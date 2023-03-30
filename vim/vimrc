@@ -1,0 +1,148 @@
+call plug#begin('~/.vim/plugged')
+	Plug 'dracula/vim',{'as': 'dracula'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'tpope/vim-commentary'
+    Plug 'itchyny/lightline.vim'
+    Plug 'godlygeek/tabular'
+    Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+    Plug 'preservim/nerdtree'
+call plug#end()
+
+augroup myaugrp
+    autocmd!
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g'\"" | endif
+augroup end
+
+syntax on
+filetype on
+filetype indent on
+filetype plugin on
+
+set background=dark
+colorscheme dracula
+
+set number
+set mouse=a
+set wildmenu
+set wildoptions=pum
+set laststatus=2
+set noshowmode
+set hlsearch
+set incsearch
+set scrolloff=8
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set smartcase
+set smartindent
+set encoding=utf-8
+set nobackup
+set nowrap
+set nowritebackup
+set updatetime=300
+set signcolumn=yes
+
+let g:mapleader=" "
+
+nnoremap ; :
+inoremap jk <esc>
+nnoremap q :q<cr>
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
+nnoremap <leader>/ :nohl<cr>
+nnoremap <c-j> <c-w>j
+nnoremap <c-h> <c-w>h
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+nnoremap <silent> <leader>l :Tab /\|<cr>
+nnoremap <silent> <leader>= :Tab /=<cr>
+nnoremap <silent> <leader>n :NERDTreeToggle<cr>
+
+
+""""""""""""""""""""""""""""""
+""""""""" nerdtree 配置 """"""
+""""""""""""""""""""""""""""""
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+"""""""""""""""""""""""""""""""""""""""""
+"""""""""""" LeaderF 配置 """""""""""""""
+"""""""""""""""""""""""""""""""""""""""""
+let g:Lf_PreviewInPopup = 1
+let g:Lf_ShowDevIcons = 1
+let g:Lf_DevIconsFont = "JetBrainsMono Nerf Font"
+let g:Lf_HideHelp = 1
+let g:Lf_UseCache = 0
+let g:Lf_UseVersionControlTool = 0
+let g:Lf_IgnoreCurrentBufferName = 1
+let g:Lf_WindowPosition = 'popup'
+let g:Lf_PreviewInPopup = 1
+let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu Sans Mono for Powerline" }
+let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
+
+let g:Lf_ShortcutF = "<leader>ff"
+noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
+noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
+noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
+noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
+
+noremap <C-B> :<C-U><C-R>=printf("Leaderf! rg --current-buffer -e %s ", expand("<cword>"))<CR>
+noremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
+xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
+noremap go :<C-U>Leaderf! rg --recall<CR>
+
+let g:Lf_GtagsAutoGenerate = 0
+let g:Lf_Gtagslabel = 'native-pygments'
+noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
+noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
+noremap <leader>fo :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
+noremap <leader>fn :<C-U><C-R>=printf("Leaderf gtags --next %s", "")<CR><CR>
+noremap <leader>fp :<C-U><C-R>=printf("Leaderf gtags --previous %s", "")<CR><CR>
+
+
+""""""""""""""""""""""
+"""""" coc 配置 """"""
+""""""""""""""""""""""
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+nmap <leader>rn <Plug>(coc-rename)

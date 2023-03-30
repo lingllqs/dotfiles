@@ -1,2 +1,1 @@
-# dotfile
-configuration
+# 配置
