@@ -1,11 +1,17 @@
 call plug#begin('~/.vim/plugged')
 	Plug 'dracula/vim',{'as': 'dracula'}
+    Plug 'joshdick/onedark.vim'
+    Plug 'morhetz/gruvbox'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'tpope/vim-commentary'
     Plug 'itchyny/lightline.vim'
     Plug 'godlygeek/tabular'
     Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
     Plug 'preservim/nerdtree'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    Plug 'rhysd/clever-f.vim'
 call plug#end()
 
 augroup myaugrp
@@ -19,7 +25,7 @@ filetype indent on
 filetype plugin on
 
 set background=dark
-colorscheme dracula
+colorscheme gruvbox
 
 set number
 set mouse=a
@@ -31,11 +37,13 @@ set hlsearch
 set incsearch
 set scrolloff=8
 set shiftwidth=4
+set softtabstop=4
 set tabstop=4
 set expandtab
 set smartcase
 set smartindent
 set encoding=utf-8
+set showcmd
 set nobackup
 set nowrap
 set nowritebackup
@@ -44,22 +52,36 @@ set signcolumn=yes
 
 let g:mapleader=" "
 
-nnoremap ; :
 inoremap jk <esc>
+
+nnoremap ; :
 nnoremap q :q<cr>
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap <leader>w :w<cr>
 nnoremap j gj
 nnoremap k gk
 nnoremap gj j
 nnoremap gk k
-nnoremap <leader>/ :nohl<cr>
+nnoremap <leader><cr> :nohl<cr>
 nnoremap <c-j> <c-w>j
 nnoremap <c-h> <c-w>h
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
+nnoremap <silent> <leader>e :NERDTreeToggle<cr>
 nnoremap <silent> <leader>l :Tab /\|<cr>
 nnoremap <silent> <leader>= :Tab /=<cr>
-nnoremap <silent> <leader>n :NERDTreeToggle<cr>
 
+vnoremap <silent> <leader>l :Tab /\|<cr>
+vnoremap <silent> <leader>= :Tab /=<cr>
+
+
+
+"""""""""""""""""""""""""
+"""" auto-pairs 配置 """"
+"""""""""""""""""""""""""
+let g:AutoPairsFlyMode = 1
+let g:AutoPairsShortcutBackInsert = '<M-b>'
 
 """"""""""""""""""""""""""""""
 """"""""" nerdtree 配置 """"""
@@ -146,3 +168,33 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 nmap <leader>rn <Plug>(coc-rename)
+
+"""""""""""""""""""""""
+"""""" nerdtree  """"""
+"""""""""""""""""""""""
+let s:brown = "905532"
+let s:aqua =  "3AFFDB"
+let s:blue = "689FB6"
+let s:darkBlue = "44788E"
+let s:purple = "834F79"
+let s:lightPurple = "834F79"
+let s:red = "AE403F"
+let s:beige = "F5C06F"
+let s:yellow = "F09F17"
+let s:orange = "D4843E"
+let s:darkOrange = "F16529"
+let s:pink = "CB6F6F"
+let s:salmon = "EE6E73"
+let s:green = "8FAA54"
+let s:lightGreen = "31B53E"
+let s:white = "FFFFFF"
+let s:rspec_red = 'FE405F'
+let s:git_orange = 'F54D27'
+
+let g:NERDTreeDirArrowExpandable = ' '
+let g:NERDTreeDirArrowCollapsible = ' '
+
+"""""""""""""""""""""""""
+""""""" clever-f  """""""
+"""""""""""""""""""""""""
+let g:clever_f_mark_direct = 1
