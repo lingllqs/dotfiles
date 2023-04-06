@@ -1,0 +1,7 @@
+vim.api.nvim_set_keymap("i",        "jk",  "<esc>",         { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n",        ";",   ":",             { noremap = true })
+vim.api.nvim_set_keymap("n",        "q",	":q<cr>",       { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n",        "j",    "gj",           { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n",        "k",    "gk",           { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n",        "gj",    "j",           { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n",        "gk",    "k",           { noremap = true, silent = true })
