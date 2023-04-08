@@ -1,14 +1,21 @@
 /* See LICENSE file for copyright and license details.
+ * 查看LICENSE文件了解版权和许可证细节
  *
  * dynamic window manager is designed like any other X client as well. It is
  * driven through handling X events. In contrast to other X clients, a window
  * manager selects for SubstructureRedirectMask on the root window, to receive
  * events about window (dis-)appearance. Only one X connection at a time is
  * allowed to select for this event mask.
+ * 动态窗口管理器设计得跟任何其它X客户端一样。它是通过处理X事件来驱动的。与其它X客户端
+ * 相反，这个窗口管理器在根窗口上选择子结构重定向掩码去接收关于窗口是否出现的事件。该事件
+ * 的掩码同一时间只能允许选择一个X连接。
  *
  * The event handlers of dwm are organized in an array which is accessed
  * whenever a new event has been fetched. This allows event dispatching
  * in O(1) time.
+ * 每当获取一个新的事件，dwm的事件处理程序会把它组织到一个可以被访问的数组里，
+ * 使得事件可以在O(1)时间内被分发出去。
+ *
  *
  * Each child of the root window is called a client, except windows which have
  * set the override_redirect flag. Clients are organized in a linked client

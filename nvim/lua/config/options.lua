@@ -7,3 +7,4 @@ vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.wrap = false
 vim.opt.showcmd = true
+
