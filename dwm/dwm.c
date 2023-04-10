@@ -22,10 +22,15 @@
  * list on each monitor, the focus history is remembered through a stack list
  * on each monitor. Each client contains a bit array to indicate the tags of a
  * client.
+ * 每个根窗口的子窗口都被成为一个客户端，除了被设置了覆盖重定向标志的窗口。屏幕内所有
+ * 的客户端都被组织在一个链表中，而每个屏幕的聚焦历史都通过一个栈列表记录起来。每个客户端
+ * 到包含一个位数组来表明其所在的tag中。
  *
  * Keys and tagging rules are organized as arrays and defined in config.h.
+ * 键和标签规则都被当作一个数组定义在config.h中。
  *
  * To understand everything else, start reading main().
+ * 开始阅读main函数去了解其他信息。
  */
 #include <errno.h>
 #include <locale.h>
@@ -64,7 +69,7 @@
 #define WIDTH(X)                ((X)->w + 2 * (X)->bw)
 #define HEIGHT(X)               ((X)->h + 2 * (X)->bw)
 #define TAGMASK                 ((1 << LENGTH(tags)) - 1)
-#define TEXTW(X)                (drw_fontset_getwidth(drw, (X)) + lrpad)
+#define TEXTW(X)                (drw_fontset_getwidth(drw, (X)) + lrpad) // 获取给定字符串在当前字体下的宽度
 #define SYSTEM_TRAY_REQUEST_DOCK    0
 
 /* XEMBED messages */
@@ -84,7 +89,13 @@
 #define OPAQUE                  0xffU
 
 /* enums */
-enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
+enum {
+    CurNormal, // 普通光标
+    CurResize, // 调整大小光标
+    CurMove,   // 移动的光标
+    CurLast    // 于告诉窗口管理器该枚举类型中定义了多少个鼠标光标类型。
+}; /* cursor */
+
 enum {
     SchemeNorm,       // 普通
     SchemeSel,        // 选中的
@@ -97,10 +108,12 @@ enum {
     SchemeBarEmpty,   // 状态栏空白部分
     SchemeStatusText  // 状态栏文本
 }; /* color schemes */
+
 enum { NetSupported, NetWMName, NetWMState, NetWMCheck,
        NetSystemTray, NetSystemTrayOP, NetSystemTrayOrientation, NetSystemTrayOrientationHorz,
        NetWMFullscreen, NetActiveWindow, NetWMWindowType,
        NetWMWindowTypeDialog, NetClientList, NetLast }; /* EWMH atoms */
+
 enum { Manager, Xembed, XembedInfo, XLast }; /* Xembed atoms */
 enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; /* default atoms */
 enum { ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkBarEmpty,
@@ -116,197 +129,199 @@ typedef struct {
 } Arg;
 
 typedef struct {
-	unsigned int click;
-	unsigned int mask;
-	unsigned int button;
-	void (*func)(const Arg *arg);
-	const Arg arg;
+	unsigned int click;           // 点击次数
+	unsigned int mask;            // 键盘修饰键
+	unsigned int button;          // 鼠标按键
+	void (*func)(const Arg *arg); // 回调函数
+	const Arg arg;                // 回调函数参数
 } Button;
 
 typedef struct Monitor Monitor;
 typedef struct Client Client;
 struct Client {
-	char name[256];
-	float mina, maxa;
-	int x, y, w, h;
-	int oldx, oldy, oldw, oldh;
-	int basew, baseh, incw, inch, maxw, maxh, minw, minh;
-	int bw, oldbw;
-    int taskw;
-	unsigned int tags;
+	char name[256];                                       // 窗口名字
+	float mina, maxa;                                     // 窗口最小宽度和最大宽度的比例因子
+	int x, y, w, h;                                       // 窗口的位置和大小（宽度和高度）
+	int oldx, oldy, oldw, oldh;                           // 窗口上一次的位置和大小
+	int basew, baseh, incw, inch, maxw, maxh, minw, minh; // 窗口的基准值和调整值
+	int bw, oldbw;                                        // 窗口的边框大小和上一次的边框大小
+    int taskw;                                            // 窗口任务列表的宽度
+	unsigned int tags;                                    // 窗口对应的工作区标签
 	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen, isglobal, isnoborder, isscratchpad;
-	Client *next;
-	Client *snext;
-	Monitor *mon;
-	Window win;
+	Client *next;  // 指向下一个窗口结构体指针
+	Client *snext; // 指向下一屏幕的窗口结构体指针
+	Monitor *mon;  // 指向监视器结构体的指针
+	Window win;    // 床都的下X11窗口ID
 };
 
 typedef struct {
-	unsigned int mod;
-	KeySym keysym;
+	unsigned int mod; // 键盘修饰键
+	KeySym keysym;    // 按键键码
 	void (*func)(const Arg *);
 	const Arg arg;
 } Key;
 
 typedef struct {
-	const char *symbol;
-	void (*arrange)(Monitor *);
+	const char *symbol;         // 布局符号
+	void (*arrange)(Monitor *); // 对应的布局函数
 } Layout;
 
 typedef struct Pertag Pertag;
 struct Monitor {
-	char ltsymbol[16];
-	float mfact;
-	int nmaster;
-	int num;
-	int by;               /* bar geometry */
-	int bt;               /* number of tasks */
-	int mx, my, mw, mh;   /* screen size */
-	int wx, wy, ww, wh;   /* window area  */
-	unsigned int seltags;
-	unsigned int sellt;
-	unsigned int tagset[2];
-	int showbar;
-	int topbar;
-	Client *clients;
-	Client *sel;
-	Client *stack;
-	Monitor *next;
-	Window barwin;
-	const Layout *lt[2];
-	Pertag *pertag;
-    uint isoverview;
+	char ltsymbol[16];      // 当前布局的名称（符号）
+	float mfact;            // 当前主窗口和剩余窗口之间的比例（以百分比表示）
+	int nmaster;            // 当前主窗口的数量
+	int num;                // 显示器的编号
+	int by;                 // 状态栏的高度和显示位置
+	int bt;                 // 任务栏上任务按钮的数量
+	int mx, my, mw, mh;     // 显示器的大小和位置
+	int wx, wy, ww, wh;     // 窗口的总区域（不包括状态栏）
+	unsigned int seltags;   // 当前选中的标签
+	unsigned int sellt;     // 当前选中的布局
+	unsigned int tagset[2]; // 当前选中的工作区标签
+	int showbar;            // 表示是否显示状态栏
+	int topbar;             // 表示状态栏的位置
+	Client *clients;        // 指向当前显示器上所有的客户端的指针
+	Client *sel;            // 指向当前选中的客户端
+	Client *stack;          // 指向当前显示器上所有窗口的堆栈
+	Monitor *next;          // 指向下一显示器的指针（如果有）
+	Window barwin;          // 状态栏所在的窗口ID
+	const Layout *lt[2];    // 当前显示器上的两种布局（用于布局切换）
+	Pertag *pertag;         // 指向描述每个工作区的动态信息的Pertag结构体
+    uint isoverview;        // 表示当前显示器是否处于概览模式下
 };
 
 typedef struct {
-	const char *class;
-	const char *instance;
-	const char *title;
-	unsigned int tags;
-	int isfloating;
-    int isglobal;
-	int isnoborder;
-	int monitor;
-    uint floatposition;
+	const char *class;    // 表示要匹配的窗口类名(可以使用xprop命令查看)
+	const char *instance; // 表示匹配的窗口实例名
+	const char *title;    // 表示要匹配的窗口标题
+	unsigned int tags;    // 表示窗口所在的标签（可以是多个)
+	int isfloating;       // 表示窗口是否是浮动的
+    int isglobal;         // 表示窗口是否在所有显示器和tag中显示
+	int isnoborder;       // 表示窗口是否有边框
+	int monitor;          // 表示窗口在哪个显示器放置
+    uint floatposition;   // 表示浮动窗口的位置
 } Rule;
 
 typedef struct Systray   Systray;
 struct Systray {
-	Window win;
-	Client *icons;
+	Window win;    // 表示托盘窗口的ID
+	Client *icons; // 表示托盘图标的状态
 };
 
 /* function declarations */
 /* static void logtofile(const char *fmt, ...); */
 
-static void tile(Monitor *m);
-static void magicgrid(Monitor *m);
-static void overview(Monitor *m);
-static void grid(Monitor *m, uint gappo, uint uappi);
+static void tile(Monitor *m);                         // 平铺布局
+static void magicgrid(Monitor *m);                    // 网格布局
+static void overview(Monitor *m);                     // 概览布局
+static void grid(Monitor *m, uint gappo, uint uappi); // 网格布局
 
-static void applyrules(Client *c);
-static int applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact);
-static void arrange(Monitor *m);
-static void arrangemon(Monitor *m);
-static void attach(Client *c);
-static void attachstack(Client *c);
-static void buttonpress(XEvent *e);
-static void checkotherwm(void);
-static void cleanup(void);
-static void cleanupmon(Monitor *mon);
-static void clientmessage(XEvent *e);
-static void configure(Client *c);
-static void configurenotify(XEvent *e);
-static void configurerequest(XEvent *e);
-static void clickstatusbar(const Arg *arg);
-static Monitor *createmon(void);
-static void destroynotify(XEvent *e);
-static void detach(Client *c);
-static void detachstack(Client *c);
-static Monitor *dirtomon(int dir);
+static void applyrules(Client *c);          // 把用户指定的规则应用到客户端c
+static int applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact); // 根据客户端的窗口大小提示（size hints）和显示器的大小来确定客户端的实际位置和大小
+static void arrange(Monitor *m);            // 排列显示器m上的客户端
+static void arrangemon(Monitor *m);         // 排列所有显示器上的客户端
+static void attach(Client *c);              // 将客户端添加到当前显示器的客户端列表中
+static void attachstack(Client *c);         // 将客户端添加到当前显示器的客户端堆栈中
+static void buttonpress(XEvent *e);         // 处理鼠标按下事件
+static void checkotherwm(void);             // 检查是否有其他窗口管理器
+static void cleanup(void);                  // 释放资源和清理内存
+static void cleanupmon(Monitor *mon);       // 释放单个显示器及其上的所有客户端和相关资源
+static void clientmessage(XEvent *e);       // 处理客户端消息事件
+static void configure(Client *c);           // 处理客户端配置请求
+static void configurenotify(XEvent *e);     // 检查配置是否已经更改
+static void configurerequest(XEvent *e);    // 响应配置请求
+static void clickstatusbar(const Arg *arg); // 处理点击状态栏事件
+static Monitor *createmon(void);            // 初始化显示器
+static void destroynotify(XEvent *e);       // 处理窗口销毁事件
+static void detach(Client *c);              // 将客户端从当前显示器中分离
+static void detachstack(Client *c);         // 将客户端从当前窗口管理器的客户端列表中移除
+static Monitor *dirtomon(int dir);          // 用于当前显示器的方向上的下一个显示器
 
-static void drawbar(Monitor *m);
-static void drawbars(void);
-static int drawstatusbar(Monitor *m, int bh, char* text);
+static void drawbar(Monitor *m);                          // 绘制状态栏
+static void drawbars(void);                               // 更新所有显示器的状态栏
+static int drawstatusbar(Monitor *m, int bh, char* text); // 在状态栏上绘制文本
 
-static void enternotify(XEvent *e);
-static void expose(XEvent *e);
+static void enternotify(XEvent *e); // 处理鼠标进入窗口事件
+static void expose(XEvent *e);      // 处理窗口暴露的部分
 
-static void focusin(XEvent *e);
-static void focus(Client *c);
-static void focusmon(const Arg *arg);
-static void focusstack(const Arg *arg);
+static void focusin(XEvent *e);         // 处理窗口获取焦点的事件
+static void focus(Client *c);           // 用于切换焦点
+static void focusmon(const Arg *arg);   // 切换焦点到指定显示器
+static void focusstack(const Arg *arg); // 切换焦点到堆栈中的下一客户端
 
-static void pointerfocuswin(Client *c);
+static void pointerfocuswin(Client *c); // 将鼠标指针聚焦到给定客户端
 
-static Atom getatomprop(Client *c, Atom prop);
-static int getrootptr(int *x, int *y);
-static long getstate(Window w);
-static unsigned int getsystraywidth();
-static int gettextprop(Window w, Atom atom, char *text, unsigned int size);
+static Atom getatomprop(Client *c, Atom prop);                              // 获取客户端属性中的原子值
+static int getrootptr(int *x, int *y);                                      // 获取指针位置
+static long getstate(Window w);                                             // 获取窗口状态
+static unsigned int getsystraywidth();                                      // 获取系统托盘宽度
+static int gettextprop(Window w, Atom atom, char *text, unsigned int size); // 获取窗口属性值的字符串
 
-static void grabbuttons(Client *c, int focused);
-static void grabkeys(void);
+static void grabbuttons(Client *c, int focused); // 用于绑定指定客户端窗口的鼠标按钮事件
+static void grabkeys(void);                      // 窗口管理器绑定按键事件
 
-static void hide(Client *c);
-static void show(Client *c);
-static void showtag(Client *c);
-static void hidewin(const Arg *arg);
-static void hideotherwins(const Arg *arg);
-static void showonlyorall(const Arg *arg);
-static int issinglewin(const Arg *arg);
-static void restorewin(const Arg *arg);
+static void hide(Client *c);               // 隐藏客户端窗口
+static void show(Client *c);               // 显示一个被隐藏的窗口
+static void showtag(Client *c);            // 显示客户端所属标签
+static void hidewin(const Arg *arg);       // 隐藏当前焦点窗口
+static void hideotherwins(const Arg *arg); // 隐藏除了当前选中窗口以外的窗口
+static void showonlyorall(const Arg *arg); // 显示指定标签中所有窗口或在所有标签中显示指定窗口的函数
+static int issinglewin(const Arg *arg);    // 检查是否只有一个窗口当前处于选择状态
+static void restorewin(const Arg *arg);    // 恢复最近被隐藏的窗口
 
-static void incnmaster(const Arg *arg);
-static void keypress(XEvent *e);
-static void killclient(const Arg *arg);
-static void forcekillclient(const Arg *arg);
+static void incnmaster(const Arg *arg);      // 增加主客户端数目
+static void keypress(XEvent *e);             // 处理按键事件
+static void killclient(const Arg *arg);      // 关闭当前选定客户端
+static void forcekillclient(const Arg *arg); // 强制关闭当前选中客户端
 
-static void manage(Window w, XWindowAttributes *wa);
-static void mappingnotify(XEvent *e);
-static void maprequest(XEvent *e);
-static void motionnotify(XEvent *e);
-static void movemouse(const Arg *arg);
-static void movewin(const Arg *arg);
-static void resizewin(const Arg *arg);
-static Client *nexttiled(Client *c);
-static void pop(Client *);
-static void propertynotify(XEvent *e);
-static void quit(const Arg *arg);
-static void setup(void);
-static void seturgent(Client *c, int urg);
-static void sigchld(int unused);
-static void spawn(const Arg *arg);
-static Monitor *systraytomon(Monitor *m);
+static void manage(Window w, XWindowAttributes *wa); // 管理新建窗口，设置其属性
+static void mappingnotify(XEvent *e);                // 处理输入设备映射更改通知事件的函数
+static void maprequest(XEvent *e);                   // 处理客户端窗口映射请求事件
+static void motionnotify(XEvent *e);                 // 处理鼠标移动事件
+static void movemouse(const Arg *arg);               // 移动鼠标指针
+static void movewin(const Arg *arg);                 // 移动窗口
+static void resizewin(const Arg *arg);               // 调整窗口大小
+static Client *nexttiled(Client *c);                 // 找到下一个平铺窗口
+static void pop(Client *);                           // 将输入的客户端放置到顶部（默认）
+static void propertynotify(XEvent *e);               // 处理窗口属性修改事件
+static void quit(const Arg *arg);                    // 通过响应用户发出的退出事件来终止窗口管理器的运行
+static void setup(void);                             // 设置X11环境
+static void seturgent(Client *c, int urg);           // 指定窗口标记为紧急
+static void sigchld(int unused);                     // 处理子进程终止信号
+static void spawn(const Arg *arg);                   // 启动新进程
+static Monitor *systraytomon(Monitor *m);            // 系统托盘指定显示器
 
-static Monitor *recttomon(int x, int y, int w, int h);
-static void removesystrayicon(Client *i);
-static void resize(Client *c, int x, int y, int w, int h, int interact);
-static void resizebarwin(Monitor *m);
-static void resizeclient(Client *c, int x, int y, int w, int h);
-static void resizemouse(const Arg *arg);
-static void resizerequest(XEvent *e);
-static void restack(Monitor *m);
+static Monitor *recttomon(int x, int y, int w, int h);                   // 将一个矩形区域转换为对应的监视器
+static void removesystrayicon(Client *i);                                // 移除客户端的系统托盘图标
+static void resize(Client *c, int x, int y, int w, int h, int interact); // 调整客户端窗口的大小和位置
+static void resizebarwin(Monitor *m);                                    // 调整指定显示器上状态栏的窗口的大小
+static void resizeclient(Client *c, int x, int y, int w, int h);         // 调整客户端窗口的大小和位置
+static void resizemouse(const Arg *arg);                                 // 处理鼠标调整大小窗口操作
+static void resizerequest(XEvent *e);                                    // 处理X服务器的ResizeRequest事件
+static void restack(Monitor *m);                                         // 重新堆叠一个指定显示器上的所有窗口
 
-static void run(void);
-static void runAutostart(void);
-static void scan(void);
-static int sendevent(Window w, Atom proto, int m, long d0, long d1, long d2, long d3, long d4);
-static void sendmon(Client *c, Monitor *m);
-static void setclientstate(Client *c, long state);
-static void setfocus(Client *c);
+static void run(void);          // 启动窗口管理器
+static void runAutostart(void); // 后台运行的程序
+static void scan(void);         // 扫描display屏幕上所有窗口
+                                
+static int sendevent(Window w, Atom proto, int m, long d0, long d1, long d2, long d3, long d4); // 发送客户端消息
+                                                                                                 
+static void sendmon(Client *c, Monitor *m);        // 将当前活动窗口移动到新的显示器上
+static void setclientstate(Client *c, long state); // 用于设置客户端窗口的状态
+static void setfocus(Client *c);                   // 设置当前活动的客户端窗口和焦点
 
-static void selectlayout(const Arg *arg);
-static void setlayout(const Arg *arg);
+static void selectlayout(const Arg *arg); // 用于选择当前使用的窗口布局
+static void setlayout(const Arg *arg);    // 用于设置当前监视器的布局属性
 
-static void fullscreen(const Arg *arg);
-static void setfullscreen(Client *c, int fullscreen);
-static void setmfact(const Arg *arg);
+static void fullscreen(const Arg *arg);               // 全屏
+static void setfullscreen(Client *c, int fullscreen); // 用于将客户端窗口设置为全屏
+static void setmfact(const Arg *arg);                 // 设置主窗口的比例
 
-static void tag(const Arg *arg);
-static void tagmon(const Arg *arg);
-static void tagtoleft(const Arg *arg);
-static void tagtoright(const Arg *arg);
+static void tag(const Arg *arg);        // 更改当前查看器的标签集合
+static void tagmon(const Arg *arg);     // 用于将当前活动的窗口移动到另一个监视器
+static void tagtoleft(const Arg *arg);  // 用于在当前监视器上将窗口从当前标签移动到左侧标签
+static void tagtoright(const Arg *arg); // 用于在当前监视器上将窗口从当前标签移动到右侧标签
 
 static void togglebar(const Arg *arg);
 static void togglesystray();
@@ -319,97 +334,102 @@ static void togglewin(const Arg *arg);
 static void toggleglobal(const Arg *arg);
 static void toggleborder(const Arg *arg);
 
-static void unfocus(Client *c, int setfocus);
-static void unmanage(Client *c, int destroyed);
-static void unmapnotify(XEvent *e);
+static void unfocus(Client *c, int setfocus);   // 用于将客户端窗口从焦点状态中移除
+static void unmanage(Client *c, int destroyed); // 于将一个客户端窗口从DWMS管理的客户端列表中移除，同时销毁相关的窗口对象。
+static void unmapnotify(XEvent *e);             // 用于监听要从屏幕上撤下的窗口事件
 
-static void updatebarpos(Monitor *m);
-static void updatebars(void);
-static void updateclientlist(void);
-static int updategeom(void);
-static void updatenumlockmask(void);
-static void updatesizehints(Client *c);
-static void updatestatus(void);
-static void updatesystray(void);
-static void updatesystrayicongeom(Client *i, int w, int h);
-static void updatesystrayiconstate(Client *i, XPropertyEvent *ev);
-static void updatetitle(Client *c);
-static void updatewindowtype(Client *c);
-static void updatewmhints(Client *c);
+static void updatebarpos(Monitor *m);                              // 更新状态栏位置
+static void updatebars(void);                                      // 用于在所有监视器的状态栏位置发生变化时调用updatebarpos函数
+static void updateclientlist(void);                                // 更新客户端列表
+static int updategeom(void);                                       // 更新屏幕几何形状
+static void updatenumlockmask(void);                               // 用于更新numlockmask变量的值
+static void updatesizehints(Client *c);                            // 用于更新客户端窗口的大小提示
+static void updatestatus(void);                                    // 更新状态栏上的文本
+static void updatesystray(void);                                   // 更新系统托盘中的图标和状态
+static void updatesystrayicongeom(Client *i, int w, int h);        // 用于更新系统托盘中图标的几何形状
+static void updatesystrayiconstate(Client *i, XPropertyEvent *ev); // 更新系统托盘图标状态
+static void updatetitle(Client *c);                                // 更新客户端窗口的标题
+static void updatewindowtype(Client *c);                           // 更新客户端窗口的类型
+static void updatewmhints(Client *c);                              // 更新客户端窗口的WM认证信息
 
-static void setgap(const Arg *arg);
+static void setgap(const Arg *arg);//用于设置窗口管理器的边框和窗口之间的间隙大小
 
-static void view(const Arg *arg);
-static void viewtoleft(const Arg *arg);
-static void viewtoright(const Arg *arg);
+static void view(const Arg *arg);        // 用于切换窗口管理器的当前工作区
+static void viewtoleft(const Arg *arg);  // 用于将当前工作区切换到其左侧的工作区
+static void viewtoright(const Arg *arg); // 用于将当前工作区切换到其右侧的工作区
 
-static void exchange_client(const Arg *arg);
-static void focusdir(const Arg *arg);
+static void exchange_client(const Arg *arg); // 用于在当前工作区的两个窗口之间交换位置
+static void focusdir(const Arg *arg);        // 用于根据指定的输入方向（左、右、上或下）更改当前焦点窗口
 
-static Client *wintoclient(Window w);
-static Monitor *wintomon(Window w);
-static Client *wintosystrayicon(Window w);
-static int xerror(Display *dpy, XErrorEvent *ee);
-static int xerrordummy(Display *dpy, XErrorEvent *ee);
-static int xerrorstart(Display *dpy, XErrorEvent *ee);
-static void xinitvisual();
-static void zoom(const Arg *arg);
+static Client *wintoclient(Window w);                  // 用于将X窗口ID转换为对应的客户端窗口
+static Monitor *wintomon(Window w);                    // 用于将X窗口ID转换为相应的显示器
+static Client *wintosystrayicon(Window w);             // 用于将X窗口ID转换为对应的系统托盘图标客户端
+static int xerror(Display *dpy, XErrorEvent *ee);      // 用于处理X服务器返回错误信息的函数
+static int xerrordummy(Display *dpy, XErrorEvent *ee); // 是一个空的错误处理函数
+static int xerrorstart(Display *dpy, XErrorEvent *ee); // 是xerror函数和xerrordummy函数所用的公有函数
+static void xinitvisual();                             // 用于初始化X11图形系统中的可视化配置
+static void zoom(const Arg *arg);                      // 用于切换活动窗口和上一个窗口
 
 /* variables */
-static Systray *systray =  NULL;
-static const char broken[] = "broken";
-static char stext[1024];
-static int screen;
-static int sw, sh;           /* X display screen geometry width, height */
-static int bh, blw = 0;      /* bar geometry */
-static int lrpad;            /* sum of left and right padding for text */
-static int vp;               /* vertical padding for bar */
-static int sp;               /* side padding for bar */
-static int (*xerrorxlib)(Display *, XErrorEvent *);
-static unsigned int numlockmask = 0;
+static Systray *systray =  NULL;       // 存储系统托盘图标的相关信息和处理系统托盘图标事件的函数。
+static const char broken[] = "broken"; // 表示某些客户端当前的状态或信息无法被窗口管理器正确处理或显示。
+static char stext[1024];               // 存储窗口管理器状态栏的文本内容。
+static int screen;                     // 存储当前连接的X11服务器的屏幕号
+static int sw, sh;                     // 存储连接的X11服务器的屏幕分辨率的宽度和高度
+static int bh, blw = 0;                // 存储窗口管理器的边框高度和边框宽度。
+static int lrpad;                      // 存储窗口管理器的左右内边距值。
+static int vp;                         // 存储窗口管理器的垂直内边距值
+static int sp;                         // 存储窗口管理器的分隔符大小值
+                                       
+static int (*xerrorxlib)(Display *, XErrorEvent *); // 程序错误时的处理函数地址
+static unsigned int numlockmask = 1;                // 存储Num Lock键的按下状态。
+                                                    
+// 存储不同类型的X事件（如鼠标点击事件、按键事件、窗口大小变更事件等）对应的处理函数指针
 static void (*handler[LASTEvent]) (XEvent *) = {
-	[ButtonPress] = buttonpress,
-	[ClientMessage] = clientmessage,
+	[ButtonPress]      = buttonpress,
+	[ClientMessage]    = clientmessage,
 	[ConfigureRequest] = configurerequest,
-	[ConfigureNotify] = configurenotify,
-	[DestroyNotify] = destroynotify,
-	[EnterNotify] = enternotify,
-	[Expose] = expose,
-	[FocusIn] = focusin,
-	[KeyPress] = keypress,
-	[MappingNotify] = mappingnotify,
-	[MapRequest] = maprequest,
-	[MotionNotify] = motionnotify,
-	[PropertyNotify] = propertynotify,
-	[ResizeRequest] = resizerequest,
-	[UnmapNotify] = unmapnotify
+	[ConfigureNotify]  = configurenotify,
+	[DestroyNotify]    = destroynotify,
+	[EnterNotify]      = enternotify,
+	[Expose]           = expose,
+	[FocusIn]          = focusin,
+	[KeyPress]         = keypress,
+	[MappingNotify]    = mappingnotify,
+	[MapRequest]       = maprequest,
+	[MotionNotify]     = motionnotify,
+	[PropertyNotify]   = propertynotify,
+	[ResizeRequest]    = resizerequest,
+	[UnmapNotify]      = unmapnotify
 };
-static Atom wmatom[WMLast], netatom[NetLast], xatom[XLast];
-static int running = 1;
-static Cur *cursor[CurLast];
-static Clr **scheme;
-static Display *dpy;
-static Drw *drw;
-static int useargb = 0;
-static Visual *visual;
-static int depth;
-static Colormap cmap;
-static Monitor *mons, *selmon;
-static Window root, wmcheckwin;
 
-static int hiddenWinStackTop = -1;
-static Client *hiddenWinStack[100];
+static Atom wmatom[WMLast], netatom[NetLast], xatom[XLast];  // 存储窗口管理和X11网络管理所需要用到的一些原子（Atom）值
+                                                             //
+static int running = 1;                                      // 表示程序是否正在运行
+static Cur *cursor[CurLast];                                 // 存储不同状态下使用的鼠标光标
+static Clr **scheme;                                         // 指向颜色方案（Clr类型）数组的指针
+static Display *dpy;                                         // 指向Display结构体的指针，用于表示连接到X服务器的客户端程序
+static Drw *drw;                                             // 指向Drw结构体的指针，用于表示dwm窗口管理器的绘图上下文
+static int useargb = 1;                                      // 指示dwm窗口管理器是否应该使用Alpha合成（ARGB）绘图方式
+static Visual *visual;                                       // 表示窗口管理器所使用的可视化表达方式
+static int depth;                                            // 用于表示窗口管理器创建窗口时所使用的颜色深度
+static Colormap cmap;                                        // 用于表示窗口管理器所使用的颜色映射表
+static Monitor *mons, *selmon;                               // mons指针指向一个包含所有显示器信息的链表，而selmon指针则指向当前活动的显示器
+static Window root, wmcheckwin;                              // root变量是一个表示根窗口的X11窗口ID,wmcheckwin变量是一个表示状态窗口的X11窗口ID
+
+static int hiddenWinStackTop = -1;  // 用于表示已隐藏窗口栈的顶部
+static Client *hiddenWinStack[100]; // 用于存储已隐藏窗口的栈
 
 /* configuration, allows nested code to access above variables */
 #include "config.h"
 
 struct Pertag {
-	unsigned int curtag, prevtag; /* current and previous tag */
-	int nmasters[LENGTH(tags) + 1]; /* number of windows in master area */
-	float mfacts[LENGTH(tags) + 1]; /* mfacts per tag */
-	unsigned int sellts[LENGTH(tags) + 1]; /* selected layouts */
+	unsigned int curtag, prevtag;              /* current and previous tag */
+	int nmasters[LENGTH(tags) + 1];            /* number of windows in master area */
+	float mfacts[LENGTH(tags) + 1];            /* mfacts per tag */
+	unsigned int sellts[LENGTH(tags) + 1];     /* selected layouts */
 	const Layout *ltidxs[LENGTH(tags) + 1][2]; /* matrix of tags and layouts indexes  */
-	int showbars[LENGTH(tags) + 1]; /* display bar for the current tag */
+	int showbars[LENGTH(tags) + 1];            /* display bar for the current tag */
 };
 
 /* function implementations */
@@ -428,8 +448,12 @@ logtofile(const char *fmt, ...)
     system(cmd);
 }
 
-void
-applyrules(Client *c)
+/* typedef struct {
+	char *res_name;
+	char *res_class;
+} XClassHint; */
+
+void applyrules(Client *c)
 {
     const char *class, *instance;
     unsigned int i;
@@ -443,37 +467,41 @@ applyrules(Client *c)
     c->isnoborder = 0;
     c->isscratchpad = 0;
     c->tags = 0;
+    // 获取指定窗口的类和实例名
+    // int XGetClassHint(Display *display, Window w, XClassHint *class_hint_return);
     XGetClassHint(dpy, c->win, &ch);
     class    = ch.res_class ? ch.res_class : broken;
     instance = ch.res_name  ? ch.res_name  : broken;
 
+    // 遍历config.h中定义的规则
     for (i = 0; i < LENGTH(rules); i++) {
         r = &rules[i];
         // 当rule中定义了一个或多个属性时，只要有一个属性匹配，就认为匹配成功
-        if ((r->title && strstr(c->name, r->title))
-                || (r->class && strstr(class, r->class))
-                || (r->instance && strstr(instance, r->instance)))
+        if ((r->title && strstr(c->name, r->title)) || 
+            (r->class && strstr(class, r->class)) || 
+            (r->instance && strstr(instance, r->instance)))
         {
             c->isfloating = r->isfloating;
             c->isglobal = r->isglobal;
             c->isnoborder = r->isnoborder;
             c->tags |= r->tags;
             c->bw = c->isnoborder ? 0 : borderpx;
+
             for (m = mons; m && m->num != r->monitor; m = m->next);
             if (m)
                 c->mon = m;
             // 如果设定了floatposition 且未指定xy，设定窗口位置
             if (r->isfloating && c->x == 0 && c->y == 0) {
                 switch (r->floatposition) {
-                    case 1: c->x = selmon->wx + gappo; c->y = selmon->wy + gappo; break; // 左上
-                    case 2: c->x = selmon->wx + (selmon->ww - WIDTH(c)) / 2 - gappo; c->y = selmon->wy + gappo; break; // 中上
-                    case 3: c->x = selmon->wx + selmon->ww - WIDTH(c) - gappo; c->y = selmon->wy + gappo; break; // 右上
-                    case 4: c->x = selmon->wx + gappo; c->y = selmon->wy + (selmon->wh - HEIGHT(c)) / 2; break; // 左中
+                    case 1: c->x = selmon->wx + gappo; c->y = selmon->wy + gappo; break;                                                  // 左上
+                    case 2: c->x = selmon->wx + (selmon->ww - WIDTH(c)) / 2 - gappo; c->y = selmon->wy + gappo; break;                    // 中上
+                    case 3: c->x = selmon->wx + selmon->ww - WIDTH(c) - gappo; c->y = selmon->wy + gappo; break;                          // 右上
+                    case 4: c->x = selmon->wx + gappo; c->y = selmon->wy + (selmon->wh - HEIGHT(c)) / 2; break;                           // 左中
                     case 0: // 默认0，居中
-                    case 5: c->x = selmon->wx + (selmon->ww - WIDTH(c)) / 2; c->y = selmon->wy + (selmon->wh - HEIGHT(c)) / 2; break; // 中中
-                    case 6: c->x = selmon->wx + selmon->ww - WIDTH(c) - gappo; c->y = selmon->wy + (selmon->wh - HEIGHT(c)) / 2; break; // 右中
-                    case 7: c->x = selmon->wx + gappo; c->y = selmon->wy + selmon->wh - HEIGHT(c) - gappo; break; // 左下
-                    case 8: c->x = selmon->wx + (selmon->ww - WIDTH(c)) / 2; c->y = selmon->wy + selmon->wh - HEIGHT(c) - gappo; break; // 中下
+                    case 5: c->x = selmon->wx + (selmon->ww - WIDTH(c)) / 2; c->y = selmon->wy + (selmon->wh - HEIGHT(c)) / 2; break;     // 中中
+                    case 6: c->x = selmon->wx + selmon->ww - WIDTH(c) - gappo; c->y = selmon->wy + (selmon->wh - HEIGHT(c)) / 2; break;   // 右中
+                    case 7: c->x = selmon->wx + gappo; c->y = selmon->wy + selmon->wh - HEIGHT(c) - gappo; break;                         // 左下
+                    case 8: c->x = selmon->wx + (selmon->ww - WIDTH(c)) / 2; c->y = selmon->wy + selmon->wh - HEIGHT(c) - gappo; break;   // 中下
                     case 9: c->x = selmon->wx + selmon->ww - WIDTH(c) - gappo; c->y = selmon->wy + selmon->wh - HEIGHT(c) - gappo; break; // 右下
                 }
             }
@@ -492,8 +520,7 @@ applyrules(Client *c)
     c->tags = c->tags & TAGMASK ? c->tags & TAGMASK : c->mon->tagset[c->mon->seltags];
 }
 
-int
-applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact)
+int applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact)
 {
     int baseismin;
     Monitor *m = c->mon;
@@ -558,8 +585,7 @@ applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact)
     return *x != c->x || *y != c->y || *w != c->w || *h != c->h;
 }
 
-void
-arrange(Monitor *m)
+void arrange(Monitor *m)
 {
     if (m)
         showtag(m->stack);
@@ -572,8 +598,7 @@ arrange(Monitor *m)
         arrangemon(m);
 }
 
-void
-arrangemon(Monitor *m)
+void arrangemon(Monitor *m)
 {
     if (m->isoverview) {
         strncpy(m->ltsymbol, overviewlayout.symbol, sizeof m->ltsymbol);
@@ -584,8 +609,7 @@ arrangemon(Monitor *m)
     }
 }
 
-void
-attach(Client *c)
+void attach(Client *c)
 {
     if (!newclientathead) {
         Client **tc;
