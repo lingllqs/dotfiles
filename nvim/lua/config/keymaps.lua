@@ -10,6 +10,12 @@ vim.api.nvim_set_keymap("n",        "gk",  	"k",           	{ noremap = true, si
 vim.api.nvim_set_keymap("n",        "S",    "<cmd>TranslateW<cr>", {noremap = true})
 vim.api.nvim_set_keymap("v",        "S",    "<cmd>TranslateW<cr>", {noremap = true})
 
+vim.api.nvim_set_keymap("n",        "<leader>|",    "<cmd>Tab /|<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n",        "<leader>=",    "<cmd>Tab /=<cr>", {noremap = true})
+vim.cmd([[
+    nnoremap <silent> <leader>/ :Tab /\/\/<cr>
+]])
+
 vim.api.nvim_set_keymap("n",        "0",    "<cmd>call v:lua.MagicMove()<cr>", { noremap = true, silent = true })
 
 function MagicMove()
