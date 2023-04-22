@@ -6,8 +6,8 @@ static const unsigned int borderpx        = 2;    /* 窗口边框大小 */
 static const unsigned int systraypinning  = 1;    /* 托盘跟随的显示器 0代表不指定显示器 */
 static const unsigned int systrayspacing  = 1;    /* 托盘间距 */
 static const unsigned int systrayspadding = 5;    /* 托盘和状态栏的间隙 */
-static int gappi                          = 12;   /* 窗口与窗口 缝隙大小 */
-static int gappo                          = 12;   /* 窗口与边缘 缝隙大小 */
+static int gappi                          = 6;   /* 窗口与窗口 缝隙大小 */
+static int gappo                          = 6;   /* 窗口与边缘 缝隙大小 */
 static const int _gappo                   = 12;   /* 窗口与窗口 缝隙大小 不可变 用于恢复时的默认值 */
 static const int _gappi                   = 12;   /* 窗口与边缘 缝隙大小 不可变 用于恢复时的默认值 */
 static const int vertpad                  = 5;    /* vertical padding of bar */
@@ -23,8 +23,8 @@ static const unsigned int baralpha        = 0xc0; /* 状态栏透明度 */
 static const unsigned int borderalpha     = 0xdd; /* 边框透明度 */
 
 static const char *fonts[] = {
-    "JetBrainsMono Nerd Font:type=medium:size=14:antialias=true:autohint=true",
-    "monospace:size=14",
+    "JetBrainsMono Nerd Font:type=medium:size=12:antialias=true:autohint=true",
+    "monospace:size=12",
     /* "WenQuanYi Micro Hei:size=16:type=Regular:antialias=ture:autohint=true",
      */
     /* "Symbols Nerd
@@ -33,7 +33,7 @@ static const char *fonts[] = {
 
 static const char *colors[][3] = { /* 颜色设置 ColFg, ColBg, ColBorder */
     [SchemeNorm]      = {"#bbbbbb", "#333333", "#444444"},
-    [SchemeSel]       = {"#ffffff", "#37474F", "#42A5F5"},
+    [SchemeSel]       = {"#ffffff", "#37474F", "#00F5FF"},
     [SchemeSelGlobal] = {"#ffffff", "#37474F", "#FFC0CB"},
     [SchemeHid]       = {"#dddddd", NULL, NULL},
     [SchemeSystray]   = {NULL, "#7799AA", NULL},
@@ -60,17 +60,21 @@ static const char *statusbarscript = "/home/lqs/scripts/statusbar/statusbar.sh";
 /* 自定义 scratchpad instance */
 static const char scratchpadname[] = "scratchpad";
 
-static const char *tags[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+static const char *tags[] = {"", "", "3", "4", "5", "6", "", "", ""};
 
 static const Rule rules[] = {
     /* class                instance            title           tags mask   isfloating isglobal     isnoborder  monitor floatposition */
     {NULL,                  NULL,               "图片查看器",   0,          1,          0,          0,          -1,     0},
     {NULL,                  NULL,               "图片查看",     0,          1,          0,          0,          -1,     0},
 
+    {"ghex",                NULL,               NULL,           0,          1,          0,          0,          -1,     3},
+    {"bochs",               NULL,               "Bochs Enhanced Debugger",  0,          1,          0,          0,      -1,     3},
+    {"Qemu-system-i386",    NULL,               "QEMU",           0,        1,          0,          1,          -1,     0},
+    {"telegram-desktop",     NULL,              "Telegram",     1 << 7,          1,          0,          0,          -1,     0},
     {"qtcreator",           NULL,               NULL,           0,          1,          0,          0,          -1,     0},
     {"firefox",             NULL,               NULL,           1 << 1,     0,          0,          0,          -1,     0},
     {"chromium",            NULL,               NULL,           1 << 2,     0,          0,          0,          -1,     0},
-    {"music",               NULL,               NULL,           1 << 5,     1,          0,          1,          -1,     0},
+    // {"music",               NULL,               NULL,           1 << 5,     1,          0,          1,          -1,     0},
     {"obs",                 NULL,               NULL,           1 << 6,     0,          0,          0,          -1,     0},
     {"QQ",                  NULL,               NULL,           1 << 7,     0,          0,          1,          -1,     0},
     {"clash for windows",   NULL,               NULL,           1 << 8,     1,          0,          0,          -1,     0},
@@ -150,11 +154,11 @@ static Key keys[] = {
     {MODKEY|ControlMask,    XK_F12,         quit,               {0}}, /* super ctrl f12     |  退出dwm */
 
     {MODKEY|ShiftMask,      XK_space,       selectlayout,       {.v = &layouts[1]}}, /* super shift space  |  切换到网格布局 */
-    {MODKEY,                XK_o,           showonlyorall,      {0}}, /* super o            |  切换 只显示一个窗口 / 全部显示 */
+    {MODKEY,                XK_o,           showonlyorall,      {0}},                /* super o | 切换 只显示一个窗口 / 全部显示 */
 
     {MODKEY|ControlMask,    XK_equal,       setgap,             {.i = -6}}, /* super ctrl +       |  窗口增大 */
     {MODKEY|ControlMask,    XK_minus,       setgap,             {.i = +6}}, /* super ctrl -       |  窗口减小 */
-    {MODKEY|ControlMask,    XK_space,       setgap,             {.i = 0}}, /* super ctrl space   |  窗口重置 */
+    {MODKEY|ControlMask,    XK_space,       setgap,             {.i = 0}},  /* super ctrl space   |  窗口重置 */
 
     {MODKEY|ControlMask,    XK_Up,          movewin,            {.ui = UP}},    /* super ctrl up      |  移动窗口 */
     {MODKEY|ControlMask,    XK_Down,        movewin,            {.ui = DOWN}},  /* super ctrl down    |  移动窗口 */
@@ -182,9 +186,9 @@ static Key keys[] = {
     {MODKEY,                XK_minus,       spawn,          SHCMD("alacritty --class FG")},
     {MODKEY,                XK_space,       spawn,          SHCMD("alacritty --class float")},
     {MODKEY,                XK_F11,         spawn,          SHCMD("killall pcmanfm || pcmanfm")},
-    {MODKEY,                XK_d,           spawn,          SHCMD("rofi -show run")},
-    {MODKEY,                XK_F1,          spawn,          SHCMD("amixer sset Master 5%+ unmute")},
-    {MODKEY,                XK_F2,          spawn,          SHCMD("amixer sset Master 5%- unmute")},
+    {MODKEY,                XK_d,           spawn,          SHCMD("rofi -show drun")},
+    {MODKEY,                XK_F1,          spawn,          SHCMD("amixer sset Master 3%+ unmute")},
+    {MODKEY,                XK_F2,          spawn,          SHCMD("amixer sset Master 3%- unmute")},
     {MODKEY|ShiftMask,      XK_a,           spawn,          SHCMD("flameshot gui -c -p ~/Pictures/screenshots")},
     {MODKEY|ShiftMask,      XK_q,           spawn,          SHCMD("kill -9 $(xprop | grep _NET_WM_PID | awk '{print $3}')")},
 

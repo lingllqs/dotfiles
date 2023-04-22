@@ -8,4 +8,7 @@ vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.wrap = false
 vim.opt.showcmd = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 
+vim.cmd([[colorscheme gruvbox]])

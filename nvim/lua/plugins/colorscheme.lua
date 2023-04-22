@@ -35,7 +35,7 @@ return {
         'morhetz/gruvbox',
         lazy = flase,
         config = function ()
-            vim.cmd([[colorscheme gruvbox]])
+            -- vim.cmd([[colorscheme gruvbox]])
         end
-    }
+    },
 }

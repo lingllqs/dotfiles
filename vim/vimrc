@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'ryanoasis/vim-devicons'
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     Plug 'rhysd/clever-f.vim'
+    Plug 'voldikss/vim-translator'
 call plug#end()
 
 augroup myaugrp
@@ -58,7 +59,7 @@ let g:mapleader=" "
 
 inoremap jk <esc>
 
-nnoremap ; :
+noremap ; :
 nnoremap q :q<cr>
 nnoremap n nzz
 nnoremap N Nzz
@@ -204,3 +205,14 @@ let g:NERDTreeDirArrowCollapsible = ' '
 """"""" clever-f  """""""
 """""""""""""""""""""""""
 let g:clever_f_mark_direct = 1
+
+""""""""""""""""""""""""""""""
+""""""""" translator """""""""
+""""""""""""""""""""""""""""""
+
+let g:translator_target_lang = 'zh'
+let g:translator_default_engines = ['haici', 'youdao']
+let g:translator_history_enable = v:true
+" Display translation in a window
+nmap <silent> mm :<Plug>TranslateW
+vmap <silent> mm :<Plug>TranslateWV
