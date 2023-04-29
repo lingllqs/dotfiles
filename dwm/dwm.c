@@ -573,7 +573,8 @@ arrangemon(Monitor *m)
         strncpy(m->ltsymbol, overviewlayout.symbol, sizeof m->ltsymbol);
         overviewlayout.arrange(m);
     } else {
-        strncpy(m->ltsymbol, m->lt[m->sellt]->symbol, sizeof m->ltsymbol);
+        /* strncpy(m->ltsymbol, m->lt[m->sellt]->symbol, sizeof(m->ltsymbol)); */
+        snprintf(m->ltsymbol, sizeof m->ltsymbol, "%s", m->lt[m->sellt]->symbol);
         m->lt[m->sellt]->arrange(m);
     }
 }
@@ -1028,15 +1029,19 @@ drawbar(Monitor *m)
     x = 0;
 
     // 代表为overview tag状态
-    if (m->isoverview) {
+    if (m->isoverview) 
+    {
         w = TEXTW(overviewtag);
         drw_setscheme(drw, scheme[SchemeSelTag]);
         drw_text(drw, x, 0, w, bh, lrpad / 2, overviewtag, 0);
         drw_setscheme(drw, scheme[SchemeUnderline]);
         drw_rect(drw, x, bh - boxw, w + lrpad, boxw, 1, 0);
         x += w;
-    } else {
-        for (i = 0; i < LENGTH(tags); i++) {
+    }
+    else 
+    {
+        for (i = 0; i < LENGTH(tags); i++) 
+        {
             /* do not draw vacant tags */
             if (!(occ & 1 << i || m->tagset[m->seltags] & 1 << i))
                 continue;
@@ -1044,7 +1049,8 @@ drawbar(Monitor *m)
             w = TEXTW(tags[i]);
             drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSelTag : SchemeNormTag]);
             drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
-            if (m->tagset[m->seltags] & 1 << i) {
+            if (m->tagset[m->seltags] & 1 << i) 
+            {
                 drw_setscheme(drw, scheme[SchemeUnderline]);
                 drw_rect(drw, x + 2, bh - boxw, w + lrpad - 4, boxw, 1, 0);
             }
@@ -1058,7 +1064,8 @@ drawbar(Monitor *m)
     x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
 
     // 绘制TASKS
-    for (c = m->clients; c; c = c->next) {
+    for (c = m->clients; c; c = c->next) 
+    {
         // 判断是否需要绘制 && 判断颜色设置
         if (!ISVISIBLE(c))
             continue;
@@ -1073,13 +1080,16 @@ drawbar(Monitor *m)
         // 绘制TASK
         w = MIN(TEXTW(c->name), TEXTW("          "));
         empty_w = m->ww - x - status_w - system_w;
-        if (w > empty_w) { // 如果当前TASK绘制后长度超过最大宽度
+        if (w > empty_w) 
+        { // 如果当前TASK绘制后长度超过最大宽度
             w = empty_w;
             x = drw_text(drw, x, 0, w, bh, lrpad / 2, "...", 0);
             c->taskw = w;
             tasks_w += w;
             break;
-        } else {
+        } 
+        else 
+        {
             x = drw_text(drw, x, 0, w, bh, lrpad / 2, c->name, 0);
             c->taskw = w;
             tasks_w += w;
@@ -1087,7 +1097,8 @@ drawbar(Monitor *m)
     }
     /** 空白部分的宽度 = 总宽度 - 状态栏的宽度 - 托盘的宽度 - sp (托盘存在时 额外多-一个 systrayspadding) */
     empty_w = m->ww - x - status_w - system_w - 2 * sp - (system_w ? systrayspadding : 0);
-    if (empty_w > 0) {
+    if (empty_w > 0) 
+    {
         drw_setscheme(drw, scheme[SchemeBarEmpty]);
         drw_rect(drw, x, 0, empty_w, bh, 1, 1);
     }
@@ -3679,7 +3690,7 @@ main(int argc, char *argv[])
 Client *direction_select(const Arg *arg) {
     Client *tempClients[100];
     Client *c = NULL, *tc = selmon->sel;
-    int last = -1, cur = 0, issingle = issinglewin(NULL);
+    int last = -1, issingle = issinglewin(NULL);
 
     if (tc && tc->isfullscreen) /* no support for focusstack with fullscreen windows */
         return NULL;
@@ -3692,7 +3703,6 @@ Client *direction_select(const Arg *arg) {
         if (ISVISIBLE(c) && (issingle || !HIDDEN(c))) {
             last ++;
             tempClients[last] = c;
-            if (c == tc) cur = last;
         }
     }
 
@@ -3700,7 +3710,7 @@ Client *direction_select(const Arg *arg) {
     int sel_x=tc->x;
     int sel_y=tc->y;
     long long int distance=LLONG_MAX;
-    int temp_focus=0;
+    /* int temp_focus=0; */
     Client *tempFocusClients=NULL;
 
     switch (arg->i) {

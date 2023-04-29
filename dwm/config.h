@@ -24,7 +24,7 @@ static const unsigned int borderalpha     = 0xdd; /* 边框透明度 */
 
 static const char *fonts[] = {
     "JetBrainsMono Nerd Font:type=medium:size=12:antialias=true:autohint=true",
-    "monospace:size=12",
+    /* "monospace:size=12", */
     /* "WenQuanYi Micro Hei:size=16:type=Regular:antialias=ture:autohint=true",
      */
     /* "Symbols Nerd
@@ -49,8 +49,8 @@ static const unsigned int alphas[][3] = { /* 透明度设置 ColFg, ColBg, ColBo
     [SchemeSelGlobal]  = {OPAQUE, baralpha, borderalpha},
     [SchemeNormTag]    = {OPAQUE, baralpha, borderalpha},
     [SchemeSelTag]     = {OPAQUE, baralpha, borderalpha},
-    [SchemeBarEmpty]   = {NULL, 0xa0a, NULL},
-    [SchemeStatusText] = {OPAQUE, 0x88, NULL},
+    [SchemeBarEmpty]   = {0, 0xa0a, 0},
+    [SchemeStatusText] = {OPAQUE, 0x88, 0},
 };
 
 /* 自定义脚本位置 */
@@ -60,7 +60,7 @@ static const char *statusbarscript = "/home/lqs/scripts/statusbar/statusbar.sh";
 /* 自定义 scratchpad instance */
 static const char scratchpadname[] = "scratchpad";
 
-static const char *tags[] = {"", "", "3", "4", "5", "6", "", "", ""};
+static const char *tags[] = {"󰣇", "", "", "", "", "󰃂", "", "󰘅", "󰟾"};
 
 static const Rule rules[] = {
     /* class                instance            title           tags mask   isfloating isglobal     isnoborder  monitor floatposition */
@@ -69,14 +69,15 @@ static const Rule rules[] = {
 
     {"ghex",                NULL,               NULL,           0,          1,          0,          0,          -1,     3},
     {"bochs",               NULL,               "Bochs Enhanced Debugger",  0,          1,          0,          0,      -1,     3},
-    {"Qemu-system-i386",    NULL,               "QEMU",           0,        1,          0,          1,          -1,     0},
-    {"telegram-desktop",     NULL,              "Telegram",     1 << 7,          1,          0,          0,          -1,     0},
+    {"Qemu-system-i386",    NULL,               "QEMU",           0,        1,          0,          0,          -1,     0},
+    {"telegram-desktop",     NULL,               "Telegram",     1 << 7,          1,          0,          0,          -1,     0},
     {"qtcreator",           NULL,               NULL,           0,          1,          0,          0,          -1,     0},
     {"firefox",             NULL,               NULL,           1 << 1,     0,          0,          0,          -1,     0},
-    {"chromium",            NULL,               NULL,           1 << 2,     0,          0,          0,          -1,     0},
-    // {"music",               NULL,               NULL,           1 << 5,     1,          0,          1,          -1,     0},
+    {"code-oss",            NULL,               NULL,           0,          0,          0,          0,          -1,     0},
+    {"chromium",            NULL,               NULL,           1 << 4,     0,          0,          0,          -1,     0},
+    {"music",               NULL,               NULL,           1 << 5,     1,          0,          1,          -1,     0},
     {"obs",                 NULL,               NULL,           1 << 6,     0,          0,          0,          -1,     0},
-    {"QQ",                  NULL,               NULL,           1 << 7,     0,          0,          1,          -1,     0},
+    {"QQ",                  NULL,               NULL,           1 << 7,     1,          0,          0,          -1,     0},
     {"clash for windows",   NULL,               NULL,           1 << 8,     1,          0,          0,          -1,     0},
     {"flameshot",           NULL,               NULL,           0,          1,          0,          0,          -1,     0},
     {"scratchpad",          "scratchpad",       "scratchpad",   TAGMASK,    1,          1,          1,          -1,     2},
