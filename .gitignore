@@ -1,0 +1,6 @@
+lyrics/
+playlists/
+.db
+.log
+.pid
+.sql
