@@ -1,0 +1,147 @@
+Apr 28 20:55 : update: added SHE/找不到-S_H_E-177846.flac
+Apr 28 20:55 : config: option 'buffer_time' on line 219 was not recognized
+Apr 28 20:55 : update: added SHE/亲爱的树洞-S_H_E-3158445.flac
+Apr 28 20:55 : update: added 周杰伦/园游会-周杰伦-295518.flac
+Apr 28 20:55 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+Apr 28 20:55 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+Apr 28 20:55 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+Apr 28 20:55 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+Apr 28 20:55 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+Apr 28 20:56 : player: played "SHE/找不到-S_H_E-177846.flac"
+Apr 28 20:57 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+Apr 28 20:58 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+Apr 28 20:58 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+Apr 28 20:58 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+Apr 28 20:58 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+Apr 28 21:01 : player: played "SHE/找不到-S_H_E-177846.flac"
+Apr 28 21:05 : player: played "周杰伦/园游会-周杰伦-295518.flac"
+Apr 28 21:13 : player: played "SHE/亲爱的树洞-S_H_E-3158445.flac"
+Apr 28 21:17 : player: played "周杰伦/园游会-周杰伦-295518.flac"
+Apr 28 21:18 : player: played "SHE/找不到-S_H_E-177846.flac"
+Apr 28 21:18 : config: option 'buffer_time' on line 219 was not recognized
+Apr 28 21:18 : player: played "SHE/找不到-S_H_E-177846.flac"
+Apr 28 21:22 : config: option 'buffer_time' on line 219 was not recognized
+Apr 28 21:25 : player: played "SHE/找不到-S_H_E-177846.flac"
+Apr 28 21:29 : player: played "周杰伦/园游会-周杰伦-295518.flac"
+Apr 28 21:33 : player: played "SHE/找不到-S_H_E-177846.flac"
+Apr 28 21:38 : player: played "SHE/亲爱的树洞-S_H_E-3158445.flac"
+Apr 28 21:43 : player: played "周杰伦/园游会-周杰伦-295518.flac"
+Apr 28 21:46 : player: played "SHE/找不到-S_H_E-177846.flac"
+Apr 28 21:55 : player: played "周杰伦/园游会-周杰伦-295518.flac"
+Apr 28 21:59 : player: played "SHE/找不到-S_H_E-177846.flac"
+Apr 28 22:00 : update: added SHE/超可能-S_H_E-672804.flac
+Apr 28 22:00 : update: added SHE/说你爱我-S_H_E-540195.ape
+Apr 28 22:00 : update: added SHE/爱上你-S_H_E-672803.flac
+Apr 28 22:00 : update: added SHE/借口-S_H_E-240835.flac
+Apr 28 22:00 : update: added SHE/恋人未满-S_H_E-83878.flac
+Apr 28 22:00 : ffmpeg/flac: Format flac detected only with low score of 1, misdetection possible!
+Apr 28 22:00 : ffmpeg/flac: Could not find codec parameters for stream 0 (Audio: flac, 0 channels): unspecified sample format
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+Apr 28 22:00 : ffmpeg: Unsupported libavcodec SampleFormat value: name   depth (?)
+Apr 28 22:00 : update: added 周杰伦/珊瑚海-周杰伦_梁心颐-118983.flac
+Apr 28 22:00 : ffmpeg/flac: Format flac detected only with low score of 1, misdetection possible!
+Apr 28 22:00 : ffmpeg/flac: Could not find codec parameters for stream 0 (Audio: flac, 0 channels): unspecified sample format
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+Apr 28 22:00 : ffmpeg: Unsupported libavcodec SampleFormat value: name   depth (?)
+Apr 28 22:00 : ffmpeg/flac: Format flac detected only with low score of 1, misdetection possible!
+Apr 28 22:00 : ffmpeg/flac: Could not find codec parameters for stream 0 (Audio: flac, 0 channels): unspecified sample format
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+Apr 28 22:00 : ffmpeg: Unsupported libavcodec SampleFormat value: name   depth (?)
+Apr 28 22:00 : update: added 周杰伦/本草纲目-周杰伦-228912.flac
+Apr 28 22:00 : ffmpeg/flac: Format flac detected only with low score of 1, misdetection possible!
+Apr 28 22:00 : ffmpeg/flac: Could not find codec parameters for stream 0 (Audio: flac, 0 channels): unspecified sample format
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+Apr 28 22:00 : ffmpeg: Unsupported libavcodec SampleFormat value: name   depth (?)
+Apr 28 22:00 : update: added 周杰伦/大笨钟-周杰伦-3204357.flac
+Apr 28 22:00 : update: added 周杰伦/花海-周杰伦-440615.flac
+Apr 28 22:00 : ffmpeg/flac: Format flac detected only with low score of 1, misdetection possible!
+Apr 28 22:00 : ffmpeg/flac: Could not find codec parameters for stream 0 (Audio: flac, 0 channels): unspecified sample format
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+Apr 28 22:00 : ffmpeg: Unsupported libavcodec SampleFormat value: name   depth (?)
+Apr 28 22:00 : update: added 周杰伦/不该_(with_aMEI)-周杰伦-7134989.flac
+Apr 28 22:00 : ffmpeg/flac: Format flac detected only with low score of 1, misdetection possible!
+Apr 28 22:00 : ffmpeg/flac: Could not find codec parameters for stream 0 (Audio: flac, 0 channels): unspecified sample format
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+Apr 28 22:00 : ffmpeg: Unsupported libavcodec SampleFormat value: name   depth (?)
+Apr 28 22:04 : update: updating 周杰伦/珊瑚海-周杰伦_梁心颐-118983.flac
+Apr 28 22:04 : update: updating 周杰伦/本草纲目-周杰伦-228912.flac
+Apr 28 22:04 : update: added 周杰伦/给我一首歌的时间-周杰伦-440614.flac
+Apr 28 22:04 : update: updating 周杰伦/大笨钟-周杰伦-3204357.flac
+Apr 28 22:04 : update: updating 周杰伦/不该_(with_aMEI)-周杰伦-7134989.flac
+Apr 28 22:04 : ffmpeg/flac: Format flac detected only with low score of 1, misdetection possible!
+Apr 28 22:04 : ffmpeg/flac: Could not find codec parameters for stream 0 (Audio: flac, 0 channels): unspecified sample format
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+Apr 28 22:04 : ffmpeg: Unsupported libavcodec SampleFormat value: name   depth (?)
+Apr 28 22:04 : update: added 孙燕姿/开始懂了-孙燕姿-325842.flac
+Apr 28 22:04 : update: added 孙燕姿/超快感-孙燕姿-325264.flac
+Apr 28 22:04 : update: added 孙燕姿/绿光(Remastered)-孙燕姿-423818.flac
+Apr 28 22:04 : player: played "SHE/亲爱的树洞-S_H_E-3158445.flac"
+Apr 28 22:07 : update: updating 孙燕姿/开始懂了-孙燕姿-325842.flac
+Apr 28 22:07 : player: played "SHE/亲爱的树洞-S_H_E-3158445.flac"
+Apr 28 22:11 : player: played "SHE/借口-S_H_E-240835.flac"
+Apr 28 22:16 : player: played "SHE/说你爱我-S_H_E-540195.ape"
+Apr 28 22:20 : player: played "SHE/爱上你-S_H_E-672803.flac"
+Apr 28 22:24 : player: played "SHE/超可能-S_H_E-672804.flac"
+Apr 28 22:29 : player: played "SHE/恋人未满-S_H_E-83878.flac"
+Apr 28 22:33 : player: played "SHE/找不到-S_H_E-177846.flac"
+Apr 28 22:38 : player: played "SHE/亲爱的树洞-S_H_E-3158445.flac"
+Apr 28 22:42 : player: played "周杰伦/园游会-周杰伦-295518.flac"
+Apr 28 22:45 : player: played "周杰伦/本草纲目-周杰伦-228912.flac"
+Apr 28 22:50 : player: played "周杰伦/珊瑚海-周杰伦_梁心颐-118983.flac"
+Apr 28 22:54 : player: played "周杰伦/大笨钟-周杰伦-3204357.flac"
+Apr 28 22:59 : player: played "周杰伦/不该_(with_aMEI)-周杰伦-7134989.flac"
+Apr 28 23:02 : player: played "周杰伦/给我一首歌的时间-周杰伦-440614.flac"
+Apr 29 17:53 : config: option 'buffer_time' on line 219 was not recognized
+Apr 29 17:54 : player: played "周杰伦/给我一首歌的时间-周杰伦-440614.flac"
+Apr 29 17:55 : update: added SHE/星星之火-S_H_E-120685.flac
+Apr 29 17:55 : update: added SHE/冰箱-S_H_E-83873.flac
+Apr 29 17:55 : update: added SHE/触电-S_H_E-177763.flac
+Apr 29 17:55 : update: added SHE/比你贱-S_H_E_周定纬-43294394.flac
+Apr 29 17:55 : update: added SHE/我爱雨夜花-S_H_E-1041194.flac
+Apr 29 17:55 : update: added 孙燕姿/我要的幸福-孙燕姿-325846.flac
+Apr 29 17:56 : player: played "SHE/借口-S_H_E-240835.flac"
+Apr 29 17:59 : player: played "SHE/比你贱-S_H_E_周定纬-43294394.flac"
+Apr 29 18:04 : player: played "SHE/亲爱的树洞-S_H_E-3158445.flac"
+Apr 29 18:08 : player: played "周杰伦/园游会-周杰伦-295518.flac"
+Apr 29 18:15 : player: played "周杰伦/珊瑚海-周杰伦_梁心颐-118983.flac"
+Apr 29 18:23 : player: played "SHE/超可能-S_H_E-672804.flac"
+Apr 29 18:28 : player: played "SHE/借口-S_H_E-240835.flac"
+Apr 29 18:32 : player: played "SHE/触电-S_H_E-177763.flac"
+Apr 29 18:36 : player: played "SHE/借口-S_H_E-240835.flac"
+Apr 29 18:41 : player: played "SHE/说你爱我-S_H_E-540195.ape"
+Apr 29 18:45 : player: played "SHE/我爱雨夜花-S_H_E-1041194.flac"
+Apr 29 18:49 : player: played "SHE/爱上你-S_H_E-672803.flac"
+Apr 29 18:52 : player: played "SHE/超可能-S_H_E-672804.flac"
+Apr 30 16:43 : config: option 'buffer_time' on line 219 was not recognized
+Apr 30 16:44 : player: played "SHE/超可能-S_H_E-672804.flac"
+Apr 30 16:59 : player: played "SHE/超可能-S_H_E-672804.flac"
+Apr 30 17:04 : player: played "SHE/恋人未满-S_H_E-83878.flac"
+Apr 30 17:08 : player: played "SHE/星星之火-S_H_E-120685.flac"
+Apr 30 17:12 : player: played "SHE/找不到-S_H_E-177846.flac"
+Apr 30 17:17 : player: played "SHE/冰箱-S_H_E-83873.flac"
+Apr 30 17:20 : player: played "SHE/比你贱-S_H_E_周定纬-43294394.flac"
+Apr 30 17:25 : player: played "SHE/亲爱的树洞-S_H_E-3158445.flac"
+Apr 30 17:29 : player: played "周杰伦/园游会-周杰伦-295518.flac"
+Apr 30 17:33 : player: played "周杰伦/本草纲目-周杰伦-228912.flac"
+Apr 30 17:37 : player: played "周杰伦/珊瑚海-周杰伦_梁心颐-118983.flac"
+Apr 30 17:41 : player: played "周杰伦/大笨钟-周杰伦-3204357.flac"
+Apr 30 17:46 : player: played "周杰伦/不该_(with_aMEI)-周杰伦-7134989.flac"
+Apr 30 17:50 : player: played "周杰伦/给我一首歌的时间-周杰伦-440614.flac"
+Apr 30 17:54 : player: played "周杰伦/花海-周杰伦-440615.flac"
+Apr 30 17:58 : player: played "孙燕姿/超快感-孙燕姿-325264.flac"
+Apr 30 17:59 : player: played "孙燕姿/开始懂了-孙燕姿-325842.flac"
+Apr 30 17:59 : config: option 'buffer_time' on line 222 was not recognized
+Apr 30 18:03 : player: played "孙燕姿/开始懂了-孙燕姿-325842.flac"
+Apr 30 18:06 : player: played "孙燕姿/我要的幸福-孙燕姿-325846.flac"
+Apr 30 18:09 : player: played "孙燕姿/绿光(Remastered)-孙燕姿-423818.flac"
+Apr 30 18:14 : player: played "SHE/借口-S_H_E-240835.flac"
+Apr 30 18:18 : player: played "SHE/触电-S_H_E-177763.flac"
+Apr 30 18:22 : player: played "SHE/借口-S_H_E-240835.flac"
+Apr 30 18:27 : player: played "SHE/说你爱我-S_H_E-540195.ape"
+Apr 30 18:31 : player: played "SHE/我爱雨夜花-S_H_E-1041194.flac"
+Apr 30 18:35 : player: played "SHE/爱上你-S_H_E-672803.flac"
+Apr 30 18:39 : player: played "SHE/超可能-S_H_E-672804.flac"
+Apr 30 18:43 : player: played "SHE/恋人未满-S_H_E-83878.flac"
+Apr 30 18:48 : player: played "SHE/星星之火-S_H_E-120685.flac"
+Apr 30 18:52 : player: played "SHE/找不到-S_H_E-177846.flac"
+Apr 30 18:57 : player: played "SHE/冰箱-S_H_E-83873.flac"

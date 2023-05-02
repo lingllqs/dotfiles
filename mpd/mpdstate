@@ -1,0 +1,38 @@
+sw_volume: 66
+audio_device_state:1:my_fifo
+audio_device_state:1:My Pulse Output
+state: play
+current: 9
+time: 120.081000
+random: 0
+repeat: 1
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:SHE/触电-S_H_E-177763.flac
+1:SHE/借口-S_H_E-240835.flac
+2:SHE/说你爱我-S_H_E-540195.ape
+3:SHE/我爱雨夜花-S_H_E-1041194.flac
+4:SHE/爱上你-S_H_E-672803.flac
+5:SHE/超可能-S_H_E-672804.flac
+6:SHE/恋人未满-S_H_E-83878.flac
+7:SHE/星星之火-S_H_E-120685.flac
+8:SHE/找不到-S_H_E-177846.flac
+9:SHE/冰箱-S_H_E-83873.flac
+10:SHE/比你贱-S_H_E_周定纬-43294394.flac
+11:SHE/亲爱的树洞-S_H_E-3158445.flac
+12:周杰伦/园游会-周杰伦-295518.flac
+13:周杰伦/本草纲目-周杰伦-228912.flac
+14:周杰伦/珊瑚海-周杰伦_梁心颐-118983.flac
+15:周杰伦/大笨钟-周杰伦-3204357.flac
+16:周杰伦/不该_(with_aMEI)-周杰伦-7134989.flac
+17:周杰伦/给我一首歌的时间-周杰伦-440614.flac
+18:周杰伦/花海-周杰伦-440615.flac
+19:孙燕姿/超快感-孙燕姿-325264.flac
+20:孙燕姿/开始懂了-孙燕姿-325842.flac
+21:孙燕姿/我要的幸福-孙燕姿-325846.flac
+22:孙燕姿/绿光(Remastered)-孙燕姿-423818.flac
+playlist_end
