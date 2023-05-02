@@ -1,40 +1,30 @@
-vim.api.nvim_set_keymap("i",        "jk",  	"<esc>",        { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n",        ";",   	":",            { noremap = true })
-vim.api.nvim_set_keymap("i",        "<c-u>", "<esc>viwUea", {noremap = true, silent = true })
-vim.api.nvim_set_keymap("v",        ";",   	":",            { noremap = true })
-vim.api.nvim_set_keymap("n",        "q",   	":q<cr>",       { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n",        "j",   	"gj",           { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n",        "k",   	"gk",           { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n",        "gj",  	"j",           	{ noremap = true, silent = true })
-vim.api.nvim_set_keymap("n",        "gk",  	"k",           	{ noremap = true, silent = true })
-vim.api.nvim_set_keymap("n",        "<leader><cr>", ":nohl<cr>", {noremap = tree, silent = true})
+-- Keymaps are automatically loaded on the VeryLazy event
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
 
--- vim.api.nvim_set_keymap("n",        "S",    "<cmd>TranslateW<cr>", {noremap = true})
--- vim.api.nvim_set_keymap("v",        "S",    "<cmd>TranslateW<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", ";", ":", { noremap = true })
+vim.api.nvim_set_keymap("v", ";", ":", { noremap = true })
+vim.api.nvim_set_keymap("i", "jk", "<esc>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "q", ":q<cr>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<leader><cr>", ":nohl<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<c-u>", "<esc>viwUea", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<bs>", "viwc", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap( 'n', '<m-up>',      ':m .-2<cr>',       { noremap = true, silent = true } )
-vim.api.nvim_set_keymap( 'n', '<m-down>',    ':m .+1<cr>',       { noremap = true, silent = true } )
-vim.api.nvim_set_keymap( 'i', '<m-up>',      '<Esc>:m .-2<cr>i', { noremap = true, silent = true } )
-vim.api.nvim_set_keymap( 'i', '<m-down>',    '<Esc>:m .+1<cr>i', { noremap = true, silent = true } )
-vim.api.nvim_set_keymap( 'v', '<m-up>',      ":m '<-2<cr>gv",    { noremap = true, silent = true } )
-vim.api.nvim_set_keymap( 'v', '<m-down>',    ":m '>+1<cr>gv",    { noremap = true, silent = true } )
-
-
-
-vim.api.nvim_set_keymap("n",        "<bs>", "viws", { noremap = true, silent = true })
-
-vim.api.nvim_set_keymap("n",        "<leader>|",    "<cmd>Tab /|<cr>", {noremap = true})
-vim.api.nvim_set_keymap("n",        "<leader>=",    "<cmd>Tab /=<cr>", {noremap = true})
-
-vim.api.nvim_set_keymap( 'v', 'T',           ':call v:lua.MagicToggleHump(v:true)<CR>',          { noremap = true, silent = true } )
-vim.api.nvim_set_keymap( 'v', 't',           ':call v:lua.MagicToggleHump(v:false)<CR>',         { noremap = true, silent = true } )
-
+-- vim.api.nvim_set_keymap("n", "mk", ":MarkdownPreviewToggle<cr>", { noremap = true, silent = true })
 
 vim.cmd([[
-    nnoremap <silent> <leader>/ :Tab /\/\/<cr>
+    nnoremap m/ :Tab /\/\/<cr>
+    nnoremap m* :Tab /\/\*<cr>
+    nnoremap m= :Tab /=<cr>
+    nnoremap m" :Tab /"<cr>
+    nnoremap m; :Tab /;<cr>
+    nnoremap m# :Tab /#<cr>
+    nnoremap m\| :Tab /\|<cr>
 ]])
 
-vim.api.nvim_set_keymap("n",        "0",    "<cmd>call v:lua.MagicMove()<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "0", "<cmd>call v:lua.MagicMove()<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'T', ':call v:lua.MagicToggleHump(v:true)<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 't', ':call v:lua.MagicToggleHump(v:false)<CR>', { noremap = true, silent = true })
 
 function MagicMove()
     local first = 1
@@ -61,5 +51,3 @@ function MagicToggleHump(upperCase)
     vim.fn.setreg('t', w)
     vim.fn.execute('normal! "tP')
 end
-
-
