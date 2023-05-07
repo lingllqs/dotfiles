@@ -1,0 +1,446 @@
+: 1683285832:0;ls
+: 1683285843:0;sudo pacman -S nerd-fonts-jetbrains-mono
+: 1683285851:0;ls
+: 1683285855:0;sudo pacman -Syy
+: 1683285860:0;sudo pacman -Syu
+: 1683285899:0;ls
+: 1683285920:0;fc-list | grep "nerd"
+: 1683285928:0;fc-list | grep "fonts"
+: 1683285931:0;fc-list | grep "font"
+: 1683285938:0;fc-list | grep "nerd"
+: 1683285943:0;fc-list | grep "Jet"
+: 1683285983:0;vim .zshrc
+: 1683286032:0;ls
+: 1683286039:0;cd dotfile
+: 1683286039:0;ls
+: 1683286056:0;cp mpd ../.config -r
+: 1683286066:0;cp ncmpcpp ../.config -r
+: 1683286077:0;sudo pacman -S mpd ncmpcpp
+: 1683286133:0;sudo pacman -S wqy-microhei wqy-zenhei
+: 1683286171:0;ls
+: 1683286193:0;cd
+: 1683286194:0;ls
+: 1683286196:0;ls -a
+: 1683286228:0;mv .status .slstatus
+: 1683286229:0;ls
+: 1683286230:0;cd .slstatus
+: 1683286231:0;ls
+: 1683286233:0;l
+: 1683286247:0;rm config.h
+: 1683286251:0;l
+: 1683286254:0;make
+: 1683286259:0;make clean
+: 1683286260:0;l
+: 1683286270:0;sudo make clean install
+: 1683286273:0;ls
+: 1683286279:0;..
+: 1683286279:0;ls
+: 1683286281:0;cd .dwm
+: 1683286282:0;ls
+: 1683286285:0;l
+: 1683286341:0;sudo pacman -S fcitx5-im fcitx5-chinese-addons fcitx5-nord fcitx5-material-color
+: 1683286535:0;cat ../.ssh/id_rsa.pub
+: 1683286593:0;cd
+: 1683286594:0;ls
+: 1683286599:0;mkdir workspace
+: 1683286600:0;cd workspace
+: 1683286601:0;ls
+: 1683286610:0;git clone git@github.com:lingllqs/blog.git
+: 1683286636:0;cp blog/source/img/wallpaper/* ~/Pictures
+: 1683286642:0;cd
+: 1683286644:0;cd Pictures
+: 1683286645:0;ls
+: 1683286650:0;mkdir wallpaper
+: 1683286652:0;ls
+: 1683286661:0;mv *.jpg wallpaper
+: 1683286662:0;ls
+: 1683286663:0;cd wallpaper
+: 1683286664:0;ls
+: 1683286674:0;feh --bg-fill ./1.jpg
+: 1683286677:0;cd
+: 1683286688:0;paru neovim
+: 1683286697:0;paru neovim-nightly
+: 1683286708:0;sudo pacman -S neovim
+: 1683286723:0;ls
+: 1683286727:0;nvim .xinitrc
+: 1683286836:0;ls
+: 1683286843:0;nvim .zshrc
+: 1683287125:0;poweroff
+: 1683318797:0;startx
+: 1683319248:0;paru xunlei
+: 1683319412:0;ls
+: 1683319420:0;bat tmp.text
+: 1683319426:0;ls
+: 1683319429:0;rm tmp.text
+: 1683319429:0;ls
+: 1683319435:0;cd è¿ƒ¥éƒ»·ä¸ƒ«è½½
+: 1683319436:0;ls
+: 1683319439:0;x Clash.for.Windows-0.20.22-x64-linux.tar.gz
+: 1683319442:0;ls
+: 1683319452:0;mv Clash\ for\ Windows-0.20.22-x64-linux ~/clash
+: 1683319453:0;ls
+: 1683319454:0;cd
+: 1683319455:0;ls
+: 1683319574:0;nvim .xinitrc
+: 1683319628:0;feh --bg-fill ./Pictures/wallpaper/1.jpg
+: 1683319754:0;ls
+: 1683319761:0;systemctl start gdm.service
+: 1683319785:0;./clash/cfw
+: 1683319811:0;reboot
+: 1683319842:0;startx
+: 1683321905:0;sudo pacman -S fjeiwofew
+: 1683324009:0;ls
+: 1683326867:0;timedatectl set-ntp true
+: 1683298460:0;poweroff
+: 1683346202:0;startx
+: 1683346217:0;sudo pacman -S nerd-fonts
+: 1683346228:0;sudo pacman -S noto-fonts
+: 1683346291:0;sudo pacman -S adobe-source-han-sans-cn-fonts adobe-source-han-mono-cn-fonts adobe-source-han-serif-cn-fonts
+: 1683346353:0;startx
+: 1683346533:0;sudo pacman -Syy
+: 1683346546:0;sudo pacman -Syu
+: 1683346566:0;sudo pacman -S btop
+: 1683346573:0;sudo pacman -S neofetch
+: 1683346581:0;neofetch
+: 1683346761:0;cd .config
+: 1683346761:0;ls
+: 1683346784:0;cd omz
+: 1683346784:0;ls
+: 1683346789:0;cd lib
+: 1683346789:0;ls
+: 1683346794:0;nvim omz.sh
+: 1683346890:0;man ls
+: 1683346918:0;ls
+: 1683346922:0;nvim omz.sh
+: 1683346924:0;ls
+: 1683346927:0;la
+: 1683346932:0;man exa
+: 1683347196:0;ls
+: 1683347197:0;la
+: 1683347201:0;l
+: 1683347202:0;ll
+: 1683347204:0;lt
+: 1683347354:0;la
+: 1683347358:0;..
+: 1683347359:0;la
+: 1683347427:0;rm -r .git
+: 1683347430:0;la
+: 1683347435:0;bat .gitignore
+: 1683347441:0;rm .gitignore
+: 1683347443:0;la
+: 1683347655:0;nvim lib/omz.sh
+: 1683355849:0;sudo pacman -Qs x86-video
+: 1683355863:0;sudo pacman -Qs video
+: 1683356233:0;cd
+: 1683356235:0;cd .dwm
+: 1683356236:0;ls
+: 1683356239:0;nvim config.h
+: 1683359166:0;ls
+: 1683359200:0;startx
+: 1683361111:0;rfkill -l
+: 1683361114:0;rfkill -list
+: 1683361118:0;rfkill list
+: 1683367243:0;sudo pacman -S ttf-font-awesome
+: 1683367252:0;startx
+: 1683368231:0;sudo pacman -S adobe-source-han-serif-cn-fonts
+: 1683368240:0;ls
+: 1683368323:0;bat /etc/profile.d/freetype2.sh
+: 1683368345:0;ls
+: 1683369012:0;cat /etc/pacman.d/mirrorlist
+: 1683375016:0;man paru
+: 1683375455:0;sudo vim /etc/paru.conf
+: 1683375557:0;paru firefox
+: 1683378225:0;sudo pacman -S fcitx5-pinyin-zhwiki
+: 1683380546:0;cd
+: 1683380560:0;paru -S fcitx5
+: 1683380569:0;paru fcitx5
+: 1683380631:0;ls
+: 1683381225:0;git clone https://github.com/LazyVim/starter ~/.config/nvim
+: 1683381452:0;nvim
+: 1683381543:0;cd .config/nvim
+: 1683381543:0;ls
+: 1683381544:0;la
+: 1683381548:0;rm -rf .git
+: 1683381549:0;ls
+: 1683381557:0;..
+: 1683381572:0;rm -rf nvim
+: 1683381579:0;cp ~/dotfile/nvim .
+: 1683381582:0;cp ~/dotfile/nvim . -r
+: 1683381582:0;ls
+: 1683381585:0;cd nvim
+: 1683381585:0;ls
+: 1683381587:0;nvim
+: 1683381607:0;cd lua
+: 1683381608:0;ls
+: 1683381610:0;cd plugins
+: 1683381611:0;ls
+: 1683381614:0;nvim coc.lua
+: 1683381654:0;ls
+: 1683381665:0;..
+: 1683381666:0;ls
+: 1683381668:0;..
+: 1683381670:0;z dot
+: 1683381670:0;ls
+: 1683381675:0;ls nvim.bak
+: 1683381682:0;cd nvim.bak
+: 1683381683:0;ls
+: 1683381684:0;la
+: 1683381686:0;..
+: 1683381687:0;ls
+: 1683381691:0;lt nvim
+: 1683381707:0;z nvim
+: 1683381720:0;ls
+: 1683381721:0;cd lua
+: 1683381722:0;ls
+: 1683381727:0;ls config
+: 1683381734:0;cd config
+: 1683381734:0;ls
+: 1683381738:0;bat autocmd.lua
+: 1683381742:0;bat autocmds.lua
+: 1683381751:0;rm autocmds.lua
+: 1683381767:0;ls
+: 1683381770:0;bat keymaps.lua
+: 1683381805:0;ls
+: 1683381812:0;nvim options.lua
+: 1683381818:0;bat lazy.lua
+: 1683381824:0;ls
+: 1683381826:0;cd ..
+: 1683381827:0;ls
+: 1683381828:0;cd plugins
+: 1683381828:0;ls
+: 1683381833:0;bat auto-pairs.lua
+: 1683381837:0;bat auto-piars.lua
+: 1683381848:0;rm auto-piars.lua
+: 1683381849:0;ls
+: 1683381857:0;rm coc.lua
+: 1683381858:0;ls
+: 1683381868:0;rm comment.lua
+: 1683381869:0;ls
+: 1683381895:0;cd
+: 1683381896:0;ls
+: 1683381900:0;cd .config
+: 1683381901:0;ls
+: 1683381903:0;rm -rf nvim
+: 1683381905:0;ls
+: 1683381907:0;git clone https://github.com/LazyVim/starter ~/.config/nvim
+: 1683381913:0;cd nvim
+: 1683381913:0;ls
+: 1683381918:0;rm .git -rf
+: 1683381918:0;ls
+: 1683381920:0;nvim
+: 1683381926:0;cd lua/plugins
+: 1683381926:0;ls
+: 1683382057:0;..
+: 1683382057:0;ls
+: 1683382059:0;cd config
+: 1683382060:0;ls
+: 1683382102:0;..
+: 1683382102:0;ls
+: 1683382104:0;cd plugins
+: 1683382104:0;ls
+: 1683382121:0;cp ~/dotfile/nvim/lua/plugins/* .
+: 1683382122:0;ls
+: 1683382158:0;rm auto-pairs.lua coc.lua comment.lua neo-tree.lua notice.lua telescope.lua todo-comments.lua tokyonight.lua translate.lua.bak trouble.lua vim-floaterm.lua
+: 1683382159:0;ls
+: 1683382162:0;bat colorscheme.lua
+: 1683382176:0;bat markdown-preview.lua
+: 1683382191:0;ls
+: 1683382194:0;bat tabular.lua
+: 1683382202:0;bat translate.lua
+: 1683382210:0;nvim
+: 1683382234:0;ls
+: 1683382235:0;..
+: 1683382237:0;cd config
+: 1683382237:0;ls
+: 1683382240:0;bat autocmds.lua
+: 1683382266:0;cp ~/dotfile/nvim/lua/config/autocmd.lua .
+: 1683382266:0;ls
+: 1683382275:0;rm autocmds.lua
+: 1683382276:0;ls
+: 1683382281:0;mv autocmd.lua autocmds.lua
+: 1683382282:0;ls
+: 1683382284:0;bat autocmds.lua
+: 1683382291:0;bat keymaps.lua
+: 1683382293:0;rm keymaps.lua
+: 1683382298:0;cp ~/dotfile/nvim/lua/config/keymaps.lua .
+: 1683382299:0;ls
+: 1683382302:0;bat keymaps.lua
+: 1683382311:0;ls
+: 1683382313:0;bat options.lua
+: 1683382315:0;rm options.lua
+: 1683382315:0;ls
+: 1683382321:0;cp ~/dotfile/nvim/lua/config/options.lua .
+: 1683382322:0;ls
+: 1683382323:0;nvim
+: 1683382337:0;ls
+: 1683382343:0;cd
+: 1683382345:0;cd dotfile
+: 1683382345:0;ls
+: 1683382349:0;rm -rf nvim*
+: 1683382350:0;ls
+: 1683382357:0;cp ~/.config/nvim . -r
+: 1683382358:0;ls
+: 1683382362:0;lt nvim
+: 1683382365:0;ls
+: 1683382368:0;ls vim
+: 1683382373:0;mpd
+: 1683382380:0;ncmpcpp
+: 1683382402:0;ls
+: 1683382408:0;..
+: 1683382409:0;ls
+: 1683382462:0;z omz
+: 1683382462:0;ls
+: 1683382467:0;nvim lib/omz.sh
+: 1683382512:0;cd
+: 1683382514:0;cd Music
+: 1683382515:0;ls
+: 1683382538:0;xprop
+: 1683382654:0;z dwm
+: 1683382654:0;ls
+: 1683382660:0;nvim config.h
+: 1683382776:0;sudo make clean install
+: 1683382788:0;startx
+: 1683382822:0;ls
+: 1683382823:0;cd
+: 1683382826:0;z dot
+: 1683382826:0;ls
+: 1683382834:0;git add nvim/
+: 1683382841:0;git commit -m "nvim"
+: 1683382855:0;git config --global user.email "lingllqs@163.com"
+: 1683382862:0;git config --global user.name "lingllqs"
+: 1683382864:0;git commit -m "nvim"
+: 1683382871:0;git push origin main
+: 1683382900:0;git remote add origin git@github.com:lingllqs/dotfile.git
+: 1683382913:0;cat ~/.ssh/id_rsa.pub
+: 1683382924:0;git push origin main
+: 1683382938:0;la
+: 1683382946:0;nvim .git/config
+: 1683382976:0;git remote remove origin
+: 1683382982:0;git remote add origin git@github.com:lingllqs/dotfile.git
+: 1683382985:0;git push origin main
+: 1683383159:0;ls
+: 1683383161:0;gs
+: 1683383176:0;git rm nvim.bak
+: 1683383178:0;gs
+: 1683383194:0;git restore --staged nvim.bak
+: 1683383195:0;ls
+: 1683383196:0;gs
+: 1683383199:0;ls
+: 1683383201:0;la
+: 1683383205:0;ls
+: 1683383206:0;gs
+: 1683383228:0;git add nvim.bak
+: 1683383228:0;ls
+: 1683383236:0;git commit -m "nvim.bak"
+: 1683383238:0;gs
+: 1683383241:0;ls
+: 1683383241:0;gs
+: 1683383249:0;git push origin main
+: 1683383298:0;ls
+: 1683383299:0;cd
+: 1683383299:0;ls
+: 1683383303:0;cd workspace
+: 1683383304:0;ls
+: 1683384745:0;z dwm
+: 1683384750:0;nvim config.h
+: 1683384914:0;sudo pacman -S ttf-nerd-fonts-symbols
+: 1683384919:0;ls
+: 1683384931:0;fc-list | grep "Jet"
+: 1683384948:0;bat config.h
+: 1683384978:0;ls
+: 1683384983:0;la
+: 1683384985:0;l
+: 1683384997:0;exa --icons
+: 1683385001:0;exa
+: 1683385026:0;z wall
+: 1683385027:0;ls
+: 1683385044:0;sudo pacman -S ueberzug
+: 1683385051:0;cd
+: 1683385055:0;nvim .zshrc
+: 1683385108:0;bat .xinitrc
+: 1683385463:0;z dmw
+: 1683385463:0;ls
+: 1683385466:0;z dwm
+: 1683385467:0;ls
+: 1683385470:0;nvim config.h
+: 1683385480:0;sudo make clean install
+: 1683385485:0;startx
+: 1683385697:0;sudo nvim /etc/grub.d/40_custom
+: 1683385735:0;sudo fdisk -l
+: 1683385956:0;cat /boot/grub/grub.cfg
+: 1683385959:0;sudo cat /boot/grub/grub.cfg
+: 1683386014:0;sudo fdisk -l
+: 1683386124:0;cd /
+: 1683386125:0;ls
+: 1683386128:0;cd EFI
+: 1683386178:0;cd
+: 1683386185:0;sudo cp /boot/grub/grub.cfg /boot/grub/grub.cfg.bak
+: 1683386208:0;sudo vim /etc/grub.d/40_custom
+: 1683386286:0;sudo grub-mkconfig -o /boot/grub/grub.cfg
+: 1683386316:0;reboot
+: 1683429716:0;startx
+: 1683429856:0;sudo pacman -S ttf-nerd-fonts-symbols
+: 1683429869:0;sudo pacman -S ttf-font-awesome
+: 1683429882:0;sudo pacman -S noto-fonts-emoji
+: 1683429919:0;ls
+: 1683429934:0;cd dotfile
+: 1683429934:0;ls
+: 1683429943:0;..
+: 1683429948:0;rm -rf dotfile
+: 1683429971:0;git clone https://github.com/lingllqs/dotfile
+: 1683429975:0;ls
+: 1683429977:0;cd Documents/ls
+: 1683429980:0;cd dotfile
+: 1683429981:0;ls
+: 1683429983:0;la
+: 1683429991:0;cd dwm
+: 1683429992:0;kls
+: 1683429993:0;ls
+: 1683429997:0;nvim config.h
+: 1683430018:0;z dmw
+: 1683430021:0;z dwm
+: 1683430021:0;ls
+: 1683430024:0;sudo make clean install
+: 1683430029:0;startx
+: 1683430937:0;sudo pacman -S ttf-dejavu ttf-droid ttf-hack ttf-font-awesome otf-font-awesome ttf-lato ttf-liberation ttf-linux-libertine ttf-opensans ttf-roboto ttf-ubuntu-font-family
+: 1683431014:0;sudo pacman -S ttf-hannom noto-fonts-extra noto-fonts-cjk adobe-source-code-pro-fonts
+: 1683431033:0;startx
+: 1683431071:0;sudo pacman -S noto-fonts-emoji-blob
+: 1683431109:0;sudo pacman -S adobe-source-han-serif-tw-fonts
+: 1683431121:0;sudo make clean install
+: 1683431126:0;startx
+: 1683431315:0;ã€‚ã€‚
+: 1683431316:0;..
+: 1683431317:0;ls
+: 1683431402:0;ls è¿ƒ¥éƒ»·ä¸ƒ«è½½
+: 1683431409:0;rm -rf è¿ƒ¥éƒ»·ä¸ƒ«è½½
+: 1683431411:0;ls
+: 1683431431:0;cd workspace
+: 1683431433:0;ls
+: 1683431436:0;..
+: 1683431438:0;ls
+: 1683431446:0;cd Documents
+: 1683431447:0;ls
+: 1683431459:0;git clone git@github.com:yaocccc/dwm.git
+: 1683431484:0;ls
+: 1683431486:0;cd dwm
+: 1683431487:0;ls
+: 1683431500:0;nvim config.h
+: 1683431518:0;nvim DEF/config.h
+: 1683431567:0;sudo pacman -S nerd-fonts-jetbrains-mono
+: 1683431586:0;sudo pacman -Syy
+: 1683431590:0;sudo pacman -Syu
+: 1683431624:0;ls
+: 1683431630:0;cd DEF
+: 1683431631:0;ls
+: 1683431637:0;nvim ~/.zshrc
+: 1683432252:0;z omz
+: 1683432253:0;ls
+: 1683432258:0;nvim lib/omz.sh
+: 1683432284:0;source ~/.zshrc
+: 1683432287:0;nv
+: 1683432310:0;v lib/omz.sh
+: 1683432327:0;nv
+: 1683432338:0;z dot
+: 1683432339:0;ls
+: 1683432351:0;cp ~/.config/omz . -r
