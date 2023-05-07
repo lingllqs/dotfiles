@@ -24,7 +24,7 @@ static const unsigned int borderalpha     = 0xdd; /* 边框透明度 */
 
 static const char *fonts[] = {
     "JetBrainsMono Nerd Font:type=medium:size=12:antialias=true:autohint=true",
-    /* "monospace:size=12", */
+    "monospace:size=12",
     /* "WenQuanYi Micro Hei:size=16:type=Regular:antialias=ture:autohint=true",
      */
     /* "Symbols Nerd
@@ -54,8 +54,8 @@ static const unsigned int alphas[][3] = { /* 透明度设置 ColFg, ColBg, ColBo
 };
 
 /* 自定义脚本位置 */
-static const char *autostartscript = "/home/lqs/scripts/autostart.sh";
-static const char *statusbarscript = "/home/lqs/scripts/statusbar/statusbar.sh";
+static const char *autostartscript = "/home/lqs/.dwm/DEF/autostart.sh";
+static const char *statusbarscript = "/home/lqs/.dwm/DEF/statusbar/statusbar.sh";
 
 /* 自定义 scratchpad instance */
 static const char scratchpadname[] = "scratchpad";
@@ -69,6 +69,7 @@ static const Rule rules[] = {
 
     {"ghex",                NULL,               NULL,           0,          1,          0,          0,          -1,     3},
     {"bochs",               NULL,               "Bochs Enhanced Debugger",  0,          1,          0,          0,      -1,     3},
+    {NULL,                  NULL,               "迅雷",         0,          1,          0,          1,          -1,      0},
     {"Qemu-system-i386",    NULL,               "QEMU",           0,        1,          0,          0,          -1,     0},
     {"telegram-desktop",     NULL,               "Telegram",     1 << 7,          1,          0,          0,          -1,     0},
     {"qtcreator",           NULL,               NULL,           0,          1,          0,          0,          -1,     0},
@@ -188,8 +189,12 @@ static Key keys[] = {
     {MODKEY,                XK_space,       spawn,          SHCMD("alacritty --class float")},
     {MODKEY,                XK_F11,         spawn,          SHCMD("killall pcmanfm || pcmanfm")},
     {MODKEY,                XK_d,           spawn,          SHCMD("rofi -show drun")},
-    {MODKEY,                XK_F1,          spawn,          SHCMD("amixer sset Master 3%+ unmute")},
-    {MODKEY,                XK_F2,          spawn,          SHCMD("amixer sset Master 3%- unmute")},
+    {MODKEY,                XK_p,           spawn,          SHCMD("/home/lqs/.dwm/DEF/rofi.sh") },                                       /* super p          | rofi: 执行自定义脚本   */
+    {MODKEY,                XK_n,           spawn,          SHCMD("/home/lqs/.dwm/DEF/blurlock.sh") },                                   /* super n          | 锁定屏幕               */
+    {MODKEY|ShiftMask,      XK_Up,          spawn,          SHCMD("/home/lqs/.dwm/DEF/set_vol.sh up") },                                 /* super shift up   | 音量加                 */
+    {MODKEY|ShiftMask,      XK_Down,        spawn,          SHCMD("/home/lqs/.dwm/DEF/set_vol.sh down") },                               /* super shift down | 音量减                 */
+    /* {MODKEY,                XK_F1,          spawn,          SHCMD("amixer sset Master 3%+ unmute")}, */
+    /* {MODKEY,                XK_F2,          spawn,          SHCMD("amixer sset Master 3%- unmute")}, */
     {MODKEY|ShiftMask,      XK_a,           spawn,          SHCMD("flameshot gui -c -p ~/Pictures/screenshots")},
     {MODKEY|ShiftMask,      XK_q,           spawn,          SHCMD("kill -9 $(xprop | grep _NET_WM_PID | awk '{print $3}')")},
 
