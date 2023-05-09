@@ -33,8 +33,8 @@ static const char *fonts[] = {
 
 static const char *colors[][3] = { /* 颜色设置 ColFg, ColBg, ColBorder */
     [SchemeNorm]      = {"#bbbbbb", "#333333", "#444444"},
-    [SchemeSel]       = {"#ffffff", "#37474F", "#00F5FF"},
-    [SchemeSelGlobal] = {"#ffffff", "#37474F", "#FFC0CB"},
+    [SchemeSel]       = {"#ffffff", "#37474F", "#FFC0CB"},
+    [SchemeSelGlobal] = {"#ffffff", "#37474F", "#00F5FF"},
     [SchemeHid]       = {"#dddddd", NULL, NULL},
     [SchemeSystray]   = {NULL, "#7799AA", NULL},
     [SchemeUnderline] = {"#7799AA", NULL, NULL},
@@ -54,8 +54,8 @@ static const unsigned int alphas[][3] = { /* 透明度设置 ColFg, ColBg, ColBo
 };
 
 /* 自定义脚本位置 */
-static const char *autostartscript = "/home/lqs/.dwm/DEF/autostart.sh";
-static const char *statusbarscript = "/home/lqs/.dwm/DEF/statusbar/statusbar.sh";
+static const char *autostartscript = "/home/lqs/scripts/autostart.sh";
+static const char *statusbarscript = "/home/lqs/scripts/statusbar/statusbar.sh";
 
 /* 自定义 scratchpad instance */
 static const char scratchpadname[] = "scratchpad";
@@ -189,10 +189,10 @@ static Key keys[] = {
     {MODKEY,                XK_space,       spawn,          SHCMD("alacritty --class float")},
     {MODKEY,                XK_F11,         spawn,          SHCMD("killall pcmanfm || pcmanfm")},
     {MODKEY,                XK_d,           spawn,          SHCMD("rofi -show drun")},
-    {MODKEY,                XK_p,           spawn,          SHCMD("/home/lqs/.dwm/DEF/rofi.sh") },                                       /* super p          | rofi: 执行自定义脚本   */
-    {MODKEY,                XK_n,           spawn,          SHCMD("/home/lqs/.dwm/DEF/blurlock.sh") },                                   /* super n          | 锁定屏幕               */
-    {MODKEY|ShiftMask,      XK_Up,          spawn,          SHCMD("/home/lqs/.dwm/DEF/set_vol.sh up") },                                 /* super shift up   | 音量加                 */
-    {MODKEY|ShiftMask,      XK_Down,        spawn,          SHCMD("/home/lqs/.dwm/DEF/set_vol.sh down") },                               /* super shift down | 音量减                 */
+    {MODKEY,                XK_p,           spawn,          SHCMD("/home/lqs/scripts/rofi.sh")},                                       /* super p          | rofi: 执行自定义脚本   */
+    {MODKEY,                XK_n,           spawn,          SHCMD("/home/lqs/scripts/blurlock.sh")},                                   /* super n          | 锁定屏幕               */
+    {MODKEY|ShiftMask,      XK_Up,          spawn,          SHCMD("/home/lqs/scripts/set_vol.sh up")},                                 /* super shift up   | 音量加                 */
+    {MODKEY|ShiftMask,      XK_Down,        spawn,          SHCMD("/home/lqs/scripts/set_vol.sh down")},                               /* super shift down | 音量减                 */
     /* {MODKEY,                XK_F1,          spawn,          SHCMD("amixer sset Master 3%+ unmute")}, */
     /* {MODKEY,                XK_F2,          spawn,          SHCMD("amixer sset Master 3%- unmute")}, */
     {MODKEY|ShiftMask,      XK_a,           spawn,          SHCMD("flameshot gui -c -p ~/Pictures/screenshots")},
