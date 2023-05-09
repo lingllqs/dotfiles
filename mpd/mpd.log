@@ -145,3 +145,102 @@ Apr 30 18:43 : player: played "SHE/恋人未满-S_H_E-83878.flac"
 Apr 30 18:48 : player: played "SHE/星星之火-S_H_E-120685.flac"
 Apr 30 18:52 : player: played "SHE/找不到-S_H_E-177846.flac"
 Apr 30 18:57 : player: played "SHE/冰箱-S_H_E-83873.flac"
+May 06 22:12 : exception: Failed to decode /home/lqs/Music/SHE/冰箱-S_H_E-83873.flac; Failed to open '/home/lqs/Music/SHE/冰箱-S_H_E-83873.flac': No such file or directory
+May 06 22:12 : config: option 'buffer_time' on line 222 was not recognized
+May 06 22:12 : player: played "SHE/冰箱-S_H_E-83873.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/SHE/找不到-S_H_E-177846.flac; Failed to open '/home/lqs/Music/SHE/找不到-S_H_E-177846.flac': No such file or directory
+May 06 22:13 : player: played "SHE/找不到-S_H_E-177846.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/SHE/冰箱-S_H_E-83873.flac; Failed to open '/home/lqs/Music/SHE/冰箱-S_H_E-83873.flac': No such file or directory
+May 06 22:13 : player: played "SHE/冰箱-S_H_E-83873.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/SHE/比你贱-S_H_E_周定纬-43294394.flac; Failed to open '/home/lqs/Music/SHE/比你贱-S_H_E_周定纬-43294394.flac': No such file or directory
+May 06 22:13 : player: played "SHE/比你贱-S_H_E_周定纬-43294394.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/SHE/亲爱的树洞-S_H_E-3158445.flac; Failed to open '/home/lqs/Music/SHE/亲爱的树洞-S_H_E-3158445.flac': No such file or directory
+May 06 22:13 : player: played "SHE/亲爱的树洞-S_H_E-3158445.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/周杰伦/园游会-周杰伦-295518.flac; Failed to open '/home/lqs/Music/周杰伦/园游会-周杰伦-295518.flac': No such file or directory
+May 06 22:13 : player: played "周杰伦/园游会-周杰伦-295518.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/周杰伦/本草纲目-周杰伦-228912.flac; Failed to open '/home/lqs/Music/周杰伦/本草纲目-周杰伦-228912.flac': No such file or directory
+May 06 22:13 : player: played "周杰伦/本草纲目-周杰伦-228912.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/周杰伦/珊瑚海-周杰伦_梁心颐-118983.flac; Failed to open '/home/lqs/Music/周杰伦/珊瑚海-周杰伦_梁心颐-118983.flac': No such file or directory
+May 06 22:13 : player: played "周杰伦/珊瑚海-周杰伦_梁心颐-118983.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/周杰伦/大笨钟-周杰伦-3204357.flac; Failed to open '/home/lqs/Music/周杰伦/大笨钟-周杰伦-3204357.flac': No such file or directory
+May 06 22:13 : player: played "周杰伦/大笨钟-周杰伦-3204357.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/周杰伦/不该_(with_aMEI)-周杰伦-7134989.flac; Failed to open '/home/lqs/Music/周杰伦/不该_(with_aMEI)-周杰伦-7134989.flac': No such file or directory
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/周杰伦/给我一首歌的时间-周杰伦-440614.flac; Failed to open '/home/lqs/Music/周杰伦/给我一首歌的时间-周杰伦-440614.flac': No such file or directory
+May 06 22:13 : player: played "周杰伦/不该_(with_aMEI)-周杰伦-7134989.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/周杰伦/给我一首歌的时间-周杰伦-440614.flac; Failed to open '/home/lqs/Music/周杰伦/给我一首歌的时间-周杰伦-440614.flac': No such file or directory
+May 06 22:13 : player: played "周杰伦/给我一首歌的时间-周杰伦-440614.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/周杰伦/花海-周杰伦-440615.flac; Failed to open '/home/lqs/Music/周杰伦/花海-周杰伦-440615.flac': No such file or directory
+May 06 22:13 : player: played "周杰伦/花海-周杰伦-440615.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/孙燕姿/超快感-孙燕姿-325264.flac; Failed to open '/home/lqs/Music/孙燕姿/超快感-孙燕姿-325264.flac': No such file or directory
+May 06 22:13 : player: played "孙燕姿/超快感-孙燕姿-325264.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/孙燕姿/开始懂了-孙燕姿-325842.flac; Failed to open '/home/lqs/Music/孙燕姿/开始懂了-孙燕姿-325842.flac': No such file or directory
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/孙燕姿/我要的幸福-孙燕姿-325846.flac; Failed to open '/home/lqs/Music/孙燕姿/我要的幸福-孙燕姿-325846.flac': No such file or directory
+May 06 22:13 : player: played "孙燕姿/开始懂了-孙燕姿-325842.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/孙燕姿/我要的幸福-孙燕姿-325846.flac; Failed to open '/home/lqs/Music/孙燕姿/我要的幸福-孙燕姿-325846.flac': No such file or directory
+May 06 22:13 : player: played "孙燕姿/我要的幸福-孙燕姿-325846.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/孙燕姿/绿光(Remastered)-孙燕姿-423818.flac; Failed to open '/home/lqs/Music/孙燕姿/绿光(Remastered)-孙燕姿-423818.flac': No such file or directory
+May 06 22:13 : player: played "孙燕姿/绿光(Remastered)-孙燕姿-423818.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/SHE/触电-S_H_E-177763.flac; Failed to open '/home/lqs/Music/SHE/触电-S_H_E-177763.flac': No such file or directory
+May 06 22:13 : player: played "SHE/触电-S_H_E-177763.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/SHE/借口-S_H_E-240835.flac; Failed to open '/home/lqs/Music/SHE/借口-S_H_E-240835.flac': No such file or directory
+May 06 22:13 : player: played "SHE/借口-S_H_E-240835.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/SHE/说你爱我-S_H_E-540195.ape; Failed to open '/home/lqs/Music/SHE/说你爱我-S_H_E-540195.ape': No such file or directory
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/SHE/我爱雨夜花-S_H_E-1041194.flac; Failed to open '/home/lqs/Music/SHE/我爱雨夜花-S_H_E-1041194.flac': No such file or directory
+May 06 22:13 : player: played "SHE/说你爱我-S_H_E-540195.ape"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/SHE/我爱雨夜花-S_H_E-1041194.flac; Failed to open '/home/lqs/Music/SHE/我爱雨夜花-S_H_E-1041194.flac': No such file or directory
+May 06 22:13 : player: played "SHE/我爱雨夜花-S_H_E-1041194.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/SHE/爱上你-S_H_E-672803.flac; Failed to open '/home/lqs/Music/SHE/爱上你-S_H_E-672803.flac': No such file or directory
+May 06 22:13 : player: played "SHE/爱上你-S_H_E-672803.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/SHE/超可能-S_H_E-672804.flac; Failed to open '/home/lqs/Music/SHE/超可能-S_H_E-672804.flac': No such file or directory
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/SHE/恋人未满-S_H_E-83878.flac; Failed to open '/home/lqs/Music/SHE/恋人未满-S_H_E-83878.flac': No such file or directory
+May 06 22:13 : player: played "SHE/超可能-S_H_E-672804.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/SHE/恋人未满-S_H_E-83878.flac; Failed to open '/home/lqs/Music/SHE/恋人未满-S_H_E-83878.flac': No such file or directory
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/SHE/星星之火-S_H_E-120685.flac; Failed to open '/home/lqs/Music/SHE/星星之火-S_H_E-120685.flac': No such file or directory
+May 06 22:13 : player: played "SHE/恋人未满-S_H_E-83878.flac"
+May 06 22:13 : exception: Failed to decode /home/lqs/Music/SHE/星星之火-S_H_E-120685.flac; Failed to open '/home/lqs/Music/SHE/星星之火-S_H_E-120685.flac': No such file or directory
+May 06 22:13 : player: played "SHE/星星之火-S_H_E-120685.flac"
+May 06 22:13 : update: removing 孙燕姿/绿光(Remastered)-孙燕姿-423818.flac
+May 06 22:13 : update: removing 孙燕姿/我要的幸福-孙燕姿-325846.flac
+May 06 22:13 : update: removing 孙燕姿/开始懂了-孙燕姿-325842.flac
+May 06 22:13 : update: removing 孙燕姿/超快感-孙燕姿-325264.flac
+May 06 22:13 : update: removing 周杰伦/花海-周杰伦-440615.flac
+May 06 22:13 : update: removing 周杰伦/给我一首歌的时间-周杰伦-440614.flac
+May 06 22:13 : update: removing 周杰伦/不该_(with_aMEI)-周杰伦-7134989.flac
+May 06 22:13 : update: removing 周杰伦/大笨钟-周杰伦-3204357.flac
+May 06 22:13 : update: removing 周杰伦/珊瑚海-周杰伦_梁心颐-118983.flac
+May 06 22:13 : update: removing 周杰伦/本草纲目-周杰伦-228912.flac
+May 06 22:13 : update: removing 周杰伦/园游会-周杰伦-295518.flac
+May 06 22:13 : update: removing SHE/亲爱的树洞-S_H_E-3158445.flac
+May 06 22:13 : update: removing SHE/比你贱-S_H_E_周定纬-43294394.flac
+May 06 22:13 : update: removing SHE/冰箱-S_H_E-83873.flac
+May 06 22:13 : update: removing SHE/找不到-S_H_E-177846.flac
+May 06 22:13 : update: removing SHE/星星之火-S_H_E-120685.flac
+May 06 22:13 : update: removing SHE/恋人未满-S_H_E-83878.flac
+May 06 22:13 : update: removing SHE/超可能-S_H_E-672804.flac
+May 06 22:13 : update: removing SHE/爱上你-S_H_E-672803.flac
+May 06 22:13 : update: removing SHE/我爱雨夜花-S_H_E-1041194.flac
+May 06 22:13 : update: removing SHE/说你爱我-S_H_E-540195.ape
+May 06 22:13 : update: removing SHE/借口-S_H_E-240835.flac
+May 06 22:13 : update: removing SHE/触电-S_H_E-177763.flac
+May 06 22:13 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+May 06 22:13 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+May 06 22:13 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+May 06 22:13 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+May 08 16:10 : config: option 'buffer_time' on line 222 was not recognized
+May 08 16:13 : config: option 'buffer_time' on line 222 was not recognized
+May 08 22:40 : config: option 'buffer_time' on line 222 was not recognized
+May 08 22:40 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+May 08 22:49 : config: option 'buffer_time' on line 222 was not recognized
+May 08 22:49 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+May 08 22:49 : update: added SHE/超可能-S_H_E-672804.flac
+May 08 22:49 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+May 08 22:49 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+May 08 22:50 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+May 08 22:50 : exception: Failed to open /home/lqs/.config/mpd/playlists: No such file or directory
+May 08 22:51 : exception: Failed to enable output "My Pulse Output" (pulse); pa_context_connect() has failed: Connection refused
+May 08 22:55 : player: played "SHE/超可能-S_H_E-672804.flac"
+May 08 22:55 : exception: Failed to enable output "My Pulse Output" (pulse); pa_context_connect() has failed: Connection refused
+May 08 22:59 : player: played "SHE/超可能-S_H_E-672804.flac"
+May 08 22:59 : exception: Failed to enable output "My Pulse Output" (pulse); pa_context_connect() has failed: Connection refused
+May 08 23:03 : player: played "SHE/超可能-S_H_E-672804.flac"
+May 08 23:03 : player: played "SHE/超可能-S_H_E-672804.flac"
