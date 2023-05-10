@@ -68,10 +68,10 @@ static const Rule rules[] = {
     {NULL,                  NULL,               "图片查看",     0,          1,          0,          0,          -1,     0},
 
     {"ghex",                NULL,               NULL,           0,          1,          0,          0,          -1,     3},
-    {"bochs",               NULL,               "Bochs Enhanced Debugger",  0,          1,          0,          0,      -1,     3},
-    {NULL,                  NULL,               "迅雷",         0,          1,          0,          1,          -1,      0},
-    {"Qemu-system-i386",    NULL,               "QEMU",           0,        1,          0,          0,          -1,     0},
-    {"telegram-desktop",     NULL,               "Telegram",     1 << 7,          1,          0,          0,          -1,     0},
+    {"feh",                 NULL,               NULL,           0,          1,          0,          0,          -1,     0},
+    {NULL,                  NULL,               "迅雷",         0,          1,          0,          1,          -1,     0},
+    {"Qemu-system-i386",    NULL,               "QEMU",         0,          1,          0,          0,          -1,     0},
+    {"telegram-desktop",    NULL,               "Telegram",     1 << 7,     1,          0,          0,          -1,     0},
     {"qtcreator",           NULL,               NULL,           0,          1,          0,          0,          -1,     0},
     {"firefox",             NULL,               NULL,           1 << 1,     0,          0,          0,          -1,     0},
     {"code-oss",            NULL,               NULL,           0,          0,          0,          0,          -1,     0},
@@ -94,6 +94,7 @@ static const Rule rules[] = {
 
     {NULL,                  NULL,               "crx_",         0,          1,          0,          0,          -1,     0},
     {NULL,                  NULL,               "broken",       0,          1,          0,          0,          -1,     0},
+    {"bochs",               NULL,               "Bochs Enhanced Debugger",  0,          1,          0,          0,      -1,     3},
 };
 
 static const char *overviewtag = "OVERVIEW";
