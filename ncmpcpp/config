@@ -346,7 +346,7 @@ song_columns_list_format = "(10f)[250]{l} (50)[cyan]{t|f} (18)[blue]{a} (22)[mag
 ## state (either unknown, play, pause, or stop) for its duration.
 ##
 #
-#execute_on_player_state_change = ""
+# execute_on_player_state_change = ""
 #
 #playlist_show_mpd_host = no
 #
