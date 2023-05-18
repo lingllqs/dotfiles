@@ -36,7 +36,7 @@ notify() {
 }
 
 call_menu() {
-    case $(echo -e ' 关机\n 重启\n 休眠\n 锁定' | rofi -dmenu -window-title power) in
+    case $(echo -e ' 关机\n 重启\n 休眠\n 锁定' | rofi -theme material -dmenu -window-title power) in
         " 关机") poweroff ;;
         " 重启") reboot ;;
         " 休眠") systemctl hibernate ;;
@@ -46,7 +46,7 @@ call_menu() {
 
 click() {
     case "$1" in
-        L) notify; feh --randomize --bg-fill ~/Pictures/wallpaper/*.png ;;
+        L) notify; feh --randomize --bg-fill ~/Pictures/wallpaper/* ;;
         R) call_menu ;;
     esac
 }

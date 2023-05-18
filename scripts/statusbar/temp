@@ -1,8 +1,7 @@
 
-export _cpu='^scpu^^c#3E206F^^b#6E51760x88^ 閭 ^c#3E206F^^b#6E51760x99^ 00%  '
-export _mem='^smem^^c#3B001B^^b#6873790x88^  ^c#3B001B^^b#6873790x99^ 09% '
-export _vol='^svol^^c#442266^^b#7879560x88^ 奔 ^c#442266^^b#7879560x99^ 30% '
+export _cpu='^scpu^^c#3E206F^^b#6E51760x88^ 閭 ^c#3E206F^^b#6E51760x99^ 10%  '
+export _mem='^smem^^c#3B001B^^b#6873790x88^  ^c#3B001B^^b#6873790x99^ 18% '
+export _vol='^svol^^c#442266^^b#7879560x88^ 奔 ^c#442266^^b#7879560x99^ 25% '
 export _icons='^sicons^^c#2D1B46^^b#5555660x66^  '
-export _bat='^sbat^^c#3B001B^^b#4865660x88^  ^c#3B001B^^b#4865660x99^ 0% '
 export _wifi='^swifi^^c#000080^^b#3870560x88^ 褐 ^c#000080^^b#3870560x99^ Wi-Fi '
-export _date='^sdate^^c#4B005B^^b#7E51680x88^  ^c#4B005B^^b#7E51680x99^ 05/09 11:17 '
+export _date='^sdate^^c#4B005B^^b#7E51680x88^  ^c#4B005B^^b#7E51680x99^ 05/17 20:01 '
