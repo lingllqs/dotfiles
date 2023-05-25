@@ -3,6 +3,7 @@ export FZF_DEFAULT_OPTS="--height 12 --layout=reverse --history=$OMZ/cache/fzfhi
 export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,dist,vendor} --type f"
 export FZF_PREVIEW_COMMAND='bash $OMZ/lib/file_preview.sh {}'
 
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:complete:*:options' sort false
 zstyle ':fzf-tab:complete:_zlua:*' query-string input
 zstyle ':completion:*:descriptions' format "[%d]"
