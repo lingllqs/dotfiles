@@ -3203,12 +3203,15 @@ updatesystray(void)
     XSetWindowAttributes wa;
     XWindowChanges wc;
     Client *i;
-    Monitor *m = systraytomon(NULL);
+    Monitor *m = systraytomon(NULL); // 获取系统托盘所在的显示器
     unsigned int x = m->mx + m->mw;
     unsigned int w = 1;
 
     if (!showsystray)
         return;
+    /* 如果系统托盘尚未初始化，则在指定位置创建一个窗口，并配置窗口属性。
+     * 创建窗口后，将其投射到屏幕上，并在其上设置选择所有权。
+     * 如果选择所有权成功，则通知管理器并同步所有数据。否则，释放系统托盘 window 并返回 */
     if (!systray) {
         /* init systray */
         if (!(systray = (Systray *)calloc(1, sizeof(Systray))))

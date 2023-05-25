@@ -5,9 +5,9 @@ static const int newclientathead          = 0;    /* 定义新窗口在栈顶还
 static const unsigned int borderpx        = 2;    /* 窗口边框大小 */
 static const unsigned int systraypinning  = 1;    /* 托盘跟随的显示器 0代表不指定显示器 */
 static const unsigned int systrayspacing  = 1;    /* 托盘间距 */
-static const unsigned int systrayspadding = 5;    /* 托盘和状态栏的间隙 */
-static int gappi                          = 6;   /* 窗口与窗口 缝隙大小 */
-static int gappo                          = 6;   /* 窗口与边缘 缝隙大小 */
+static const unsigned int systrayspadding = 10;   /* 托盘和状态栏的间隙 */
+static int gappi                          = 8;    /* 窗口与窗口 缝隙大小 */
+static int gappo                          = 8;    /* 窗口与边缘 缝隙大小 */
 static const int _gappo                   = 12;   /* 窗口与窗口 缝隙大小 不可变 用于恢复时的默认值 */
 static const int _gappi                   = 12;   /* 窗口与边缘 缝隙大小 不可变 用于恢复时的默认值 */
 static const int vertpad                  = 5;    /* vertical padding of bar */
@@ -34,7 +34,7 @@ static const char *fonts[] = {
 static const char *colors[][3] = { /* 颜色设置 ColFg, ColBg, ColBorder */
     [SchemeNorm]      = {"#bbbbbb", "#333333", "#444444"},
     [SchemeSel]       = {"#ffffff", "#37474F", "#FFC0CB"},
-    [SchemeSelGlobal] = {"#ffffff", "#37474F", "#00F5FF"},
+    [SchemeSelGlobal] = {"#ffffff", "#37474F", "#16ffb0"},
     [SchemeHid]       = {"#dddddd", NULL, NULL},
     [SchemeSystray]   = {NULL, "#7799AA", NULL},
     [SchemeUnderline] = {"#7799AA", NULL, NULL},
@@ -60,7 +60,8 @@ static const char *statusbarscript = "/home/lqs/scripts/statusbar/statusbar.sh";
 /* 自定义 scratchpad instance */
 static const char scratchpadname[] = "scratchpad";
 
-static const char *tags[] = {"󰣇", "", "", "", "", "󰃂", "", "󰘅", "󰟾"};
+/* static const char *tags[] = {"󰣇", "", "", "", "", "󰃂", "", "󰘅", "󰟾"}; */
+static const char *tags[] = {"一", "二", "三", "四", "五", "六", "七", "八", "九"};
 
 static const Rule rules[] = {
     /* class                instance            title           tags mask   isfloating isglobal     isnoborder  monitor floatposition */
@@ -189,8 +190,8 @@ static Key keys[] = {
     {MODKEY,                XK_minus,       spawn,          SHCMD("alacritty --class FG")},
     {MODKEY,                XK_space,       spawn,          SHCMD("alacritty --class float")},
     {MODKEY,                XK_F11,         spawn,          SHCMD("killall pcmanfm || pcmanfm")},
-    {MODKEY,                XK_d,           spawn,          SHCMD("rofi -show drun")},
-    {MODKEY,                XK_p,           spawn,          SHCMD("/home/lqs/scripts/rofi.sh")},                                       /* super p          | rofi: 执行自定义脚本   */
+    {MODKEY,                XK_p,           spawn,          SHCMD("rofi options -theme material -show window -show-icons")},
+    {MODKEY,                XK_d,           spawn,          SHCMD("/home/lqs/scripts/rofi.sh")},                                       /* super p          | rofi: 执行自定义脚本   */
     {MODKEY,                XK_n,           spawn,          SHCMD("/home/lqs/scripts/blurlock.sh")},                                   /* super n          | 锁定屏幕               */
     {MODKEY|ShiftMask,      XK_Up,          spawn,          SHCMD("/home/lqs/scripts/set_vol.sh up")},                                 /* super shift up   | 音量加                 */
     {MODKEY|ShiftMask,      XK_Down,        spawn,          SHCMD("/home/lqs/scripts/set_vol.sh down")},                               /* super shift down | 音量减                 */
@@ -208,10 +209,10 @@ static Key keys[] = {
     TAGKEYS(XK_3, 2, 0)
     TAGKEYS(XK_4, 3, 0) 
     TAGKEYS(XK_5, 4, 0) 
-    TAGKEYS(XK_6, 5, 0)
+    TAGKEYS(XK_6, 5, "/home/lqs/scripts/music_player.sh")
     TAGKEYS(XK_7, 6, "obs") 
     TAGKEYS(XK_8, 7, "linuxqq")
-    TAGKEYS(XK_9, 8, "/home/lqs/clash/cfw")
+    TAGKEYS(XK_9, 8, "/home/lqs/.clash/cfw")
 };
 
 static Button buttons[] = {
@@ -235,6 +236,6 @@ static Button buttons[] = {
     {ClkStatusText, 0, Button4, clickstatusbar, {0}}, // 鼠标滚轮上 | 状态栏     | 根据状态栏的信号执行 // ~/scripts/dwmstatusbar.sh $signal U
     {ClkStatusText, 0, Button5, clickstatusbar, {0}}, // 鼠标滚轮下 | 状态栏     | 根据状态栏的信号执行 // ~/scripts/dwmstatusbar.sh $signal D
     /* 点击bar空白处 */
-    {ClkBarEmpty, 0, Button1, spawn, SHCMD("rofi -show window")},   // 左键 | bar空白处 | rofi 执行 window
-    {ClkBarEmpty, 0, Button3, spawn, SHCMD("rofi -show drun")},     // 右键 | bar空白处 | rofi 执行 drun
+    {ClkBarEmpty, 0, Button1, spawn, SHCMD("rofi -theme material -show-icons -show window")},   // 左键 | bar空白处 | rofi 执行 window
+    {ClkBarEmpty, 0, Button3, spawn, SHCMD("rofi -theme material -show-icons -show drun")},     // 右键 | bar空白处 | rofi 执行 drun
 };
