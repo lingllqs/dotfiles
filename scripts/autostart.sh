@@ -7,10 +7,11 @@ daemons ()
   [ $1 ] && sleep $1
   $_thisdir/statusbar/statusbar.sh cron &
   xss-lock -- ~/scripts/blurlock.sh &
-  picom &
-  dunst &
   fcitx5 &
+  # picom &
+  picom --experimental-backends &
+  dunst &
   flameshot &
 }
 
-daemons 1 &
+daemons 0 &

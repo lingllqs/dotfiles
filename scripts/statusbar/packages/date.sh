@@ -25,15 +25,27 @@ update() {
         "12") time_icon="" ;;
     esac
 
+    weekday=$(date +%w)
+    case $weekday in
+        0) day="星期日" ;;
+        1) day="星期一" ;;
+        2) day="星期二" ;;
+        3) day="星期三" ;;
+        4) day="星期四" ;;
+        5) day="星期五" ;;
+        6) day="星期六" ;;
+    esac
+
     icon=" $time_icon "
-    text=" $time_text "
+    text=" $time_text $day "
 
     sed -i '/^export '$this'=.*$/d' $tempfile
     printf "export %s='%s%s%s%s%s'\n" $this "$signal" "$icon_color" "$icon" "$text_color" "$text" >> $tempfile
 }
 
 notify() {
-    _cal=$(cal --color=always | sed 1,2d | sed 's/..7m/<b><span color="#ff79c6">/;s/..27m/<\/span><\/b>/' )
+    _cal=$(cal | sed 1,2d | sed 's/..7m/<b><span color="#ff79c6">/;s/..27m/<\/span><\/b>/')
+    # _cal=$(cal --color=always | sed 1,2d)
     _todo=$(cat ~/.todo.md | sed 's/\(- \[x\] \)\(.*\)/<span color="#ff79c6">\1<s>\2<\/s><\/span>/' | sed 's/- \[[ |x]\] //')
     notify-send "  Calendar" "\n$_cal\n————————————————————\n$_todo" -r 9527
 }
