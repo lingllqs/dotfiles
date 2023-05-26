@@ -25,10 +25,9 @@ static const unsigned int borderalpha     = 0xdd; /* 边框透明度 */
 static const char *fonts[] = {
     "JetBrainsMono Nerd Font:type=medium:size=12:antialias=true:autohint=true",
     "monospace:size=12",
-    /* "WenQuanYi Micro Hei:size=16:type=Regular:antialias=ture:autohint=true",
-     */
-    /* "Symbols Nerd
-       Font:pixelsize=14:type=2048-em:antialias=true:autohint=true" */
+    "JoyPixels:pixelsize=12:type=Regular:antialias=true:autohint=true",
+    "WenQuanYi Micro Hei:size=12:type=Regular:antialias=ture:autohint=true",
+    /* "Symbols Nerd Font:pixelsize=14:type=2048-em:antialias=true:autohint=true" */
 };
 
 static const char *colors[][3] = { /* 颜色设置 ColFg, ColBg, ColBorder */
@@ -37,9 +36,9 @@ static const char *colors[][3] = { /* 颜色设置 ColFg, ColBg, ColBorder */
     [SchemeSelGlobal] = {"#ffffff", "#37474F", "#16ffb0"},
     [SchemeHid]       = {"#dddddd", NULL, NULL},
     [SchemeSystray]   = {NULL, "#7799AA", NULL},
-    [SchemeUnderline] = {"#7799AA", NULL, NULL},
-    [SchemeNormTag]   = {"#bbbbbb", "#333333", NULL},
-    [SchemeSelTag]    = {"#eeeeee", "#333333", NULL},
+    [SchemeUnderline] = {"#ff883b", NULL, NULL},
+    [SchemeNormTag]   = {"#eeeeee", "#333333", NULL},
+    [SchemeSelTag]    = {"#ff6700", "#333e40", NULL},
     [SchemeBarEmpty]  = {NULL, "#111111", NULL},
 };
 
@@ -49,8 +48,8 @@ static const unsigned int alphas[][3] = { /* 透明度设置 ColFg, ColBg, ColBo
     [SchemeSelGlobal]  = {OPAQUE, baralpha, borderalpha},
     [SchemeNormTag]    = {OPAQUE, baralpha, borderalpha},
     [SchemeSelTag]     = {OPAQUE, baralpha, borderalpha},
-    [SchemeBarEmpty]   = {0, 0xa0a, 0},
-    [SchemeStatusText] = {OPAQUE, 0x88, 0},
+    [SchemeBarEmpty]   = {0, 0x00, 0},
+    [SchemeStatusText] = {OPAQUE, 0x00, 0},
 };
 
 /* 自定义脚本位置 */
