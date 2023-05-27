@@ -78,6 +78,7 @@ static const Rule rules[] = {
     {"chromium",            NULL,               NULL,           1 << 4,     0,          0,          0,          -1,     0},
     {"music",               NULL,               NULL,           1 << 5,     1,          0,          1,          -1,     0},
     {"obs",                 NULL,               NULL,           1 << 6,     0,          0,          0,          -1,     0},
+    {"obsidian",            NULL,               NULL,           1 << 3,     0,          0,          0,          -1,     0},
     {"QQ",                  NULL,               NULL,           1 << 7,     1,          0,          0,          -1,     0},
     {"clash for windows",   NULL,               NULL,           1 << 8,     1,          0,          0,          -1,     0},
     {"flameshot",           NULL,               NULL,           0,          1,          0,          0,          -1,     0},
@@ -189,7 +190,7 @@ static Key keys[] = {
     {MODKEY,                XK_minus,       spawn,          SHCMD("alacritty --class FG")},
     {MODKEY,                XK_space,       spawn,          SHCMD("alacritty --class float")},
     {MODKEY,                XK_F11,         spawn,          SHCMD("killall pcmanfm || pcmanfm")},
-    {MODKEY,                XK_p,           spawn,          SHCMD("rofi options -theme material -show window -show-icons")},
+    {MODKEY,                XK_p,           spawn,          SHCMD("rofi -show drun")},
     {MODKEY,                XK_d,           spawn,          SHCMD("/home/lqs/scripts/rofi.sh")},                                       /* super p          | rofi: 执行自定义脚本   */
     {MODKEY,                XK_n,           spawn,          SHCMD("/home/lqs/scripts/blurlock.sh")},                                   /* super n          | 锁定屏幕               */
     {MODKEY|ShiftMask,      XK_Up,          spawn,          SHCMD("/home/lqs/scripts/set_vol.sh up")},                                 /* super shift up   | 音量加                 */
@@ -235,6 +236,6 @@ static Button buttons[] = {
     {ClkStatusText, 0, Button4, clickstatusbar, {0}}, // 鼠标滚轮上 | 状态栏     | 根据状态栏的信号执行 // ~/scripts/dwmstatusbar.sh $signal U
     {ClkStatusText, 0, Button5, clickstatusbar, {0}}, // 鼠标滚轮下 | 状态栏     | 根据状态栏的信号执行 // ~/scripts/dwmstatusbar.sh $signal D
     /* 点击bar空白处 */
-    {ClkBarEmpty, 0, Button1, spawn, SHCMD("rofi -theme material -show-icons -show window")},   // 左键 | bar空白处 | rofi 执行 window
-    {ClkBarEmpty, 0, Button3, spawn, SHCMD("rofi -theme material -show-icons -show drun")},     // 右键 | bar空白处 | rofi 执行 drun
+    {ClkBarEmpty, 0, Button1, spawn, SHCMD("rofi -show-icons -show window")},   // 左键 | bar空白处 | rofi 执行 window
+    {ClkBarEmpty, 0, Button3, spawn, SHCMD("rofi -show-icons -show drun")},     // 右键 | bar空白处 | rofi 执行 drun
 };
