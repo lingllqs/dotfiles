@@ -1,0 +1,31 @@
+import = ["~/.config/alacritty/themes/tokyo-night.toml"]
+
+[env]
+TERM = "xterm-256color"
+GTK_IM_MODULE = "fcitx5"
+QT_IM_MODULE = "fcitx5"
+XMODIFIERS = "@im=fcitx5"
+LANG = "en_US.UTF-8"
+
+[window]
+opacity = 0.8
+title = "alacritty"
+class = { instance = "Alacritty", general = "Alacritty" }
+
+[font]
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+size = 12.0
+
+[cursor]
+style = { shape = "Underline", blinking = "On" }
+vi_mode_style = { shape = "Beam", blinking = "On" }
+blink_interval = 500
+blink_timeout = 0
+unfocused_hollow = true
+thickness = 0.15
+
+[mouse]
+hide_when_typing = true
