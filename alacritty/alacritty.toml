@@ -41,3 +41,8 @@ thickness = 0.15
 [mouse]
 hide_when_typing = true
 
+[keyboard]
+bindings = [
+  { key = "Insert", mods = "Control", mode = "~Vi", action = "CopySelection" },
+  { key = "Insert", mods = "Shift", mode = "~Vi", action = "PasteSelection" },
+]
