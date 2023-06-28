@@ -17,6 +17,7 @@ vim.cmd([[
     nnoremap m* :Tab /\/\*<cr>
     nnoremap m= :Tab /=<cr>
     nnoremap m" :Tab /"<cr>
+    nnoremap m: :Tab /:<cr>
     nnoremap m; :Tab /;<cr>
     nnoremap m# :Tab /#<cr>
     nnoremap m\| :Tab /\|<cr>
