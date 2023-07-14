@@ -2,7 +2,7 @@ return {
     -- add gruvbox
     { "ellisonleao/gruvbox.nvim" },
     { "EdenEast/nightfox.nvim" },
-    { 'projekt0n/github-nvim-theme', version = 'v0.0.7' },
+    { 'projekt0n/github-nvim-theme'},
     { "nxstynate/rosePine.nvim", priority = 1000 },
     { "catppuccin/nvim", name = "catppuccin" },
 

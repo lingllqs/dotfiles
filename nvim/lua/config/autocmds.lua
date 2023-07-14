@@ -15,6 +15,8 @@ vim.cmd([[
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "c" },
   callback = function()
+    vim.opt.shiftwidth=4
+    vim.opt.tabstop=4
     vim.b.autoformat = false
   end,
 })
