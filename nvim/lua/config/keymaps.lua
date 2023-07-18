@@ -1,16 +1,36 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+local map = vim.keymap.set
 
-vim.api.nvim_set_keymap("n", ";", ":", { noremap = true })
-vim.api.nvim_set_keymap("v", ";", ":", { noremap = true })
-vim.api.nvim_set_keymap("i", "jk", "<esc>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "q", ":q<cr>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<leader><cr>", ":nohl<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<c-u>", "<esc>viwUea", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<bs>", "viwc", { noremap = true, silent = true })
+map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
--- vim.api.nvim_set_keymap("n", "mk", ":MarkdownPreviewToggle<cr>", { noremap = true, silent = true })
+map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
+map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
+map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
+map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
+
+map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+
+map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
+map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
+map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+
+map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
+
+map("n", ";", ":", { noremap = true })
+map("v", ";", ":", { noremap = true })
+map("i", "jk", "<esc>", { noremap = true, silent = true })
+map("n", "q", ":q<cr>", { noremap = true, silent = true })
+-- map("n", "<leader><cr>", ":nohl<cr>", { noremap = true, silent = true })
+map("i", "<c-u>", "<esc>viwUea", { noremap = true, silent = true })
+map("n", "<bs>", "viwc", { noremap = true, silent = true })
+
+-- map("n", "mk", ":MarkdownPreviewToggle<cr>", { noremap = true, silent = true })
 
 vim.cmd([[
     nnoremap m/ :Tab /\/\/<cr>
@@ -23,9 +43,9 @@ vim.cmd([[
     nnoremap m\| :Tab /\|<cr>
 ]])
 
-vim.api.nvim_set_keymap("n", "0", "<cmd>call v:lua.MagicMove()<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', 'T', ':call v:lua.MagicToggleHump(v:true)<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', 't', ':call v:lua.MagicToggleHump(v:false)<CR>', { noremap = true, silent = true })
+map("n", "0", "<cmd>call v:lua.MagicMove()<cr>", { noremap = true, silent = true })
+map('v', 'T', ':call v:lua.MagicToggleHump(v:true)<CR>', { noremap = true, silent = true })
+map('v', 't', ':call v:lua.MagicToggleHump(v:false)<CR>', { noremap = true, silent = true })
 
 function MagicMove()
     local first = 1
