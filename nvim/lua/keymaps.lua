@@ -13,8 +13,8 @@ map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
 map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
-map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
 map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
+map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
 map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
 map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
 map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
@@ -30,10 +30,18 @@ map("n", "q", ":q<cr>", { noremap = true, silent = true })
 map("i", "<c-u>", "<esc>viwUea", { noremap = true, silent = true })
 map("n", "<bs>", "viwc", { noremap = true, silent = true })
 
--- map("n", "mk", ":MarkdownPreviewToggle<cr>", { noremap = true, silent = true })
+map("n", "<A-Tab>", "<cmd>bNext<CR>")
+map("n", "<leader>bc", "<cmd>bd<CR>")
+
+-- map("v", "J", ":m '>+1<CR>gv=gv")
+-- map("v", "K", ":m '<-2<CR>gv=gv")
+
+map({ "v", "n" }, "<leader>y", "\"+y")
+
 
 vim.cmd([[
     nnoremap m/ :Tab /\/\/<cr>
+    nnoremap m- :Tab /--<cr>
     nnoremap m* :Tab /\/\*<cr>
     nnoremap m= :Tab /=<cr>
     nnoremap m" :Tab /"<cr>
@@ -72,3 +80,4 @@ function MagicToggleHump(upperCase)
     vim.fn.setreg('t', w)
     vim.fn.execute('normal! "tP')
 end
+
