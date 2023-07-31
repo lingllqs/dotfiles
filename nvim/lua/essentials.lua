@@ -1,3 +1,46 @@
+local option = vim.opt
+local buffer = vim.b
+local global = vim.g
+
+-- Globol Settings --
+option.showmode = false
+option.backspace = { "indent", "eol", "start" }
+option.tabstop = 4
+option.shiftwidth = 4
+option.expandtab = true
+option.shiftround = true
+option.cindent = true
+option.autoindent = true
+option.smartindent = true
+option.number = true
+option.relativenumber = false
+option.wildmenu = true
+option.hlsearch = false
+option.ignorecase = true
+option.smartcase = true
+option.completeopt = { "menuone", "noselect" }
+option.cursorline = true
+option.termguicolors = true
+option.signcolumn = "yes"
+option.autoread = true
+option.title = true
+option.swapfile = false
+option.backup = false
+option.updatetime = 50
+option.mouse = "a"
+option.undofile = true
+option.undodir = vim.fn.expand('$HOME/.local/share/nvim/undo')
+option.exrc = true
+option.wrap = false
+option.splitright = true
+
+-- Buffer Settings --
+buffer.fileenconding = "utf-8"
+
+-- Global Settings --
+global.mapleader = " "
+
+-- Key mappings --
 local map = vim.keymap.set
 
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -26,21 +69,18 @@ map("n", ";", ":", { noremap = true })
 map("v", ";", ":", { noremap = true })
 map("i", "jk", "<esc>", { noremap = true, silent = true })
 map("n", "q", ":q<cr>", { noremap = true, silent = true })
--- map("n", "<leader><cr>", ":nohl<cr>", { noremap = true, silent = true })
+
 map("i", "<c-u>", "<esc>viwUea", { noremap = true, silent = true })
 map("n", "<bs>", "viwc", { noremap = true, silent = true })
 
 map("n", "<A-Tab>", "<cmd>bNext<CR>")
-map("n", "<leader>bc", "<cmd>bd<CR>")
-
--- map("v", "J", ":m '>+1<CR>gv=gv")
--- map("v", "K", ":m '<-2<CR>gv=gv")
+map("n", "<leader>bc", "<cmd>bd<CR>", { desc = "close current buffer"})
 
 map({ "v", "n" }, "<leader>y", "\"+y")
 
-
 vim.cmd([[
     nnoremap m/ :Tab /\/\/<cr>
+    nnoremap m\ :Tab /\<cr>
     nnoremap m- :Tab /--<cr>
     nnoremap m* :Tab /\/\*<cr>
     nnoremap m= :Tab /=<cr>
