@@ -6,11 +6,12 @@ static const unsigned int borderpx        = 2;    /* 窗口边框大小 */
 static const unsigned int systraypinning  = 1;    /* 托盘跟随的显示器 0代表不指定显示器 */
 static const unsigned int systrayspacing  = 1;    /* 托盘间距 */
 static const unsigned int systrayspadding = 10;   /* 托盘和状态栏的间隙 */
-static int gappi                          = 8;    /* 窗口与窗口 缝隙大小 */
-static int gappo                          = 8;    /* 窗口与边缘 缝隙大小 */
+static int gappi                          = 6;    /* 窗口与窗口 缝隙大小 */
+static int gappo                          = 6;    /* 窗口与边缘 缝隙大小 */
 static const int _gappo                   = 12;   /* 窗口与窗口 缝隙大小 不可变 用于恢复时的默认值 */
 static const int _gappi                   = 12;   /* 窗口与边缘 缝隙大小 不可变 用于恢复时的默认值 */
-static const int vertpad                  = 5;    /* vertical padding of bar */
+static const int vertpad                  = 5;    /* verticty
+                                                     al padding of bar */
 static const int sidepad                  = 5;    /* horizontal padding of bar */
 static const int overviewgappi            = 24;   /* overview时 窗口与边缘 缝隙大小 */
 static const int overviewgappo            = 60;   /* overview时 窗口与窗口 缝隙大小 */
@@ -32,10 +33,10 @@ static const char *fonts[] = {
 
 static const char *colors[][3] = { /* 颜色设置 ColFg, ColBg, ColBorder */
     [SchemeNorm]      = {"#bbbbbb", "#333333", "#444444"},
-    [SchemeSel]       = {"#ffffff", "#37474F", "#FFC0CB"},
-    [SchemeSelGlobal] = {"#ffffff", "#37474F", "#16ffb0"},
+    [SchemeSel]       = {"#ffffff", "#37474F", "#EDA4FF"},
+    [SchemeSelGlobal] = {"#ffffff", "#37474F", "#FFC0CB"},
     [SchemeHid]       = {"#dddddd", NULL, NULL},
-    [SchemeSystray]   = {NULL, "#7799AA", NULL},
+    [SchemeSystray]   = {NULL, "#222222", NULL},
     [SchemeUnderline] = {"#ff883b", NULL, NULL},
     [SchemeNormTag]   = {"#eeeeee", "#333333", NULL},
     [SchemeSelTag]    = {"#ff6700", "#333e40", NULL},
@@ -68,18 +69,25 @@ static const Rule rules[] = {
     {NULL,                  NULL,               "图片查看",     0,          1,          0,          0,          -1,     0},
 
     {"ghex",                NULL,               NULL,           0,          1,          0,          0,          -1,     3},
+    {"mpv",                 NULL,               NULL,           0,          1,          0,          0,          -1,     0},
     {"feh",                 NULL,               NULL,           0,          1,          0,          0,          -1,     0},
     {NULL,                  NULL,               "迅雷",         0,          1,          0,          1,          -1,     0},
     {"Qemu-system-i386",    NULL,               "QEMU",         0,          1,          0,          0,          -1,     0},
-    {"telegram-desktop",    NULL,               "Telegram",     1 << 7,     1,          0,          0,          -1,     0},
+    {"telegram-desktop",    NULL,               "Telegram",     1 << 7,     0,          0,          0,          -1,     0},
+    {"VirtualBox Machine",  NULL,               NULL,           0,          1,          0,          0,          -1,     0},
     {"qtcreator",           NULL,               NULL,           0,          1,          0,          0,          -1,     0},
-    {"firefox",             NULL,               NULL,           1 << 1,     0,          0,          0,          -1,     0},
+    /* {"firefox",             NULL,               NULL,           1 << 1,     0,          0,          0,          -1,     0}, */
+    /* {"firefox-nightly",     NULL,               NULL,           1 << 1,     0,          0,          0,          -1,     0}, */
+    /* {"brave",               NULL,               NULL,           1 << 1,     0,          0,          0,          -1,     0}, */
     {"code-oss",            NULL,               NULL,           0,          0,          0,          0,          -1,     0},
-    {"chromium",            NULL,               NULL,           1 << 4,     0,          0,          0,          -1,     0},
+    /* {"chromium",            NULL,               NULL,           1 << 2,     0,          0,          0,          -1,     0}, */
     {"music",               NULL,               NULL,           1 << 5,     1,          0,          1,          -1,     0},
+    {"listen1",             NULL,               NULL,           1 << 5,     1,          0,          1,          -1,     0},
     {"obs",                 NULL,               NULL,           1 << 6,     0,          0,          0,          -1,     0},
     {"obsidian",            NULL,               NULL,           1 << 3,     0,          0,          0,          -1,     0},
-    {"QQ",                  NULL,               NULL,           1 << 7,     1,          0,          0,          -1,     0},
+    {"QQ",                  NULL,               NULL,           1 << 7,     0,          0,          0,          -1,     0},
+    {"discord",             NULL,               NULL,           1 << 7,     0,          0,          0,          -1,     0},
+    {"wechat",              NULL,               NULL,           1 << 7,     1,          0,          0,          -1,     0},
     {"clash for windows",   NULL,               NULL,           1 << 8,     1,          0,          0,          -1,     0},
     {"flameshot",           NULL,               NULL,           0,          1,          0,          0,          -1,     0},
     {"scratchpad",          "scratchpad",       "scratchpad",   TAGMASK,    1,          1,          1,          -1,     2},
@@ -124,8 +132,8 @@ static Key keys[] = {
 
     {MODKEY,                XK_Up,          focusstack,         {.i = -1}}, /* super up           |  本tag内切换聚焦窗口 */
     {MODKEY,                XK_Down,        focusstack,         {.i = +1}}, /* super down         |  本tag内切换聚焦窗口 */
-    {MODKEY,                XK_Left,        viewtoleft,         {0}}, /* super left         |  聚焦到左边的tag */
-    {MODKEY,                XK_Right,       viewtoright,        {0}}, /* super right        |  聚焦到右边的tag */
+    {MODKEY,                XK_Left,        viewtoleft,         {0}},       /* super left         |  聚焦到左边的tag */
+    {MODKEY,                XK_Right,       viewtoright,        {0}},       /* super right        |  聚焦到右边的tag */
 
     {MODKEY|ShiftMask,      XK_Left,        tagtoleft,          {0}}, /* super shift left   |  将本窗口移动到左边tag */
     {MODKEY|ShiftMask,      XK_Right,       tagtoright,         {0}}, /* super shift right  |  将本窗口移动到右边tag */
@@ -190,13 +198,16 @@ static Key keys[] = {
     {MODKEY,                XK_minus,       spawn,          SHCMD("alacritty --class FG")},
     {MODKEY,                XK_space,       spawn,          SHCMD("alacritty --class float")},
     {MODKEY,                XK_F11,         spawn,          SHCMD("killall pcmanfm || pcmanfm")},
+    {MODKEY,                XK_F10,         spawn,          SHCMD("killall screenkey || screenkey")},
     {MODKEY,                XK_p,           spawn,          SHCMD("rofi -show drun")},
-    {MODKEY,                XK_d,           spawn,          SHCMD("/home/lqs/scripts/rofi.sh")},                                       /* super p          | rofi: 执行自定义脚本   */
-    {MODKEY,                XK_n,           spawn,          SHCMD("/home/lqs/scripts/blurlock.sh")},                                   /* super n          | 锁定屏幕               */
-    {MODKEY|ShiftMask,      XK_Up,          spawn,          SHCMD("/home/lqs/scripts/set_vol.sh up")},                                 /* super shift up   | 音量加                 */
-    {MODKEY|ShiftMask,      XK_Down,        spawn,          SHCMD("/home/lqs/scripts/set_vol.sh down")},                               /* super shift down | 音量减                 */
-    /* {MODKEY,                XK_F1,          spawn,          SHCMD("amixer sset Master 3%+ unmute")}, */
-    /* {MODKEY,                XK_F2,          spawn,          SHCMD("amixer sset Master 3%- unmute")}, */
+    {MODKEY,                XK_d,           spawn,          SHCMD("/home/lqs/scripts/rofi.sh")},                         /* super p          | rofi: 执行自定义脚本   */
+    {MODKEY,                XK_n,           spawn,          SHCMD("/home/lqs/scripts/blurlock.sh")},                     /* super n          | 锁定屏幕               */
+    {MODKEY|ShiftMask,      XK_Up,          spawn,          SHCMD("/home/lqs/scripts/set_vol.sh up")},                   /* super shift up   | 音量加                 */
+    {MODKEY|ShiftMask,      XK_Down,        spawn,          SHCMD("/home/lqs/scripts/set_vol.sh down")},                 /* super shift down | 音量减                 */
+    {0,                     XF86XK_AudioRaiseVolume,        spawn,          SHCMD("/home/lqs/scripts/set_vol.sh up")},   /* super shift up   | 音量加                 */
+    {0,                     XF86XK_AudioLowerVolume,        spawn,          SHCMD("/home/lqs/scripts/set_vol.sh down")}, /* super shift down | 音量减                 */
+                                                                                                                         /* {MODKEY,                XK_F1,          spawn,          SHCMD("amixer sset Master 3%+ unmute")}, */
+                                                                                                                         /* {MODKEY,                XK_F2,          spawn,          SHCMD("amixer sset Master 3%- unmute")}, */
     {MODKEY|ShiftMask,      XK_a,           spawn,          SHCMD("flameshot gui -c -p ~/Pictures/screenshots")},
     {MODKEY|ShiftMask,      XK_q,           spawn,          SHCMD("kill -9 $(xprop | grep _NET_WM_PID | awk '{print $3}')")},
 
@@ -205,14 +216,15 @@ static Key keys[] = {
     /* super shift key : 将聚焦窗口移动到对应tag */
     /* key tag cmd */
     TAGKEYS(XK_1, 0, 0) 
-    TAGKEYS(XK_2, 1, "firefox") 
+    TAGKEYS(XK_2, 1, "firefox-nightly") 
     TAGKEYS(XK_3, 2, 0)
     TAGKEYS(XK_4, 3, 0) 
     TAGKEYS(XK_5, 4, 0) 
     TAGKEYS(XK_6, 5, "/home/lqs/scripts/music_player.sh")
     TAGKEYS(XK_7, 6, "obs") 
     TAGKEYS(XK_8, 7, "linuxqq")
-    TAGKEYS(XK_9, 8, "/home/lqs/.clash/cfw")
+    /* TAGKEYS(XK_9, 8, "/home/lqs/.clash/cfw") */
+    TAGKEYS(XK_9, 8, "cfw")
 };
 
 static Button buttons[] = {
