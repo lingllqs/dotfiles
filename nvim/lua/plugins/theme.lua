@@ -1,22 +1,20 @@
 return {
     {
-        "folke/tokyonight.nvim",
-        dependencies = {
-            "nvim-lualine/lualine.nvim",
-            "nvim-tree/nvim-web-devicons",
-            "utilyre/barbecue.nvim",
-            "SmiteshP/nvim-navic",
-        },
-        config = function()
-            vim.cmd[[colorscheme tokyonight-storm]]
-            require('lualine').setup({
-                options = {
-                    theme = 'tokyonight'
-                },
-            })
-            require('barbecue').setup {
-                theme = 'tokyonight',
-            }
-        end
+        'hardhackerlabs/theme-vim',
+    },
+    {
+        "rebelot/kanagawa.nvim",
+    },
+    {
+        { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    },
+    {
+        { "ellisonleao/gruvbox.nvim", priority = 1000 },
+    },
+    {
+      "LazyVim/LazyVim",
+      opts = {
+        colorscheme = "tokyonight",
+      },
     },
 }

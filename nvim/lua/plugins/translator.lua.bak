@@ -1,0 +1,18 @@
+-- return {
+--   {
+--     "voldikss/vim-translator",
+--     enabled = false,
+--     -- event = "VeryLazy",
+--     init = function()
+--       vim.g.translator_default_engines = { "haici", "youdao", "bing", "google" }
+--       vim.g.translator_target_lang = "zh"
+--     end,
+--     config = function()
+--       vim.keymap.set("n", "mm", "<Plug>TranslateW", { desc = "Translate" })
+--       vim.keymap.set("v", "mm", "<Plug>TranslateWV", { desc = "Translate" })
+--     end,
+--   },
+--   -- {
+--   --   'bujnlc8/vim-translator'
+--   -- }
+-- }
