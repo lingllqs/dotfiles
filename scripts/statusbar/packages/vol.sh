@@ -17,8 +17,8 @@
 tempfile=$(cd $(dirname $0);cd ..;pwd)/temp
 
 this=_vol
-icon_color="^c#442266^^b#7879560x88^"
-text_color="^c#442266^^b#7879560x99^"
+icon_color="^c#eeeeee^^b#2222220x88^"
+text_color="^c#eeeeee^^b#2222220x99^"
 signal=$(echo "^s$this^" | sed 's/_//')
 
 # check
@@ -34,10 +34,10 @@ update() {
         vol_text=$(pactl list sinks | grep $sink -A 7 | sed -n '8p' | awk '{printf int($5)}')
     fi
     if [ ! "$volunmuted" ];      then vol_text="--"; vol_icon="ﱝ";
-    elif [ "$vol_text" -eq 0 ];  then vol_text="00"; vol_icon="婢";
-    elif [ "$vol_text" -lt 10 ]; then vol_icon="奔"; vol_text=0$vol_text;
-    elif [ "$vol_text" -le 50 ]; then vol_icon="奔";
-    else vol_icon="墳"; fi
+    elif [ "$vol_text" -eq 0 ];  then vol_text="00"; vol_icon="🔇";
+    elif [ "$vol_text" -lt 10 ]; then vol_icon="🔈"; vol_text=0$vol_text;
+    elif [ "$vol_text" -le 50 ]; then vol_icon="🔉";
+    else vol_icon="🔊"; fi
 
     icon=" $vol_icon "
     text=" $vol_text% "

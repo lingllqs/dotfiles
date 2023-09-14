@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rofi options -theme material -show drun -show-icons
+rofi -show drun -show-icons

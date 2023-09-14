@@ -8,7 +8,7 @@ mod=$((vol % 3))
 
 case $1 in
     up) target="+$((3 - mod))%" ;;
-    down) [ $mod -eq 0 ] && target="-5%" || target="-$mod%" ;;
+    down) [ $mod -eq 0 ] && target="-3%" || target="-$mod%" ;;
 esac
 
 pactl set-sink-volume @DEFAULT_SINK@ $target

@@ -4,12 +4,12 @@
 tempfile=$(cd $(dirname $0);cd ..;pwd)/temp
 
 this=_date
-icon_color="^c#4B005B^^b#7E51680x88^"
-text_color="^c#4B005B^^b#7E51680x99^"
+icon_color="^c#eeeeee^^b#2222220x88^"
+text_color="^c#eeeeee^^b#2222220x99^"
 signal=$(echo "^s$this^" | sed 's/_//')
 
 update() {
-    time_text="$(date '+%m/%d %H:%M')"
+    time_text="$(date '+%F %H:%M')"
     case "$(date '+%I')" in
         "01") time_icon="" ;;
         "02") time_icon="" ;;
@@ -44,7 +44,7 @@ update() {
 }
 
 notify() {
-    _cal=$(cal | sed 1,2d | sed 's/..7m/<b><span color="#ff79c6">/;s/..27m/<\/span><\/b>/')
+    _cal=$(cal | sed 1,2d | sed 's/..7m/<b><span color="#fe32ff">/;s/..27m/<\/span><\/b>/')
     # _cal=$(cal --color=always | sed 1,2d)
     _todo=$(cat ~/.todo.md | sed 's/\(- \[x\] \)\(.*\)/<span color="#ff79c6">\1<s>\2<\/s><\/span>/' | sed 's/- \[[ |x]\] //')
     notify-send "  Calendar" "\n$_cal\n————————————————————\n$_todo" -r 9527

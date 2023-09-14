@@ -4,7 +4,7 @@
 tempfile=$(cd $(dirname $0);cd ..;pwd)/temp
 
 this=_icons
-color="^c#2D1B46^^b#5555660x66^"
+color="^c#2D1B46^^b#2222220x66^"
 signal=$(echo "^s$this^" | sed 's/_//')
 
 with_v2raya() {
@@ -18,7 +18,7 @@ with_bluetooth() {
 }
 
 update() {
-    icons=("")
+    icons=("🤪")
     with_v2raya
     # with_bluetooth
 
@@ -36,7 +36,7 @@ notify() {
 }
 
 call_menu() {
-    case $(echo -e ' 关机\n 重启\n 休眠\n 锁定' | rofi -theme material -dmenu -window-title power) in
+    case $(echo -e ' 关机\n 重启\n 休眠\n 锁定' | rofi -dmenu -window-title power) in
         " 关机") poweroff ;;
         " 重启") reboot ;;
         " 休眠") systemctl hibernate ;;
@@ -46,7 +46,7 @@ call_menu() {
 
 click() {
     case "$1" in
-        L) notify; feh --randomize --bg-fill ~/Pictures/wallpaper/* ;;
+        L) notify; feh --randomize --bg-fill ~/Pictures/wallpaper/*.jpg ;;
         R) call_menu ;;
     esac
 }

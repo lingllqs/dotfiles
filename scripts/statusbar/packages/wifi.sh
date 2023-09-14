@@ -3,8 +3,8 @@
 tempfile=$(cd $(dirname $0);cd ..;pwd)/temp
 
 this=_wifi
-icon_color="^c#000080^^b#3870560x88^"
-text_color="^c#000080^^b#3870560x99^"
+icon_color="^c#eeeeee^^b#2222220x88^"
+text_color="^c#eeeeee^^b#2222220x99^"
 signal=$(echo "^s$this^" | sed 's/_//')
 
 # check
