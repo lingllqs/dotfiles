@@ -1,0 +1,86 @@
+* {
+  border: none;
+  font-family: 'Hack Nerd Font Mono';
+  font-size: 16px;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+  min-height: 25px;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+#custom-arch, #workspaces {
+  border-radius: 10px;
+  background-color: #11111b;
+  color: #b4befe;
+  margin-top: 8px;
+  margin-bottom: 8px;
+	margin-left: 10px;
+	margin-right: 10px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#custom-arch {
+  font-size: 20px;
+	margin-left: 15px;
+  color: #b4befe;
+}
+
+#workspaces button {
+  background: #11111b;
+  color: #b4befe;
+}
+
+#workspaces button.active {
+  color: #cba6f7;
+}
+
+
+
+#clock {
+  background-color: #11111b;
+  color: #b4befe;
+  border-radius: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#pulseaudio {
+  background-color: #11111b;
+  color: #cdd6f4;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#network {
+  background-color: #11111b;
+  color: #cdd6f4;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+#tray {
+  border-radius: 10px;
+  background-color: #11111b;
+  color: #cdd6f4;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-right: 5px;
+  padding-left: 5px;
+}

@@ -1,0 +1,50 @@
+{
+  "layer": "top",
+    "modules-left": ["custom/arch", "hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": [ "pulseaudio", "bluetooth", "network", "tray"],
+
+    "custom/arch": {
+      "format": "  ",
+      "tooltip": false,
+      "on-click": "sh $HOME/.config/rofi/bin/powermenu"
+    },
+
+    "hyprland/workspaces": {
+      "format": "{name}",
+      "tooltip": false,
+      "active-only": true,
+      "all-outputs": false,
+    },
+
+    "clock": {
+      "format": "<span color='#b4befe'> </span>{:%Y-%m-%d %H:%M %A}",
+    },
+
+    "pulseaudio": {
+      "format": "<span color='#b4befe'>{icon}</span> {volume}%",
+      "format-muted": "",
+      "tooltip": false,
+      "format-icons": {
+        "headphone": "",
+        "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""]
+      },
+      "scroll-step": 3,
+    },
+
+
+    "network": {
+      "interface": "wlp3s0",
+      "format": "{ifname}",
+      "format-wifi": "<span color='#b4befe'> </span>WiFi",
+      "format-ethernet": "{ipaddr}/{cidr} ",
+      "format-disconnected": "<span color='#b4befe'>󰖪 </span>No Network",
+      "tooltip": true,
+    },
+    
+    "tray": {
+      "icon-size": 14,
+      "spacing": 10,
+      "show-passive-items": true
+    },
+}
