@@ -193,10 +193,10 @@ static Key keys[] = {
     {MODKEY|ShiftMask,      XK_l,           exchange_client,    {.i = RIGHT}}, /* super shift l      | 二维交换窗口 (仅平铺) */
 
     /* spawn + SHCMD 执行对应命令(已下部分建议完全自己重新定义) */
-    {MODKEY,                XK_s,           togglescratch,  SHCMD("alacritty --title scratchpad --class float")},
-    {MODKEY,                XK_Return,      spawn,          SHCMD("alacritty")},
-    {MODKEY,                XK_minus,       spawn,          SHCMD("alacritty --class FG")},
-    {MODKEY,                XK_space,       spawn,          SHCMD("alacritty --class float")},
+    {MODKEY,                XK_s,           togglescratch,  SHCMD("kitty --title scratchpad --class float")},
+    {MODKEY,                XK_Return,      spawn,          SHCMD("kitty")},
+    {MODKEY,                XK_minus,       spawn,          SHCMD("kitty --class FG")},
+    {MODKEY,                XK_space,       spawn,          SHCMD("kitty --class float")},
     {MODKEY,                XK_F11,         spawn,          SHCMD("killall pcmanfm || pcmanfm")},
     {MODKEY,                XK_F10,         spawn,          SHCMD("killall screenkey || screenkey")},
     {MODKEY,                XK_p,           spawn,          SHCMD("rofi -show drun")},
