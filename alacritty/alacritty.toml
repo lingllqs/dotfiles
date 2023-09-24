@@ -1,48 +1,54 @@
-import = ["~/.config/alacritty/themes/tokyo-night.toml"]
+import = ["~/.config/alacritty/themes/theme.toml"]
 
 working_directory = "None"
 live_config_reload = true
+ipc_socket = true
 
 [env]
 TERM = "alacritty"
-GTK_IM_MODULE = "fcitx5"
-QT_IM_MODULE = "fcitx5"
-XMODIFIERS = "@im=fcitx5"
-LANG = "en_US.UTF-8"
+LANG = "zh_CN.UTF-8"
 
 [window]
-opacity = 0.8
+opacity = 0.6
 title = "alacritty"
-dynamic_title = false
+padding = { x = 10, y = 8 }
+dynamic_title = true
 class = { instance = "alacritty", general = "alacritty" }
+decorations_theme_variant = "Dark"
 
 [scrolling]
-history = 10000
-multiplier = 3
+history = 10000 # 命令行历史，0 表示不允许滚动，最大值为100000
+multiplier = 3  # 鼠标滚轮每次滚动行数
 
 [font]
-normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
-bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
-italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
-bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
-size = 12.0
+normal = { family = "Hack Nerd Font", style = "Regular" }          # 正常
+bold = { family = "Hack Nerd Font", style = "Bold" }               # 粗体
+italic = { family = "Hack Nerd Font", style = "Italic" }           # 斜体
+bold_italic = { family = "Hack Nerd Font", style = "Bold Italic" } # 粗体加斜体
+size = 16.0                                                        # 字体大小
+offset = { x = 0, y = 0 }                                          # 字符间隔
+builtin_box_drawing = true
 
 [selection]
 save_to_clipboard = true
 
 [cursor]
-style = { shape = "Underline", blinking = "On" }
-vi_mode_style = { shape = "Beam", blinking = "On" }
-blink_interval = 500
+style = { shape = "Underline", blinking = "Always" }
+vi_mode_style = { shape = "Beam", blinking = "Always" }
+blink_interval = 750
 blink_timeout = 0
 unfocused_hollow = true
 thickness = 0.15
 
 [mouse]
 hide_when_typing = true
+bindings = [{ mouse = "Right", mods = "Control", action = "Paste" }]
 
 [keyboard]
 bindings = [
-  { key = "Insert", mods = "Control", mode = "~Vi", action = "CopySelection" },
-  { key = "Insert", mods = "Shift", mode = "~Vi", action = "PasteSelection" },
+  { key = "Insert", mods = "Control", action = "Copy" },
+  { key = "Insert", mods = "Shift", action = "Paste" },
+  { key = "Home", mods = "Control", action = "IncreaseFontSize" },
+  { key = "End", mods = "Control", action = "DecreaseFontSize" },
+  { key = "Home", mods = "Control|Shift", action = "ResetFontSize" },
 ]

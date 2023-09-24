@@ -1,0 +1,5 @@
+    "clock": {
+      "format": "{: %H:%M 󰃭 星期%a %d}",
+      "format-alt": "{:󰥔 %H:%M  %b %Y}",
+      "tooltip-format": "<tt><big>{calendar}</big></tt>"
+    },
