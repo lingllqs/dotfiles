@@ -3,42 +3,40 @@
     border-radius: 0px;
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
-    font-size: 12px;
+    font-size: 14px;
     min-height: 10px;
 }
 
-@import "themes/Catppuccin-Mocha.css";
+@import "themes/theme.css";
 
 window#waybar {
     background: @bar-bg;
 }
 
 tooltip {
-    background: @tool-bg;
-    color: @tool-color;
-    border-radius: 8px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: @tool-border;
+    background: @main-bg;
+    color: @main-fg;
+    border-radius: 7px;
+    border-width: 0px;
 }
 
 #workspaces button {
     box-shadow: none;
-	text-shadow: none;
+	  text-shadow: none;
     padding: 0px;
     border-radius: 9px;
     margin-top: 3px;
     margin-bottom: 3px;
     padding-left: 3px;
     padding-right: 3px;
-    color: @wb-color;
+    color: @main-fg;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #workspaces button.active {
-    background: @wb-act-bg;
-    color: @wb-act-color;
+    background: @wb-hvr-bg;
+    color: @wb-hvr-fg;
     margin-left: 3px;
     padding-left: 12px;
     padding-right: 12px;
@@ -48,8 +46,8 @@ tooltip {
 }
 
 #workspaces button:hover {
-    background: @wb-hvr-bg;
-    color: @wb-hvr-color;
+    background: @wb-act-bg;
+    color: @wb-act-fg;
     padding-left: 3px;
     padding-right: 3px;
     animation: gradient_f 20s ease-in infinite;
@@ -58,7 +56,7 @@ tooltip {
 
 #taskbar button {
     box-shadow: none;
-	text-shadow: none;
+	  text-shadow: none;
     padding: 0px;
     border-radius: 9px;
     margin-top: 3px;
@@ -71,8 +69,8 @@ tooltip {
 }
 
 #taskbar button.active {
-    background: @wb-act-bg;
-    color: @wb-act-color;
+    background: #000000;
+    color: #f2cda2;
     margin-left: 3px;
     padding-left: 12px;
     padding-right: 12px;
@@ -96,6 +94,8 @@ tooltip {
 #clock,
 #cpu,
 #custom-gpuinfo,
+#idle_inhibitor,
+#language,
 #memory,
 #custom-mode,
 #mpris,
@@ -116,12 +116,17 @@ tooltip {
 #custom-sr_end,
 #custom-rl_end,
 #custom-rr_end {
-    color: @main-color;
+    color: @main-fg;
     background: @main-bg;
     opacity: 1;
     margin: 4px 0px 4px 0px;
     padding-left: 4px;
     padding-right: 4px;
+}
+
+#tray menu {
+    color: @main-fg;
+    background: @main-bg;
 }
 
 #workspaces,
@@ -130,13 +135,13 @@ tooltip {
 }
 
 #custom-r_end {
-    border-radius: 0px 22px 22px 0px;
+    border-radius: 0px 21px 21px 0px;
     margin-right: 9px;
     padding-right: 3px;
 }
 
 #custom-l_end {
-    border-radius: 22px 0px 0px 22px;
+    border-radius: 21px 0px 0px 21px;
     margin-left: 9px;
     padding-left: 3px;
 }
@@ -154,13 +159,13 @@ tooltip {
 }
 
 #custom-rr_end {
-    border-radius: 0px 8px 8px 0px;
+    border-radius: 0px 7px 7px 0px;
     margin-right: 9px;
     padding-right: 3px;
 }
 
 #custom-rl_end {
-    border-radius: 8px 0px 0px 8px;
+    border-radius: 7px 0px 0px 7px;
     margin-left: 9px;
     padding-left: 3px;
 }
