@@ -8,6 +8,8 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 alias lv='lvim'
 alias tl='charcoal query'
 alias f='ranger'
+alias j='preview_file.sh'
+alias fy='charcoal query'
 alias p='procs'
 alias ls='eza'
 alias l='eza -l --icons'
@@ -20,8 +22,6 @@ alias v='nvim'
 alias df='duf'
 
 eval "$(fnm env --use-on-cd)"
-export FNM_NODE_DIST_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/
 
 export PATH=$PATH:$HOME/.local/bin/
 
-source /home/lqs/.config/broot/launcher/bash/br

@@ -1,4 +1,5 @@
 #!/bin/bash
+# 用于在<tab>行为发生时获取当前的光标位置
 
 exec < /dev/tty
 oldstty=$(stty -g)

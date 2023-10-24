@@ -26,8 +26,6 @@ alias 8='cd -8'
 alias 9='cd -9'
 alias md='mkdir -p'
 alias rd=rmdir
-alias lg=lazygit
-alias f=ranger
 
 function d () {
   if [[ -n $1 ]]; then
@@ -37,15 +35,11 @@ function d () {
   fi
 }
 compdef _dirs d
-# ls --color=tty . &>/dev/null && alias ls='ls --color=tty' || alias ls='ls -G'
-alias ls='exa'
-alias l='exa -lh --icons'
-alias ll='exa -lah --icons'
-alias la='exa -ah'
-alias lt='exa -T'
-alias v='vim'
-alias nv='nvim'
-alias neofetch='neofetch | lolcat'
+ls --color=tty . &>/dev/null && alias ls='ls --color=tty' || alias ls='ls -G'
+alias lsa='ls -lah'
+alias l='ls -lah'
+alias ll='ls -lh'
+alias la='ls -lAh'
 
 grep-flag-available() {
     echo | grep $1 "" >/dev/null 2>&1
