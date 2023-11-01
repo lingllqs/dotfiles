@@ -10,33 +10,33 @@
 @import "themes/theme.css";
 
 window#waybar {
-    background: @bar-bg;
+    background: @transparent;
 }
 
 tooltip {
-    background: @main-bg;
-    color: @main-fg;
+    background: @black0;
+    color: @white0;
     border-radius: 7px;
     border-width: 0px;
 }
 
 #workspaces button {
     box-shadow: none;
-	  text-shadow: none;
+	text-shadow: none;
     padding: 0px;
     border-radius: 9px;
     margin-top: 3px;
     margin-bottom: 3px;
     padding-left: 3px;
     padding-right: 3px;
-    color: @main-fg;
+    color: @white0;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #workspaces button.active {
-    background: @wb-hvr-bg;
-    color: @wb-hvr-fg;
+    background: @pink1;
+    color: @black1;
     margin-left: 3px;
     padding-left: 12px;
     padding-right: 12px;
@@ -46,8 +46,8 @@ tooltip {
 }
 
 #workspaces button:hover {
-    background: @wb-act-bg;
-    color: @wb-act-fg;
+    background: @overlay3;
+    color: @black1;
     padding-left: 3px;
     padding-right: 3px;
     animation: gradient_f 20s ease-in infinite;
@@ -63,14 +63,14 @@ tooltip {
     margin-bottom: 3px;
     padding-left: 3px;
     padding-right: 3px;
-    color: @wb-color;
+    color: @sky;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #taskbar button.active {
-    background: #000000;
-    color: #f2cda2;
+    background: @black0;
+    color: @white0;
     margin-left: 3px;
     padding-left: 12px;
     padding-right: 12px;
@@ -80,8 +80,8 @@ tooltip {
 }
 
 #taskbar button:hover {
-    background: @wb-hvr-bg;
-    color: @wb-hvr-color;
+    background: @pink1;
+    color: @blue;
     padding-left: 3px;
     padding-right: 3px;
     animation: gradient_f 20s ease-in infinite;
@@ -91,7 +91,6 @@ tooltip {
 #battery,
 #bluetooth,
 #custom-cliphist,
-#clock,
 #cpu,
 #custom-gpuinfo,
 #idle_inhibitor,
@@ -105,6 +104,7 @@ tooltip {
 #custom-spotify,
 #taskbar,
 #tray,
+#clock,
 #custom-updates,
 #custom-wallchange,
 #custom-wbar,
@@ -116,17 +116,26 @@ tooltip {
 #custom-sr_end,
 #custom-rl_end,
 #custom-rr_end {
-    color: @main-fg;
-    background: @main-bg;
+    color: @white0;
+    background: @black0;
     opacity: 1;
     margin: 4px 0px 4px 0px;
     padding-left: 4px;
     padding-right: 4px;
 }
 
+/* #clock { */
+/*     background: @sky; */
+/*     color: @black2; */
+/*     opacity: 1; */
+/*     margin: 4px 0px 4px 0px; */
+/*     padding-left: 4px; */
+/*     padding-right: 4px; */
+/* } */
+
 #tray menu {
-    color: @main-fg;
-    background: @main-bg;
+    color: @white0;
+    background: @black0;
 }
 
 #workspaces,
