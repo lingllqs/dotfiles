@@ -7,9 +7,14 @@
     min-height: 10px;
 }
 
-@import "themes/theme.css";
+@import "themes/theme.conf";
 
+#window {
+    color: @peach;
+}
 window#waybar {
+    border-radius: 10px;
+    margin: 5px 9px 0px 9px;
     background: @transparent;
 }
 
@@ -23,158 +28,123 @@ tooltip {
 #workspaces button {
     box-shadow: none;
 	text-shadow: none;
-    padding: 0px;
+    background: @black0;
     border-radius: 9px;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    padding-left: 3px;
-    padding-right: 3px;
+    margin: 4px 3px 4px 3px;
     color: @white0;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #workspaces button.active {
-    background: @pink1;
+    background: @blue;
     color: @black1;
+    padding-left: 15px;
+    padding-right: 15px;
     margin-left: 3px;
-    padding-left: 12px;
-    padding-right: 12px;
     margin-right: 3px;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #workspaces button:hover {
-    background: @overlay3;
-    color: @black1;
-    padding-left: 3px;
-    padding-right: 3px;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-}
-
-#taskbar button {
-    box-shadow: none;
-	  text-shadow: none;
-    padding: 0px;
-    border-radius: 9px;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    padding-left: 3px;
-    padding-right: 3px;
-    color: @sky;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
-}
-
-#taskbar button.active {
-    background: @black0;
-    color: @white0;
-    margin-left: 3px;
-    padding-left: 12px;
-    padding-right: 12px;
-    margin-right: 3px;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-}
-
-#taskbar button:hover {
     background: @pink1;
-    color: @blue;
-    padding-left: 3px;
-    padding-right: 3px;
+    color: @black1;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
-#battery,
-#bluetooth,
-#custom-cliphist,
-#cpu,
-#custom-gpuinfo,
-#idle_inhibitor,
-#language,
-#memory,
-#custom-mode,
-#mpris,
-#network,
-#custom-power,
-#pulseaudio,
-#custom-spotify,
-#taskbar,
-#tray,
-#clock,
-#custom-updates,
-#custom-wallchange,
-#custom-wbar,
-#window,
-#workspaces,
-#custom-l_end,
-#custom-r_end,
-#custom-sl_end,
-#custom-sr_end,
-#custom-rl_end,
-#custom-rr_end {
-    color: @white0;
-    background: @black0;
+#clock {
+    background: @green;
+    color: @black2;
+    border-radius: 9px;
     opacity: 1;
     margin: 4px 0px 4px 0px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-/* #clock { */
-/*     background: @sky; */
-/*     color: @black2; */
-/*     opacity: 1; */
-/*     margin: 4px 0px 4px 0px; */
-/*     padding-left: 4px; */
-/*     padding-right: 4px; */
-/* } */
+#network {
+    background: @pink1;
+    color: @black2;
+    border-radius: 9px;
+    opacity: 1;
+    margin: 4px 0px 4px 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 5px;
+}
+#bluetooth{
+    background: @sky;
+    color: @black2;
+    border-radius: 9px;
+    opacity: 1;
+    margin: 4px 0px 4px 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+#pulseaudio{
+    background: @peach;
+    color: @black2;
+    opacity: 1;
+    margin: 4px 0px 4px 0px;
+    border-radius: 9px;
+    /* border-top-left-radius: 9px; */
+    /* border-bottom-left-radius: 9px; */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#cpu {
+    color: @black0;
+    background: @mauve;
+    opacity: 1;
+    margin: 4px 0px 4px 0px;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    padding-left: 10px;
+    padding-right: 5px;
+    margin-left: 10px;
+}
+#memory {
+    color: @black0;
+    background: @mauve;
+    opacity: 1;
+    margin: 4px 0px 4px 0px;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+    padding-left: 5px;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+#tray {
+    background: @lavender;
+    border-radius: 9px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 4px 10px 4px 10px;
+}
 
 #tray menu {
-    color: @white0;
     background: @black0;
+    color: @white0;
+    padding-left: 10px;
+    padding-right: 10px;
 }
-
-#workspaces,
-#taskbar {
-    padding: 0px;
-}
-
-#custom-r_end {
-    border-radius: 0px 21px 21px 0px;
-    margin-right: 9px;
-    padding-right: 3px;
-}
-
-#custom-l_end {
-    border-radius: 21px 0px 0px 21px;
+#custom-l_margin {
     margin-left: 9px;
     padding-left: 3px;
 }
-
-#custom-sr_end {
-    border-radius: 0px;
+#custom-r_margin {
     margin-right: 9px;
     padding-right: 3px;
 }
-
-#custom-sl_end {
-    border-radius: 0px;
-    margin-left: 9px;
-    padding-left: 3px;
-}
-
-#custom-rr_end {
-    border-radius: 0px 7px 7px 0px;
-    margin-right: 9px;
-    padding-right: 3px;
-}
-
-#custom-rl_end {
-    border-radius: 7px 0px 0px 7px;
-    margin-left: 9px;
-    padding-left: 3px;
+#custom-power {
+    background: @black0;
+    color: @flamingo;
+    border-radius: 9px;
+    padding-left: 10px;
+    padding-right: 15px;
+    margin: 4px 5px 4px 5px;
 }
