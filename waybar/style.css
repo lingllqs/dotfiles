@@ -14,7 +14,6 @@
 }
 window#waybar {
     border-radius: 10px;
-    margin: 5px 9px 0px 9px;
     background: @transparent;
 }
 
@@ -79,7 +78,7 @@ tooltip {
     color: @black2;
     border-radius: 9px;
     opacity: 1;
-    margin: 4px 0px 4px 0px;
+    margin: 4px 5px 4px 5px;
     padding-left: 10px;
     padding-right: 10px;
 
@@ -88,7 +87,7 @@ tooltip {
     background: @peach;
     color: @black2;
     opacity: 1;
-    margin: 4px 0px 4px 0px;
+    margin: 4px 0px 4px 5px;
     border-radius: 9px;
     /* border-top-left-radius: 9px; */
     /* border-bottom-left-radius: 9px; */
