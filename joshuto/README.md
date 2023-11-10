@@ -1,3 +1,8 @@
+## 先决条件
+
+```bash
+pacman -S joshuto perl-image-exiftool
+```
 ## 使用
 
 ```bash
