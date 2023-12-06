@@ -1,0 +1,41 @@
+{
+    "label" : "lock",
+    "action" : "swaylock",
+    "text" : "锁屏",
+    "keybind" : "l"
+}
+
+{
+    "label" : "logout",
+    "action" : "hyprctl dispatch exit 0",
+    "text" : "注销",
+    "keybind" : "e"
+}
+
+{
+    "label" : "suspend",
+    "action" : "swaylock -f && systemctl suspend",
+    "text" : "挂起",
+    "keybind" : "u"
+}
+
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "关机",
+    "keybind" : "s"
+}
+
+{
+    "label" : "hibernate",
+    "action" : "systemctl hibernate",
+    "text" : "休眠",
+    "keybind" : "h"
+}
+
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "重启",
+    "keybind" : "r"
+}
