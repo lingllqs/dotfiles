@@ -10,10 +10,10 @@
         "custom/l_margin",
         "hyprland/workspaces",
         "custom/l_margin",
-        "hyprland/window",
+        "hyprland/window"
     ],
     "modules-center": [
-        "clock",
+        "clock"
     ],
     "modules-right": [
         "network",
@@ -147,5 +147,5 @@
         "format": " ",
         "interval": "once",
         "tooltip": false
-    },
+    }
 }
