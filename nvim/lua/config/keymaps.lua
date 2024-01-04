@@ -13,6 +13,9 @@ vim.cmd([[
 ]])
 
 local map = vim.keymap.set
+map("", "<space>", "<nop>", { noremap = true })
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 map("i", "<c-u>", "<esc>viwUea", { noremap = true, silent = true }) -- 大写当我们光标所在单词
 map("n", "<bs>", "viwc", { noremap = true, silent = true }) -- 删除光标下单词并进入插入模式
@@ -69,7 +72,7 @@ map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
 --keywordprg
-map("n", "<leader>K", "<cmd>norm! K<cr>", { desc = "Keywordprg" })
+--map("n", "<leader>K", "<cmd>norm! K<cr>", { desc = "Keywordprg" })
 
 -- better indenting
 map("v", "<", "<gv")
