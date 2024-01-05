@@ -6,12 +6,12 @@ ipc_socket = true
 
 [env]
 TERM = "alacritty"
-LANG = "zh_CN.UTF-8"
+# LANG = "en_US.UTF-8"
 
 [window]
-opacity = 0.6
+opacity = 0.8
 title = "alacritty"
-padding = { x = 10, y = 8 }
+padding = { x = 5, y = 5 }
 dynamic_title = true
 class = { instance = "alacritty", general = "alacritty" }
 decorations_theme_variant = "Dark"
