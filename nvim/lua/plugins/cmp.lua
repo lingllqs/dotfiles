@@ -55,6 +55,9 @@ return {
         }
 
         cmp.setup({
+            completion = {
+                completeopt = 'menu,menuone,preview,noselect',
+            },
             snippet = {
                 expand = function(args)
                     require('luasnip').lsp_expand(args.body)
@@ -97,19 +100,18 @@ return {
                 end, { "i", "s" }),
             }),
             formatting = {
+                expandable_indicator = true,
                 fields = { "kind", "abbr", "menu" },
                 format = function(entry, vim_item)
-                    -- Kind icons
                     vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-                    -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
                     vim_item.menu = ({
-                        nvim_lsp = "[LSP]",
-                        luasnip = "[SNIPPET]",
-                        buffer = "[BUFFER]",
-                        path = "[PATH]",
+                        nvim_lsp = "[lsp]",
+                        luasnip = "[snippet]",
+                        buffer = "[buffer]",
+                        path = "[path]",
                     })[entry.source.name]
                     return vim_item
-                end,
+                end
             },
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
