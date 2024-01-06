@@ -59,6 +59,6 @@
 | neofetch                    | 系统信息       |
 | dolphin                     | 文件浏览器     |
 | visual-studio-code-bin      | vscode         |
-| nvim                        | 文本编辑工具   |
+| neovim                      | 文本编辑工具   |
 | ark                         | 压缩工具       |
 | zsh                         | shell          |
