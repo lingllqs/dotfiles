@@ -17,7 +17,7 @@ map("", "<space>", "<nop>", { noremap = true })
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-map("i", "<c-u>", "<esc>viwUea", { noremap = true, silent = true }) -- 大写当我们光标所在单词
+map("i", "<A-u>", "<esc>viwUea", { noremap = true, silent = true }) -- 大写当我们光标所在单词
 map("n", "<bs>", "viwc", { noremap = true, silent = true }) -- 删除光标下单词并进入插入模式
 
 map("i", "jk", "<esc>", { noremap = true, silent = true })

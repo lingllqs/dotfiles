@@ -1,5 +1,5 @@
 return {
-    "godlygeek/tabular",
-    config = function()
-    end
+  "godlygeek/tabular",
+  config = function()
+  end
 }
