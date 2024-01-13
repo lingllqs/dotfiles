@@ -43,6 +43,9 @@ local function Run(opt)
       vim.cmd(string.format('term lua "%s"', filename))
     elseif filetype == 'markdown' then
       vim.cmd('MarkdownPreview')
+    elseif filetype == 'rust' then
+      RunWin()
+      vim.cmd(string.format('term rustc "%s" && ./"%s" && rm -f "%s"', filename, runfile, runfile))
     elseif filetype == 'sh' then
       RunWin()
       vim.cmd(string.format('term bash "%s"', filename))
@@ -57,9 +60,9 @@ local function Run(opt)
 end
 
 vim.api.nvim_create_autocmd({ 'FileType' }, {
-  pattern = { 'c', 'cpp', 'python', 'lua', 'markdown', 'sh', 'html' },
+  pattern = { 'c', 'cpp', 'python', 'rust', 'lua', 'markdown', 'sh', 'html' },
   callback = function()
-    vim.keymap.set('n', '<leader>r', Run, { desc = "run code" })
+    vim.keymap.set('n', '<leader>lr', Run, { desc = "run code" })
     vim.api.nvim_create_user_command('Run', function(opt)
       Run(opt.args)
     end, { nargs = 1 })
