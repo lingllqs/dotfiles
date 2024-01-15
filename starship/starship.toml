@@ -13,7 +13,7 @@ $character"""
 [directory]
 truncation_length = 1
 format = "\\[[$path]($style)\\] "
-style = "bold cyan"
+style = "italic bold cyan"
 
 [character]
 success_symbol = "[❯](green)"
@@ -22,7 +22,7 @@ vimcmd_symbol = "[❮](green)"
 
 [git_branch]
 format = "[$branch]($style)"
-style = "italic bright-black"
+style = "bright-black"
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
