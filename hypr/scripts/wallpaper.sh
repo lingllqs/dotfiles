@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-wall_set = $HOME/Pictures/wallpaper/1.jpg
+wall_set = $HOME/Pictures/wallpaper/女孩-叶子.jpg
 
 wallpaper_set() {
 	swww img "$wall_set" \
