@@ -32,7 +32,7 @@
 | qt5-graphicaleffects        | sddm主题依赖   |
 | hyprland-git                | 窗口管理器     |
 | dunst                       | 通知后台程序   |
-| rofi                        | 应用启动器     |
+| rofi-lbonn-wayland          | 应用启动器     |
 | waybar                      | 状态栏         |
 | swww                        | 壁纸           |
 | swaylock                    | 锁屏           |
