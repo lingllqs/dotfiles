@@ -64,8 +64,8 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "󰤨 WiFi  {bandwidthDownBytes}",
-        "format-ethernet": "󱘖 Wired",
+        "format-wifi": " WiFi  {bandwidthDownBytes}",
+        "format-ethernet": "󰛳 Wired",
         "tooltip-format": "󱘖 {ipaddr}\n {bandwidthUpBytes}",
         "format-linked": "󱘖 {ifname} (No IP)",
         "format-disconnected": " Disconnected",
