@@ -1,0 +1,1650 @@
+ls
+which z
+cd .config/
+ls
+cd nushell/
+ls
+..
+cd hypr/
+ls
+nvim hyprland.conf
+cd
+cd Downloads/
+ls
+cd qq_downloads/
+ls
+l
+ls
+cat Trans.json
+cd 
+cd .local/share/nvim/lazy/Trans.nvim/
+ls
+cp ~/Downloads/qq_downloads/Trans.json .
+ls
+nvim Trans.json
+cd Downloads/
+ls
+cd browser_downloads/
+ls
+l
+ls
+paru -S unzip
+unzip ecdict-sqlite-28.zip
+ls
+unzip ecdict-ultimate-sqlite.zip
+ls
+ls
+unzip ultimate.zip
+ls
+cd Downloads/browser_downloads/
+ls
+rm stardict.db ultimate.db
+l
+ls
+eza -l
+v Trans.json
+nvim Trans.json
+ls
+cd
+ls
+cd .config/nushell/
+nvim env.nu
+$nu.config-path
+nvim config.nu
+nvim env.nu
+z nu
+ls
+cd .config/nushell/
+ls
+ls -a
+ls .cache/
+nvim env.nu
+nvim config.nu
+nvim env.nu
+nvim config.nu
+ls
+cd .config/starship/
+l
+ll
+ls
+nvim starship.toml
+ls
+cd .config/nushell/
+ls
+nvim env.nu
+paru -S nwg-look kvantum qt5ct
+paru -S dolphin
+cd dotfiles/
+ls
+j
+ls
+cd sddm
+ls
+cat README.md
+sudo cp -r catppuccin-macchiato/ /usr/share/sddm/themes/
+sudo cp sddm.conf /etc
+cd dotfiles/
+ls
+cp pictures/ ../Pictures
+cp pictures/ ../Pictures -r
+cd
+cd Pictures/
+ls
+cd wallpaper/
+ls
+j
+ls
+config env 
+cd
+cd .config/nushell/
+nvim config.nu
+nvim env.nu
+config env 
+ls
+config env
+$env.config.buffer_editor
+echo $env.config.buffer_editor
+cd .config/nushell/
+$env.HTTPS_PROXY
+$env.config.buffer_editor
+config env
+nvim env.nu
+cd .config/hypr/
+ls
+..
+cd waybar/
+nvim config.jsonc
+paru -S nerd-fonts-complete
+nvim config.jsonc
+paru -Rsc nerd-fonts-complete
+paru -S nerd-fonts-jetbrainsmono
+z way
+cd .config/waybar/
+ls
+cd .config/hypr/
+ls
+nvim hyprland.conf
+paru
+paru -S nerd-fonts-complete
+paru
+paru -S qt5-wayland qt6-wayland
+jq
+neofetch
+paru -S if
+paru -S lf
+lf
+ls
+mkdir App
+cd App/
+ls
+git clone https://github.com/jstkdng/ueberzugpp.git
+cd ueberzugpp/
+ls
+mkdir build
+cd build/
+cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_X11=OFF -DENABLE_OPENCV=OFF -DENABLE_WAYLAND=ON ..
+paru -S base-devel cmake make
+cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_X11=OFF -DENABLE_OPENCV=OFF -DENABLE_WAYLAND=ON ..
+paru -S tbb
+cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_X11=OFF -DENABLE_OPENCV=OFF -DENABLE_WAYLAND=ON ..
+paru -S chafa
+cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_X11=OFF -DENABLE_OPENCV=OFF -DENABLE_WAYLAND=ON ..
+paru -S sixel
+paru -S extra-cmake-modules
+cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_X11=OFF -DENABLE_OPENCV=OFF -DENABLE_WAYLAND=ON ..
+paru -S libvips
+cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_X11=OFF -DENABLE_OPENCV=OFF -DENABLE_WAYLAND=ON ..
+paru -S libsixel
+cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_X11=OFF -DENABLE_OPENCV=OFF -DENABLE_WAYLAND=ON ..
+ls
+cmake --build .
+ls
+./ueberzugpp
+which ueberzug
+which ueberzugpp
+eza -l
+echo $env.PATH
+config env
+mkdir .local/bin
+$env.PATH
+z build
+cd App/ueberzugpp/build/
+ls
+ln -sf ./ueberzug ~/.local/bin/ueberzugpp
+which ueberzugpp
+$env.PATH
+cd .local/bin/
+ls
+eza -l
+rm ueberzugpp
+ls
+cd
+cd App/ueberzugpp/build/
+ls
+cp ueberzug ~/.local/bin/ueberzugpp
+which ueberzugpp
+cd
+cd Pictures/
+j
+cd
+cd .config/rofi/
+ls
+cd config/
+ls
+config env
+config nu 
+config env
+ls
+config env
+ls
+cd Pictures/
+ls
+cd icons/
+ls
+cd
+z icon
+zi ic
+paru telegram
+cd
+cd Downloads/
+ls
+cd browser_downloads/
+ls
+unzip theme.tdesktop-theme.zip
+ls
+..
+ls
+mkdir tg_downloads
+cd
+ls
+mkdir Documents
+cd Documents/
+ls
+mkdir themes
+ls
+z bro
+ls
+mv theme.tdesktop-theme ~/Documents/themes/
+git config --global core.editor "nvim"
+xdg-user-dirs-update 
+paru -S xdg-user-dirs-update
+nvim ~/.config/user-dirs.dirs
+paru catppuccin
+blueman-applet 
+z hy
+ls
+which v
+nvim hyprland.conf
+systemctl enable bluetooth
+systemctl start bluetooth
+v hyprland.conf
+nvim hyprland.conf
+paru
+config env
+paru
+config env
+paru
+timedatectl set-ntp true
+timedatectl 
+hwclock --systohc
+sudo hwclock --systohc
+sudo hwclock --hctosys
+man timedatectl
+info timedatectl
+sudo timedatectl set-timezone Asia/Shanghai
+sudo timedatectl set-ntp true
+date
+date now
+timedatectl status<\n>
+date now
+systemctl status bluetooth
+systemctl enable bluetooth
+systemctl status bluetooth
+systemctl start bluetooth
+systemctl status bluetooth
+blueman-applet 
+z hy
+ls
+v
+nvim hyprland.conf
+systemctl start bluetooth.service
+ping github.com
+z dot
+ls
+git remote -v
+git push github main
+paru
+config env
+ping github.com
+cat /etc/resolv.conf
+sudo nvim /etc/resolv.conf
+sudo chattr +i /etc/resolv.conf
+ping github.com
+ping t.cn
+systemctl restart NetworkManager
+ping github.com
+ping t.cn
+$env.https.proxy = "http://localhost:7897"
+ping t.cn
+ping github.com
+paru
+paru -Sua
+$env.https.proxy = "http://localhost:7897"
+paru -Sua
+$env.https.proxy = "http://127.0.0.1:7897"
+paru -Sua
+$env.https_proxy = "http://127.0.0.1:7897"
+paru -Sua
+ping github.com
+paru
+paru -Syyu
+paru -S hyprland-git
+paru hyprland-git
+$env.https_proxy = "http://127.0.0.1:7897"
+$env.https.proxy = "http://127.0.0.1:7897"
+paru hyprland-git
+paru
+rustup
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+$env.https_proxy = "http://127.0.0.1:7897"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+$env.https.proxy = "http://127.0.0.1:7897"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+$env.CARGO_HOME
+ls -a
+cd .cargo
+ls
+nvim config
+ls
+man ls
+config nu 
+paru -S man-db man-pages
+man alias
+man eza
+ls
+l
+ls
+l
+ll
+ls
+l
+ll
+ls
+lt
+md
+config nu 
+j
+which ueberzugpp
+config nu 
+ls
+j
+ueberzugpp 
+paru
+paru -Syu
+ping github.com
+paru
+ls
+cd temp/
+ls
+z app
+cd
+cd App/
+ls
+cd ueberzugpp/
+ls
+gs
+git status
+pwd
+git pull 
+cd build/
+ls
+cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_X11=OFF -DENABLE_OPENCV=OFF -DENABLE_WAYLAND=ON ..
+cmake --build .
+ls
+j
+z wall
+cd Pictures/wallpaper/
+j
+ls
+cd Documents/
+ls
+cd themes/
+ls
+git clone https://github.com/dracula/grub.git
+$env.https.proxy = "http://127.0.0.1:7897"
+git clone https://github.com/dracula/grub.git
+z theme
+ls
+$env.https_proxy = "http://127.0.0.1:7897"
+git clone https://github.com/dracula/grub.git
+ls
+cd grub/
+ls
+sudo cp -r dracula/ /boot/grub/themes/
+sudo nvim /etc/default/grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+paru
+ls
+which cargo
+z
+zi 
+cd -
+ls
+history
+ls
+config nu
+l
+man ls
+man bat
+config nu
+ls
+cat /etc/resolv.conf
+config nu
+cat /etc/resolv.conf
+config nu
+cat .config/hypr/hyprland.conf
+man bat
+config nu
+cat .config/hypr/hyprland.conf
+config nu
+cat .config/hypr/hyprland.conf
+batgrep
+config nu
+config env
+man ls
+man col
+man ls
+config env
+man select
+paru tela
+paru
+ping github.com
+ls
+l
+ll
+l
+ll
+l
+z waybar
+ls
+v config.jsonc
+z ala
+..
+ls
+z hy
+..
+cd alacritty/
+ls
+alacritty --version
+v alacritty.toml
+z way
+ls
+zi
+v config.jsonc
+z way
+v config.jsonc
+ls
+z star
+..
+ls
+cd starship/
+cd Documents/
+v starship.toml
+ls
+z star
+ls
+z dot
+ls
+v starship.toml
+z star
+ls
+v starship.toml
+ls
+z dot
+ls
+cd
+ls
+pwd
+starship
+ls
+z pal
+z w
+ls
+z w
+ls
+j
+ls
+fc-list
+fc-list | rg jet
+fc-list | rg -i jet
+z ala
+v alacritty.toml
+ls
+z hy
+ls
+z way
+ls
+v config.jsonc
+ls
+l
+cd
+cd .config/nivm
+cd .config/nvim
+ls
+ls lua/plugins/
+ls
+..
+ls
+la
+config nu
+cd -
+la
+z .con
+ls
+l
+rm nvim
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+z nvim
+pwd
+rm -rf .git/
+l
+cd lua
+ls
+cd config/
+ls
+cat autocmds.lua
+cp ~/dotfiles/nvim/lua/* .
+cp ~/dotfiles/nvim/lua/* . -r
+l
+pwd
+ls
+l
+rm plugins/ -r
+ls
+mv tools/ ..
+ls
+cat options.lua
+mv basic.lua options.lua
+rm options.lua
+mv basic.lua options.lua
+l
+cat options.lua
+cat autocmds.lua
+cp ~/dotfiles/nvim/lua/basic.lua .
+ls
+cat basic.lua
+rm basic.lua
+ls
+..
+cd plugins/
+ls
+cp ~/dotfiles/nvim/lua/plugins/ccc.lua .
+cp ~/dotfiles/nvim/lua/plugins/autopairs.lua .
+cp ~/dotfiles/nvim/lua/plugins/markdownpreview.lua .
+cp ~/dotfiles/nvim/lua/plugins/translate.lua .
+v
+paru neovide
+neovide 
+z 04
+ls
+z
+z 04
+cd plugins/
+z pl
+z
+which z
+whereis z
+whereis ls
+man man
+config nu
+man man
+man col
+config env
+man man
+man col
+man man
+man col
+config env
+man col
+man bat
+man col
+man man
+man ls
+config env
+man ls
+man col
+config env
+man col
+config env
+man col
+config env
+ls
+man ls
+z hy
+v hyprland.conf
+paru
+ping github.com
+cat /etc/resolv.conf
+paru
+z way
+ls
+v config.jsonc
+j
+help commands 
+help commands | more
+help commands | head
+help commands | cat
+which more
+which head
+which info
+which help
+help ls
+info ls
+info ls | cat
+help cat
+which cat
+help info
+help select
+ls | select name
+ls
+l
+l | select name
+paru -S fcitx5-im
+paru -S fcitx5-rime rime-flypy
+paru -S fcitx5-lua
+paru -S fcitx5-pinyin-zhwiki rime-pinyin-zhwiki
+paru -S rime-double-pinyin
+cd
+mkdir ~/.config/fcitx5/rime
+cd .config/fcitx5/rime/
+ls
+v default.custom.yaml
+z rime
+ls
+paru -S rime-double-pinyin
+pwd
+z rime
+ls
+..
+z rime
+mv default.custom.yaml ~/.local/share/fcitx5/rime/
+..
+ls
+..
+ls
+rm -r fcitx5/
+cd
+v .local/share/fcitx5/rime/
+cd .local/share/fcitx5/rime/
+v default.custom.yaml
+paru -S rime-double-pinyin rime-flypy
+ls
+v default.custom.yaml
+z wall
+ls
+swww img 女孩
+swww img 女孩-叶子.jpg
+..
+ls
+cd resources/
+ls
+j
+mv 4085755b9e599242aba38fe00d709c8b5169fb9cdc113dc1002f1375a2fe9c0d.png 小鹤音形.png
+l
+j
+‘2007.1.1
+z rime
+ls
+v default.custom.yaml
+z ala
+ls
+v alacritty.toml
+ls
+z ala
+ls
+v alacritty.toml
+z star
+ls
+z star
+ls
+v starship.toml
+ls
+z pi
+z dot
+ls
+z con
+ls
+cd starship/
+ls
+v starship.toml
+z star
+ls
+cp starship.toml ../../.config/starship/
+ls
+z star
+ls
+l
+ls
+l
+ls
+rm starship.toml
+l
+ln -sf ~/dotfiles/starship/starship.toml starship.toml
+ls
+l
+ls
+z dot
+ls
+z dot
+ls
+z dot
+ls
+l
+z dot
+v starship.toml
+z down
+ls
+l
+cat 小鹤音形for手机搜狗百度自定义方案.txt
+z rime
+ls
+v default.custom.yaml
+rg 5
+ls
+cat installation.yaml
+cat user.yaml
+z con
+ls
+cd fcitx5/
+ls
+v config
+\t
+我\t
+z rofi
+cd
+cd .config/
+ls
+cd rofi/
+ls
+cd config/
+ls
+v clipboard.rasi
+z rofi
+ls
+cd config/
+v clipboard.rasi
+ls
+z rofi
+ls
+cd config/
+ls
+v launcher.rasi
+z hy
+cd scripts/
+ls
+..
+v keybindings.conf
+z rofi
+v bin/launcher
+z wall
+j
+z wall
+l
+z bro
+l
+j
+mv `Æ¯ÁÁÃÀÅ®ºÚÉ«³¤·¢ ºÚÉ«È¹×Ó 2560x1600¶¯Âþ±ÚÖ½_±Ë°¶Í¼Íø.jpg` 黑色长发女孩.jpg
+l
+v config/launcher_1.rasi
+paru
+$env.https_proxy = "http://127.0.0.1:7897"
+paru
+l
+cd .config/
+ls
+sudo nvim /etc/locale.gen.pacnew
+sudo nvim /etc/locale.conf
+paru
+$env.https_proxy = "http://127.0.0.1:7897"
+paru
+z way
+ls
+v config.jsonc
+l
+z way
+pwd
+v config.jsonc
+l
+z rime
+pwd
+ls
+v default.custom.yaml
+cd /usr/share/rime-data/flypy_full/
+ls
+v flypy_full.txt
+zi
+ls
+v user.yaml
+cd build/
+ls
+..
+l
+cat installation.yaml
+ln -s /usr/share/rime-data/flypy_full/flypy_full.txt ~/.local/share/fcitx5/rime/
+ls
+l
+v flypy_full.txt
+z hy
+ls
+v hyprland.conf
+paru
+pwd
+ls
+l
+ls
+ping github.com
+l
+ping github.com
+l
+ls App/
+l
+j
+ping github.com
+ping t.cn
+ls | sort-by modified
+l | sort-by modified
+l | sort-by modified | where size > 10mb
+l | sort-by modified | where size > 1k
+l | sort-by modified | where size > 1kb
+l / | sort-by modified | where size > 1mb
+l /
+which http
+help http
+help https
+10 / "bob"
+(http get https://api.chucknorris.io/jokes/random).value
+ping t.cn
+l
+help chown
+man chown
+man chmod
+id -u
+ls
+cd dotq
+cd dotfiles/
+l
+ls
+cd dwl
+ls
+..
+l
+ls
+l
+ls
+cd
+ls
+cd App/
+ls
+git clone https://codeberg.org/dwl/dwl.git
+ls
+cd dwl
+ls
+v util.c
+z nvim
+ls
+pwd
+cd lua
+ls
+cd config/
+ls
+v autocmds.lua
+v keymaps.lua
+v options.lua
+v keymaps.lua
+z dwl
+v util.c
+$env.https_proxy = "http://127.0.0.1:7897"
+v util.c
+clang-format -style=microsoft -dump-config | save -f ~/.clang-format
+paru -S clang
+clang-format -style=microsoft -dump-config | save -f ~/.clang-format
+ls
+v util.c
+ls
+v config.def.h
+z lua
+ls
+cd config/
+ls
+v options.lua
+z dwl
+v util.c
+v config.def.h
+ls
+z config
+ls
+v options.lua
+z plug
+ls
+v tabular.lua
+..
+cd config/
+v options.lua
+cd
+cd .local/share/nvim/lazy/
+ls
+cd LazyVim/
+ls
+cd lua
+ls
+cd lazyvim/
+ls
+cd config/
+ls
+v options.lua
+z con
+ls
+z config
+ls
+cd nvim
+cd lua/config/
+ls
+l
+rm 
+ls
+rm \u{10}
+ls
+l
+rm \u{10}
+rm \u{10} -rf
+l
+ls
+l
+mv autocmds.lua ..
+mv keymaps.lua ..
+mv lazy.lua ..
+mv options.lua ..
+ls
+..
+ls
+rm -r config/
+mkdir config
+ls
+mv autocmds.lua config/
+mv keymaps.lua config/
+ls
+mv lazy.lua config/
+ls
+mv options.lua config/
+ls
+cd config/
+ls
+v options.lua
+z dwl
+ls
+pwd
+la
+v util.c
+v config.def.h
+git remote -v
+rm .git
+rm .git -r
+ls
+la
+cd .gitea/
+ls
+la
+cd issue_template/
+la
+v bug_report.yml
+...
+ls
+cd protocols/
+ls
+..
+ls
+v dwl.c
+ls protocols/
+ls
+make
+ls
+make install
+sudo make clean install 
+dwl
+ls
+l
+ls
+hyprprop
+paru hyprprop
+hyprprop
+paru hyprevent
+v config.h
+paru discord
+$env.https_proxy = "http://127.0.0.1:7897"
+paru discord
+paru
+ls
+timedatectl status<\n>
+timedatectl set-ntp true
+timedatectl status<\n>
+paru
+z down
+l
+mv clash.apk clash.apk.1
+l
+mv `com.google.android.gsf_14-34_minAPI34(nodpi)_apkmirror.com.apk` google-service.apk.1
+l
+mv `com.google.android.gsf_12-31_minAPI31(nodpi)_apkmirror.com.apk` google-service.apk.1
+mv `com.google.android.gsf_12-31_minAPI31(nodpi)_apkmirror.com.apk` google-service.apk.2
+l
+z dwl
+ls
+pwd
+systemctl enable seatd
+systemctl status seatd
+paru yambar
+v config.h
+paru yambar
+yambar
+cd .config/
+md yambar
+cd yambar/
+v config.yaml
+yambar
+mv config.yaml config.yml
+yambar
+pkill yambar
+z dwl
+ls
+v config.h
+exit
+z dwl
+sudo make clean install 
+v config.h
+sudo make clean install 
+ls
+yambar
+ls
+z dwl
+ls
+v config.h
+sudo make clean install 
+v config.h
+z dwl
+v config.h
+ls
+z dwl
+v config.h
+sudo make clean install 
+ls
+z dwl
+ls
+v config.h
+sudo make clean install 
+z dwl
+v config.h
+sudo make clean install 
+v config.h
+sudo make clean install 
+ls
+man alacritty
+paru
+alacritty -c
+alacritty --help
+z dot
+ls
+cd dwm
+ls
+v config.h
+z dwl
+v config.h
+sudo make clean install 
+ls
+ping t.cn
+systemctl suspend
+z dwl
+ls
+v
+ls
+v config.h
+z dwl
+ls
+man system
+man sprintf
+mk scripts
+md scripts
+cd scripts/
+ls
+touch startup.sh
+ls
+z hy
+l
+v startup.sh
+chmod +x startup.sh
+l
+v dwl.c
+sudo make clean install 
+z scripts/
+ls
+cat /etc/environment
+z hy
+l
+v startup.sh
+z dwl
+sudo make clean install 
+echo $GTK_IM_MODULE
+z dwm
+pwd
+ls
+cd scripts/
+ls
+cat autostart.sh
+ls
+cd scripts/
+ls
+z dwm
+cd scripts/
+ls
+cat autostart.sh
+z hy
+cd scripts/
+ls
+cat wallpaper.sh
+v wallpaper.sh
+z sc
+ls
+pwd
+paru
+v startup.sh
+z sc
+ls
+v startup.sh
+z dwl
+v config.h
+sudo make clean install 
+ls
+z dwl
+ls
+v config.h
+mv ~/scripts/ .
+ls
+ls scripts/
+v config.h
+config env
+sudo make clean install 
+v config.h
+sudo make clean install 
+v config.h
+sudo make clean install 
+z dwl
+$env.DWL
+yambar
+ls
+v config.h
+sudo make clean install 
+ls
+cd .config/rofi/
+ls
+./bin/launcher
+cd bin
+ls
+v launcher
+which wofi
+paru rofi
+$env.https_proxy = "http://127.0.0.1:7897"
+paru rofi
+ls
+z dwl
+v config.h
+sudo make clean install 
+ls
+z dwl
+v config.h
+sudo make clean install 
+z dwl
+ls
+v scripts/startup.sh
+sudo make clean install 
+z dwl
+v scripts/startup.sh
+sudo make clean install 
+yambar
+fcitx5
+z dwl
+ls
+z hy
+ls
+waybar
+z hy
+ls
+v scripts/startup.sh
+sudo make clean install 
+ls
+z dwl
+ls
+v config.h
+sudo make clean install 
+fcitx5
+z dwl
+v scripts/startup.sh
+sudo make clean install 
+yambar
+ls
+z dwl
+ls
+v dwl.c
+sudo make clean install 
+z dwl
+sudo make clean install 
+v dwl.c
+sudo make clean install 
+fcitx5
+ls
+v config.h
+z dwm
+ls
+v config.h
+z dwl
+ls
+v config.h
+$env.DWL_DIR = "/home/lqs/App/dwl"
+sudo make clean install 
+yambar
+z dwl
+$env.DWL_DIR
+z nu
+cd
+cd .config/nushell/
+ls
+l
+rm \
+l
+v env.nu
+z dwl
+$env.DWL_DIR
+z dwl
+sudo make clean install 
+ls
+z dwl
+$env.XDG_RUNTIME_DIR
+v config.h
+sudo make clean install 
+l
+cat dwl.desktop
+v dwl.desktop
+sudo make clean install 
+systemctl start bluetooth.service
+z dwl
+ls
+v scripts/startup.sh
+swww query
+l
+fcitx5
+ls
+v dwl.desktop
+sudo make clean install 
+ls
+z dwl
+ls
+cat dwl.desktop
+z dwl
+l
+ls
+v client.h
+v xdg-shell-protocol.h
+v Makefile
+ls
+v config.h
+ls
+z hy
+ls
+cd scripts/
+ls
+v wallpaper.sh
+cd
+ls
+cd Pictures/
+ls
+cd wallpaper/
+ls
+z dwl
+ls
+v dwl.c
+fcitx5
+paru
+paru -Sua
+paru
+$env.https_proxy = "http://127.0.0.1:7897"
+paru
+paru -Sua
+paru
+$env.https_proxy = "http://127.0.0.1:7897"
+paru
+def sz [] {<\n>  each {|r|<\n>    let by = $r.size | format filesize b<\n>    let kb = $r.size | format filesize kb<\n>    let mb = $r.size | format filesize mb<\n>    let gb = $r.size | format filesize gb<\n>    {name: $r.name Bytes: $by KB: $kb MB: $mb GB: $gb }<\n>  }<\n>}
+l | sz
+z dwl
+z dwm
+ls
+pwd
+v config.h
+sudo make clean install 
+v dwl.c +345
+sudo make clean install 
+dwl
+ls
+yambar
+ls
+z dwl
+ls
+cd scripts/
+ls
+l
+./startup.sh
+ls
+fcitx5
+pkill fcitx5
+fcitx5
+..
+ls
+v dwl.c
+sudo make clean install 
+ls
+fcitx5
+swww query
+echo $?
+swww init
+ls
+paru
+$?
+l
+man rm
+l
+date
+date humanize 
+date humanize  now
+date now
+date to-table 
+date now | to_table
+date to-table now
+date now to-table
+date
+date now | to-table
+date
+date to-table
+date now | date to-table
+date | date to-table
+date
+date now | date humanize 
+date now | date to-record 
+date now | date to-timezone 
+date to-timezone 
+date | date to-timezone 
+date
+date to-timezone Asiz/Shanghai
+date now | date to-timezone Asiz/Shanghai
+date now | date to-timezone Asia/Shanghai
+date now
+date now | date to-table
+date +%p
+date
+date -h
+date list-timezone 
+date
+date now
+config nu
+date now
+paru
+$env.https_proxy = "http://127.0.0.1:7897"
+paru -Sua
+paru clash-verge-rev
+z hy
+ls
+v windowrules.conf
+v keybindings.conf
+cd
+ls
+hyprprop
+z hy
+v windowrules.conf
+z way
+ls
+paru
+v config.jsonc
+$env.https_proxy = "http://127.0.0.1:7897"
+v config.jsonc
+paru
+env
+env | l
+env
+env | cat
+env | bat
+vim
+vim .vimrc
+z wlo
+cd .config/wlogout/
+ls
+paru
+$env.https_proxy = "http://127.0.0.1:7897"
+paru
+v layout_1
+v layout_2
+l
+vim $nu.env-path
+vim $nu.config-path
+vi .vimrc
+vim $nu.config-path
+v .vimrc
+vimtutor zh
+v $nu.config-path
+vi .vimrc
+cd .config/
+l
+ll
+l
+cd
+vi .vimrc
+vi
+vi .vimrc
+ls
+z lua
+ls
+pwd
+cd config/
+ls
+v keymaps.lua
+cd
+ls
+vi .vimrc
+env
+env | where name=user
+env | where name == user
+env | where name == USER
+$env.USER
+help cargo
+which cargo
+man cargo
+$env.config.hooks.pre_prompt
+ls
+l
+$env.https_proxy = "http://127.0.0.1:7897"
+paru
+z dwl
+v dwl.c
+sudo make clean install 
+date now
+waybar
+ls
+cd App/dwl/
+ls
+v scripts/startup.sh
+z hy
+ls
+v hyprland.conf
+cd
+gping
+paru
+paru clash-verge-rev
+ls
+cd App/
+ls
+..
+ls
+cd Downloads/
+ls
+cd browser_downloads/
+ls
+l
+ls
+rm clash.apk.1
+rm google-service.apk.1
+rm google-service.apk.2
+ls
+./clash-verge_1.5.1_amd64.AppImage
+chmod +x clash-verge_1.5.1_amd64.AppImage
+./clash-verge_1.5.1_amd64.AppImage
+ls
+mv clash-verge_1.5.1_amd64.AppImage ~/App/clash-verge-appimage/
+man mv
+mv clash-verge_1.5.1_amd64.AppImage ~/App/
+ls
+cd
+cd App/
+ls
+md clash-verge-appimage
+mv clash-verge_1.5.1_amd64.AppImage clash-verge-appimage/
+ls
+z hy
+ls
+v hyprland.conf
+hyprprop
+z hy
+v windowrules.conf
+hyprprop
+z hy
+v windowrules.conf
+z ala
+env
+v alacritty.toml
+env
+z way
+ls
+v config.jsonc
+z pic
+pwd
+ls
+cd icons/
+ls
+l
+j
+cd /boot/grub/
+ls
+cd themes/
+ls
+cd dracula/
+ls
+j
+v theme.txt
+sudo mv ~/Pictures/icons/logo.png ./logo_huaji.png
+ls
+vi theme.txt
+sudo vim theme.txt
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+$env.https_proxy = "http://127.0.0.1:7897"
+paru
+paru -Rsc clash-verge-rev-bin
+paru
+z hy
+v hyprland.conf
+z hy
+vi keybindings.conf
+z hy
+ls
+v scripts/cliphist.sh
+ls
+cliphist list | rofi -dmenu | cliphist decode | wl-copy
+systemctl status udiskie
+paru -S udiskie
+paru -S udiskies
+systemctl status udiskies
+udiskie
+which udiskie
+systemctl status udiskie
+systemctl disable udiskie
+systemctl status udisks2
+v hyprland.conf
+z hy
+v hyprland.conf
+swww init
+z Pictures/
+cd wallpaper/
+ls
+swww img 女孩-叶子.jpg
+j
+paru -S hyprpicker
+paru  hyprpicker
+hyprpicker 
+l
+hyprpicker 
+ls
+z rofi
+ls
+cd config/
+ls
+v clipboard.rasi
+ls
+..
+...
+..
+cd
+ls
+l
+cd .config/
+ls
+z hy
+v keybindings.conf
+pgrep dolphin
+man pkill
+cd
+ls
+z dot
+ls
+cp -r ../.config/hypr/ .
+ls
+gs
+git status
+git add hypr/
+git commit -m "更新hypr配置"
+git add waybar/
+git commit -m "修改图标"
+git status
+git add starship/
+git commit -m "更新starship配置"
+git push github main
+paru -Qi waybar
+paru waybar
+paru -Qi rofi
+v README.md
+git add README.md
+z dot
+git status
+git commit -m "修改帮助文档"
+git push github main
+git log
+paru -Qi xdg-desktop-portal-hyprland<\n>
+paru -Qi xdg-desktop-portal
+z hy
+ls
+v hyprland.conf
+systemctl --user status xdg-desktop-portal-hyprland
+paru -Qi xdg-desktop-portal
+v hyprland.conf
+z dot
+ls
+cd hy
+cd hypr/
+ls
+v hyprland.conf
+cat hyprpaper.conf
+cat hyprpaper.conf.bak
+git rm hyprpaper.conf.bak
+git status
+git commit -m "删除hyprpaper.conf.bak文件"
+git status
+paru hypridle
+paru -Qi hyprlang
+paru
+l
+..
+l\
+l
+cd joshuto/
+ls
+cat README.md
+cp ~/.local/bin/ueberzugpp .
+ls
+v README.md
+./run_joshuto.sh
+v README.md
+ls
+..
+git status
+git add joshuto/
+git commit -m "添加ueberzugpp工具,由于更新系统可能出现版本库不对"
+git push github main
+cd joshuto/
+l
+z hy
+v hyprland.conf
+loginctl info
+help loginctl
+man loginctl
+ls
+config nu
+config env
+ls
+z nu
+ls
+cat history.txt
+cd
+z dot
+cp ~/.config/nushell/ .
