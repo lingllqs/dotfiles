@@ -2,6 +2,7 @@
 有些字体和工具需要自行查找下载
 
 ![](./screenshots/screenshot.png)
+![](./screenshots/music.png)
 
 # 一些软件和工具
 
