@@ -185,8 +185,10 @@ arc_color = "#89dceb"
   ratio=45
   [[row.child]]
     [[row.child.child]]
+      ratio=35
       type="disk"
     [[row.child.child]]
+      ratio=45
       type="mem"
   [[row.child]]
     type="temp"
