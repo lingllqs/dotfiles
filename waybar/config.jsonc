@@ -7,13 +7,14 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "modules-left": [
-        "custom/l_margin",
+        "custom/logo",
         "hyprland/workspaces",
         "custom/l_margin",
         "hyprland/window"
     ],
     "modules-center": [
-        "clock"
+        "clock",
+        "mpd",
     ],
     "modules-right": [
         "network",
@@ -37,7 +38,8 @@
         "separate-outputs": true
     },
     "clock": {
-        "format": " {:%H:%M 󰃭 %A}",
+        //"format": " {:%H:%M 󰃭 %A}",
+        "format": "{:%H:%M %A}",
         "format-alt": " {:%Y年%m月%d日}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
@@ -64,14 +66,41 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": " WiFi  {bandwidthDownBytes}",
-        "format-ethernet": "󰛳 Wired",
+        "format-wifi": "  WiFi  {bandwidthDownBytes}",
+        "format-ethernet": "󰀂 Wired",
         "tooltip-format": "󱘖 {ipaddr}\n {bandwidthUpBytes}",
         "format-linked": "󱘖 {ifname} (No IP)",
         "format-disconnected": " Disconnected",
         "format-alt": "󰤨 {signalStrength}%",
         "interval": 5
     },
+
+    "mpd": {
+        "format": " {stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})  ",
+        "format-disconnected": "Disconnected  ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped  ",
+        "interval": 10,
+        "consume-icons": {
+            "on": " " // Icon shows only when "consume" is on
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+
     "cpu": {
         "interval": 1,
         "format": " {usage}%",
@@ -130,6 +159,13 @@
     "tray": {
         "icon-size": 16,
         "spacing": 5
+    },
+    "custom/logo": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": "once",
+        "on-click": "pkill -x wofi || wofi --show drun",
+        "exec": "echo ; echo 应用菜单",
     },
     "custom/power": {
         "format": "{}",
