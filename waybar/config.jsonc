@@ -2,15 +2,13 @@
     "layer": "top",
     "position": "top",
     "mod": "dock",
-    "height": 31,
+    "height": 30,
     "exclusive": true,
     "passthrough": false,
-    "gtk-layer-shell": true,
     "modules-left": [
-        "custom/logo",
+//        "custom/logo",
         "hyprland/workspaces",
-        "custom/l_margin",
-        "hyprland/window"
+        "hyprland/window",
     ],
     "modules-center": [
         "clock",
@@ -20,12 +18,11 @@
         "network",
         "bluetooth",
         "pulseaudio",
-        // "pulseaudio#microphone",
+        // "pulseaudio/slider",
         "cpu",
         "memory",
         "tray",
         "custom/power",
-        "custom/r_margin"
     ],
     "hyprland/workspaces": {
         "disable-scroll": false,
@@ -145,43 +142,27 @@
             ]
         }
     },
-    // "pulseaudio#microphone": {
-    //     "format": "{format_source}",
-    //     "format-source": "",
-    //     "format-source-muted": "",
-    //     "on-click": "pavucontrol -t 4",
-    //     "on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -i m",
-    //     "on-scroll-up": "~/.config/hypr/scripts/volumecontrol.sh -i i",
-    //     "on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -i d",
-    //     "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
-    //     "scroll-step": 5
+    // "pulseaudio/slider": {
+    //     "min": 0,
+    //     "max": 100,
+    //     "orientation": "horizontal"
     // },
     "tray": {
         "icon-size": 16,
         "spacing": 5
     },
-    "custom/logo": {
-        "format": "{}",
-        "tooltip": true,
-        "interval": "once",
-        "on-click": "pkill -x wofi || wofi --show drun",
-        "exec": "echo ; echo 应用菜单",
-    },
+//    "custom/logo": {
+//        "format": "{}",
+//        "tooltip": true,
+//        "interval": "once",
+//        "on-click": "pkill -x wofi || wofi --show drun",
+//        "exec": "echo ; echo 应用菜单",
+//    },
     "custom/power": {
         "format": "{}",
         "exec": "echo ; echo  logout",
         "on-click": "~/.config/hypr/scripts/logoutlaunch.sh 2",
-        "interval": 86400, // once every day
+        "interval": "once", // once every day
         "tooltip": true
     },
-    "custom/l_margin": {
-        "format": " ",
-        "interval": "once",
-        "tooltip": false
-    },
-    "custom/r_margin": {
-        "format": " ",
-        "interval": "once",
-        "tooltip": false
-    }
 }

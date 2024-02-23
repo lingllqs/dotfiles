@@ -10,34 +10,40 @@
 @import "themes/theme.conf";
 
 #window {
-    color: @peach;
+    color: #f5997f;
+    margin-left: 20px;
 }
+
 window#waybar {
-    border-radius: 10px;
-    background: @transparent;
+    background: rgba(0, 0, 0, 0.0);
+    margin: 5px 5px 5px 5px;
 }
 
 tooltip {
-    background: @black0;
-    color: @white0;
-    border-radius: 7px;
+    background: #11111b;
+    color: #cdd6f4;
+    border-radius: 5px;
     border-width: 0px;
+}
+
+#workspaces {
+    margin-left: 5px;
 }
 
 #workspaces button {
     box-shadow: none;
 	text-shadow: none;
-    background: @black0;
-    border-radius: 9px;
-    margin: 4px 3px 4px 3px;
-    color: @white0;
+    background: #222436;
+    border-radius: 5px;
+    margin: 4px 3px 4px 3px; /*上右下左*/
+    color: #cdd6f4;
     animation: gradient_f 20s ease-in infinite;
-    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #workspaces button.active {
     background: #86ffff;
-    color: @black1;
+    color: #313244;
     padding-left: 15px;
     padding-right: 15px;
     margin-left: 3px;
@@ -47,16 +53,16 @@ tooltip {
 }
 
 #workspaces button:hover {
-    background: @pink1;
-    color: @black1;
+    background: #f5c2e7;
+    color: #313244;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #clock {
-    background: @green;
-    color: @black2;
-    border-radius: 9px;
+    background: #a6da95;
+    color: #000000;
+    border-radius: 5px;
     opacity: 1;
     margin: 4px 0px 4px 0px;
     padding-left: 10px;
@@ -64,19 +70,18 @@ tooltip {
 }
 
 #network {
-    background: @pink1;
-    color: @black2;
-    border-radius: 9px;
+    background: #f5c2e7;
+    color: #000000;
+    border-radius: 5px;
     opacity: 1;
-    margin: 4px 0px 4px 0px;
+    margin: 4px 5px 4px 5px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-right: 5px;
 }
 #bluetooth{
-    background: @sky;
-    color: @black2;
-    border-radius: 9px;
+    background: #91d7e3;
+    color: #000000;
+    border-radius: 5px;
     opacity: 1;
     margin: 4px 5px 4px 5px;
     padding-left: 10px;
@@ -84,75 +89,85 @@ tooltip {
 
 }
 #pulseaudio{
-    background: @peach;
-    color: @black2;
+    background: #f5a97f;
+    color: #000000;
+    opacity: 1;
+    margin: 4px 5px 4px 5px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/* #pulseaudio-slider { */
+/*     padding: 0px 0px 0px 0px; */
+/*     margin: 4px 0px 4px 5px; */
+/* } */
+/* #pulseaudio-slider slider { */
+/*     min-height: 0px; */
+/*     min-width: 0px; */
+/*     opacity: 0; */
+/*     background-image: none; */
+/*     border: none; */
+/*     box-shadow: none; */
+/* } */
+/* #pulseaudio-slider trough { */
+/*     min-height: 0px; */
+/*     min-width: 100px; */
+/*     border-radius: 5px; */
+/*     background-color: #000000; */
+/* } */
+/* #pulseaudio-slider highlight { */
+/*     min-width: 0px; */
+/*     border-radius: 5px; */
+/*     background-color: #ef8faa; */
+/* } */
+#cpu {
+    color: #11111b;
+    background: #c6a0f6;
     opacity: 1;
     margin: 4px 0px 4px 5px;
-    border-radius: 9px;
-    /* border-top-left-radius: 9px; */
-    /* border-bottom-left-radius: 9px; */
-    padding-left: 10px;
-    padding-right: 10px;
-}
-#cpu {
-    color: @black0;
-    background: @mauve;
-    opacity: 1;
-    margin: 4px 0px 4px 0px;
-    border-top-left-radius: 9px;
-    border-bottom-left-radius: 9px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     padding-left: 10px;
     padding-right: 5px;
-    margin-left: 10px;
 }
 #memory {
-    color: @black0;
-    background: @mauve;
+    color: #11111b;
+    background: #c6a0f6;
     opacity: 1;
-    margin: 4px 0px 4px 0px;
-    border-top-right-radius: 9px;
-    border-bottom-right-radius: 9px;
+    margin: 4px 5px 4px 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     padding-left: 5px;
     padding-right: 10px;
-    margin-right: 10px;
 }
 
 #tray {
-    background: @lavender;
-    border-radius: 9px;
+    background: #b7bdf8;
+    border-radius: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    margin: 4px 10px 4px 10px;
+    margin: 4px 5px 4px 5px;
 }
 
 #tray menu {
-    background: @black0;
-    color: @white0;
+    background: #11111b;
+    color: #cdd6f4;
     padding-left: 10px;
     padding-right: 10px;
-}
-#custom-l_margin {
-    margin-left: 9px;
-    padding-left: 3px;
-}
-#custom-r_margin {
-    margin-right: 9px;
-    padding-right: 3px;
 }
 #custom-power {
-    background: @black0;
-    color: @flamingo;
-    border-radius: 9px;
-    padding-left: 10px;
-    padding-right: 15px;
-    margin: 4px 5px 4px 5px;
+    background: #dce2f1;
+    color: #523782;
+    border-radius: 5px;
+    padding: 0px 13px 0px 10px;
+    margin: 4px 8px 4px 5px;
 }
-#custom-logo {
-    background: transparent;
-    color: #aafaaa;
-    border-radius: 9px;
-    padding-left: 15px;
-    padding-right: 10px;
-    margin: 0px 5px 0px 10px;
-    font-size: 20px;
-}
+/* #custom-logo { */
+/*     background: transparent; */
+/*     color: #aafaaa; */
+/*     border-radius: 9px; */
+/*     padding-left: 15px; */
+/*     padding-right: 10px; */
+/*     margin: 4px 10px 4px 10px; */
+/*     font-size: 20px; */
+/* } */
