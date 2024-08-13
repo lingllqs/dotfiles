@@ -166,7 +166,7 @@ $env.config = {
     # Behavior without this configuration point will be to "humanize" the datetime display,
     # showing something like "a day ago."
     datetime_format: {
-        normal: '%Y%m%d %H:%M:%S %a'    # shows up in displays of variables or other datetime's outside of tables
+        normal: '%Y年%m月%d日 %H:%M:%S %A'    # shows up in displays of variables or other datetime's outside of tables
         # table: '%m/%d/%y %I:%M:%S%p'          # generally shows up in tabular outputs such as ls. commenting this out will change it to the default human readable datetime format
     }
 
@@ -224,8 +224,8 @@ $env.config = {
     buffer_editor: "" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
     use_ansi_coloring: true
     bracketed_paste: true # enable bracketed paste, currently useless on windows
-    edit_mode: emacs # emacs, vi
-    shell_integration: false # enables terminal shell integration. Off by default, as some terminals have issues with this.
+    edit_mode: vi # emacs, vi
+    # shell_integration: false # enables terminal shell integration. Off by default, as some terminals have issues with this.
     render_right_prompt_on_last_line: false # true or false to enable or disable right prompt to be rendered on last line of the prompt.
     use_kitty_protocol: false # enables keyboard enhancement protocol implemented by kitty console, only if your terminal support this.
     highlight_resolved_externals: false # true enables highlighting of external commands in the repl resolved by which.
@@ -756,12 +756,24 @@ $env.config = {
 
 source ~/.zoxide.nu
 
-alias ll = ls -la
-alias l = ls -l
-alias ls = eza
-alias lt = eza -T
-alias v = nvim
-alias vi = vim
-alias md = mkdir
-alias cat = bat -p
-alias la = eza -a
+export alias ll = ls -la
+export alias l = ls -l
+export alias ls = eza
+export alias lt = eza -T
+export alias v = nvim
+export alias vi = vim
+export alias md = mkdir
+export alias cat = bat -p
+export alias la = eza -a
+
+# export alias gll = git --no-pager log --pretty=tformat:'%C(red)%h%Creset %C(yellow)%s%Creset' --graph -n 10
+# export alias glll = git --no-pager log --date=format:'%Y-%m-%d %H:%M' --pretty=tformat:"%C(red)%h%Creset %C(blue)%cd%Creset %C(green)%cn%Creset %C(yellow)%s%Creset" --graph -n 10
+
+
+def gls [x: int = 10] {
+    git log --pretty=(ansi red)%h»¦«(ansi yellow)%s | lines | split column "»¦«" sha1 desc | first $x
+}
+
+def gll [x: int = 10] {
+    git log --pretty=(ansi red)%h»¦«(ansi blue)%aN»¦«(ansi green)%cd»¦«(ansi yellow)%s --date=format:'%Y-%m-%d %H:%M'| lines | split column "»¦«" sha1 committer merged_at desc | first $x
+}
