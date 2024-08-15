@@ -36,8 +36,8 @@ $env.PROMPT_COMMAND_RIGHT = {||}
 # The prompt indicators are environmental variables that represent
 # the state of the prompt
 $env.PROMPT_INDICATOR = {||}
-$env.PROMPT_INDICATOR_VI_INSERT = {|| ": " }
-$env.PROMPT_INDICATOR_VI_NORMAL = {|| "〉" }
+$env.PROMPT_INDICATOR_VI_INSERT = {|| "" }
+$env.PROMPT_INDICATOR_VI_NORMAL = {|| "" }
 $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
 
 
@@ -84,7 +84,6 @@ $env.NU_PLUGIN_DIRS = [
 $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.local/bin/')
 
 
-# $env.https.proxy = http://127.0.0.1:7897
 $env.EDITOR = nvim
 
 zoxide init nushell | str replace --all "-- $rest" "-- ...$rest" | str replace --all "def-env" "def --env" | save -f ~/.zoxide.nu
@@ -92,3 +91,7 @@ zoxide init nushell | str replace --all "-- $rest" "-- ...$rest" | str replace -
 $env.MANROFFOPT = "-c"
 $env.MANPAGER = "sh -c 'col -bx | bat -l man -p'"
 $env.DWL_DIR = "/home/lqs/App/dwl"
+$env.RUSTUP_DIST_SERVER = "https://rsproxy.cn"
+$env.RUSTUP_UPDATE_ROOT = "https://rsproxy.cn/rustup"
+$env.CARGO_UNSTABLE_SPARSE_REGISTRY = true
+$env.https_proxy = "http://127.0.0.1:7897"
