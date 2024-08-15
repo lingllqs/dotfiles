@@ -1,3 +1,4 @@
+# 执行完命令后是否添加一行空行
 add_newline = false
 
 format = """
