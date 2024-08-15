@@ -1,27 +1,35 @@
-_OMZ_APPLY_PREEXEC_HOOK=true
-_OMZ_APPLY_CHPWD_HOOK=true
-_OMZ_APPLY_HISTORYBYFZF=true
-source ~/.config/omz/omz.zsh
+alias l='eza -l --icons'
+alias ls='eza'
+alias la='eza -a'
+alias ll='eza -al --icons'
+alias lt='eza -T'
+alias v='nvim'
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
-alias lv='lvim'
-alias tl='charcoal query'
-alias f='ranger'
-alias j='preview_file.sh'
-alias fy='charcoal query'
-alias p='procs'
-alias ls='eza'
-alias l='eza -l --icons'
-# alias l="nu -c 'ls -l'"
-alias ll='eza -la --icons'
-# alias ll="nu -c 'ls -la'"
-alias la='eza -a'
-alias lt='eza -T'
-alias v='nvim'
-alias df='duf'
 
-eval "$(fnm env --use-on-cd)"
+eval "$(zoxide init zsh)"
 
-export PATH=$PATH:$HOME/.local/bin/
+eval "$(starship init zsh)"
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
+export HTTPS_PROXY="http://127.0.0.1:7897"
+
+
+# git 相关快捷键
+hashColor=${gitHashColor:-"magenta"}
+contentColor=${gitContentColor:-"cyan"}
+dateColor=${gitDateColor:-"yellow"}
+authorColor=${gitAuthorColor:-"blue"}
+
+gitlog() {
+    git --no-pager log --date=format:'%Y-%m-%d %H:%M'  --pretty=tformat:$1 --graph -n ${2-10} \
+}
+
+gll() {
+    gitlog "%C(${hashColor})%h %C(${contentColor})%s%Creset" $1
+}
+
+glll() { 
+    gitlog "%C(${hashColor})%h %C(${dateColor})%cd %C(${authorColor})%cn: %C(${contentColor})%s%Creset" $1
+}
