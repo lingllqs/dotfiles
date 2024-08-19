@@ -2,8 +2,11 @@
 #
 # version = "0.89.0"
 
+$env.OMN = ($env.HOME + "/.config/nushell")
+
+
 $env.STARSHIP_SHELL = "nu"
-$env.STARSHIP_CONFIG = "/home/lqs/.config/starship/starship.toml"
+$env.STARSHIP_CONFIG = $env.HOME + "/.config/starship/starship.toml"
 
 def create_left_prompt [] {
     starship prompt $'--status=($env.LAST_EXIT_CODE)'
@@ -94,4 +97,4 @@ $env.DWL_DIR = "/home/lqs/App/dwl"
 $env.RUSTUP_DIST_SERVER = "https://rsproxy.cn"
 $env.RUSTUP_UPDATE_ROOT = "https://rsproxy.cn/rustup"
 $env.CARGO_UNSTABLE_SPARSE_REGISTRY = true
-$env.https_proxy = "http://127.0.0.1:7897"
+# $env.https_proxy = "http://127.0.0.1:7897"

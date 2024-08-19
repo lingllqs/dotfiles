@@ -1,11 +1,12 @@
 source ~/.zoxide.nu
-source ~/.config/nushell/scripts/git.nu
-source ~/.config/nushell/scripts/alias.nu
+source ~/.config/nushell/scripts/themes/colors.nu
+source ~/.config/nushell/scripts/alias/alias.nu
+source ~/.config/nushell/scripts/git/git-completion.nu
 
 $env.config = {
     show_banner: false # 欢迎信息
     ls: {
-        clickable_links: true    # 链接是否可点击，需要终端模拟器支持
+        clickable_links: true # 链接是否可点击，需要终端模拟器支持
     }
     table: {
         mode: rounded # 列表显示模式
@@ -29,7 +30,14 @@ $env.config = {
     edit_mode: vi # 编辑模式 emacs,vi
     highlight_resolved_externals: true
     hooks: {
-            display_output: "if (term size).columns >= 50 { table -e } else { table  }"
+        display_output: "if (term size).columns >= 30 { table -e } else { table }"
+        pre_prompt: {||}
+        pre_execution: {||}
+        env_change: {
+            PWD: [
+                {|before, after| {}}
+            ]
+        }
     }
     keybindings: [
         {
