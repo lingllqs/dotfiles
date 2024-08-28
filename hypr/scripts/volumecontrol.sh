@@ -59,7 +59,7 @@ fi
 # set device action
 
 shift $((OPTIND - 1))
-step="${2:-5}"
+step="${2:-3}"
 icodir="~/.config/dunst/icons/vol"
 
 case $1 in

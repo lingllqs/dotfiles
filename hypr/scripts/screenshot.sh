@@ -11,7 +11,7 @@ temp_screenshot="/tmp/screenshot.png"
 
 mkdir -p $save_dir
 mkdir -p $swpy_dir
-echo -e "[Default]\nsave_dir=$save_dir\nsave_filename_format=$save_file" >$swpy_dir/config
+echo -e "[Default]\nsave_dir=$save_dir\nsave_filename_format=$save_file" > $swpy_dir/config
 
 function print_error
 {
@@ -25,18 +25,22 @@ EOF
 }
 
 case $1 in
-p) # print all outputs
+p) # 截取所有屏幕并编辑
 	grimblast copysave screen $temp_screenshot && swappy -f $temp_screenshot ;;
-s) # drag to manually snip an area / click on a window to print it
+s) # 选取一个矩形区域或者鼠标点击截取一个窗口区域并编辑
 	grimblast --freeze copysave area $temp_screenshot && swappy -f $temp_screenshot ;;
-m) # print focused monitor
+m) # 截取当前屏幕并编辑
 	grimblast copysave output $temp_screenshot && swappy -f $temp_screenshot ;;
-*) # invalid option
+c) # 截取一个矩形区域或者鼠标点击截取一个窗口区域并复制到剪切板
+    grimblast --freeze copy area $temp_screenshot ;;
+*) # 无效参数则打印提示信息
 	print_error ;;
 esac
 
+# 删除临时截图
 rm "$temp_screenshot"
 
+# 如果保存了截图则弹窗提示
 if [ -f "$save_dir/$save_file" ]; then
 	dunstify "t1" -a "saved in $save_dir" -i "$save_dir/$save_file" -r 91190 -t 2200
 fi
