@@ -2,8 +2,31 @@ source ~/.zoxide.nu
 source ~/.config/nushell/scripts/themes/colors.nu
 source ~/.config/nushell/scripts/alias/alias.nu
 source ~/.config/nushell/scripts/git/git-completion.nu
+source ~/.config/nushell/scripts/filesystem/autojump.nu
+source ~/.config/nushell/scripts/filesystem/back_to_last_dir.nu
+source ~/.config/nushell/scripts/yazi/yazi.nu
+
 
 $env.config = {
+    buffer_editor: nvim # 默认文本编辑器
+    menus: [ 
+        {
+            name: completion_menu
+            only_buffer_difference: false
+            marker: ""
+            type: {
+                layout: columnar
+                columns: 4
+                col_width: 20
+                col_padding: 2
+            }
+            style: {
+                text: green_italic
+                selected_text: green_reverse
+                description_text: "#ffffaa"
+            }
+        }
+    ]
     show_banner: false # 欢迎信息
     ls: {
         clickable_links: true # 链接是否可点击，需要终端模拟器支持
@@ -29,16 +52,6 @@ $env.config = {
     }
     edit_mode: vi # 编辑模式 emacs,vi
     highlight_resolved_externals: true
-    hooks: {
-        display_output: "if (term size).columns >= 30 { table -e } else { table }"
-        pre_prompt: {||}
-        pre_execution: {||}
-        env_change: {
-            PWD: [
-                {|before, after| {}}
-            ]
-        }
-    }
     keybindings: [
         {
             name: cut_line_from_start
@@ -55,4 +68,17 @@ $env.config = {
             event: {edit: cuttoend}
         }
     ]
+    hooks: {
+        display_output: "if (term size).columns >= 50 { table -e } else { table }"
+        pre_prompt: {||}
+        pre_execution: {||}
+        env_change: {
+            PWD: [
+                { 
+                    condition: {|before, after| $before != $after}
+                    code: {|before, after| ($after | save -f ([$env.OMN, "/cache/currentdir.txt"] | str join) --stderr /dev/null)}
+                }
+            ]
+        }
+    }
 }

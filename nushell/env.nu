@@ -1,24 +1,18 @@
-# Nushell Environment Config File
-#
-# version = "0.89.0"
-
-$env.OMN = ($env.HOME + "/.config/nushell")
+# nushell 环境配置文件
 
 
-$env.STARSHIP_SHELL = "nu"
-$env.STARSHIP_CONFIG = $env.HOME + "/.config/starship/starship.toml"
-
+# 命令行左边提示符
 def create_left_prompt [] {
     starship prompt $'--status=($env.LAST_EXIT_CODE)'
     # starship prompt --cmd-duration $env.CMD_DURATION_MS $'--status=($env.LAST_EXIT_CODE)'
 }
 
+# 定义命令行右边提示符
 def create_right_prompt [] {
-    # create a right prompt in magenta with green separators and am/pm underlined
     let time_segment = ([
         (ansi reset)
         (ansi magenta)
-        (date now | format date '%x %X %p') # try to respect user's locale
+        (date now | format date '%x %X %p')
     ] | str join | str replace --regex --all "([/:])" $"(ansi green)${1}(ansi magenta)" |
         str replace --regex --all "([AP]M)" $"(ansi magenta_underline)${1}")
 
@@ -31,24 +25,19 @@ def create_right_prompt [] {
     ([$last_exit_code, (char space), $time_segment] | str join)
 }
 
-# Use nushell functions to define your right and left prompt
+# 左边命令行提示符
 $env.PROMPT_COMMAND = {|| create_left_prompt }
-# FIXME: This default is not implemented in rust code as of 2023-09-08.
+# 右边命令行提示符
 $env.PROMPT_COMMAND_RIGHT = {||}
 
-# The prompt indicators are environmental variables that represent
-# the state of the prompt
+# 命令提示状态，例如vi模式下用什么符号提示你正在vi模式下
 $env.PROMPT_INDICATOR = {||}
 $env.PROMPT_INDICATOR_VI_INSERT = {|| "" }
 $env.PROMPT_INDICATOR_VI_NORMAL = {|| "" }
 $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
 
 
-# If you want previously entered commands to have a different prompt from the usual one,
-# you can uncomment one or more of the following lines.
-# This can be useful if you have a 2-line prompt and it's taking up a lot of space
-# because every command entered takes up 2 lines instead of 1. You can then uncomment
-# the line below so that previously entered commands show with a single `🚀`.
+# 命令执行完后提示符样式
 # $env.TRANSIENT_PROMPT_COMMAND = {|| "🚀 " }
 # $env.TRANSIENT_PROMPT_INDICATOR = {|| "" }
 # $env.TRANSIENT_PROMPT_INDICATOR_VI_INSERT = {|| "" }
@@ -71,30 +60,42 @@ $env.ENV_CONVERSIONS = {
     }
 }
 
-# Directories to search for scripts when calling source or use
-# The default for this is $nu.default-config-dir/scripts
+# nushell 脚本目录
 $env.NU_LIB_DIRS = [
-    ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
+    ($nu.default-config-dir | path join 'scripts')
 ]
 
-# Directories to search for plugin binaries when calling register
-# The default for this is $nu.default-config-dir/plugins
+# nushell 插件目录
 $env.NU_PLUGIN_DIRS = [
-    ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
+    ($nu.default-config-dir | path join 'plugins')
 ]
 
-# To add entries to PATH (on Windows you might use Path), you can use the following pattern:
+# 路径环境变量
 $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.local/bin/')
 
+# 默认文本编辑器，也可以在 config.nu 文件配置 buffer_editor
+# $env.EDITOR = nvim
 
-$env.EDITOR = nvim
+# 目录快捷跳转工具 zoxide 配置
+# zoxide init nushell | str replace --all "-- $rest" "-- ...$rest" | str replace --all "def-env" "def --env" | save -f ~/.zoxide.nu
+zoxide init nushell | save -f ~/.zoxide.nu
 
-zoxide init nushell | str replace --all "-- $rest" "-- ...$rest" | str replace --all "def-env" "def --env" | save -f ~/.zoxide.nu
+# starship 配置
+$env.STARSHIP_SHELL = "nu"
+$env.STARSHIP_CONFIG = ([$env.HOME, "/.config/starship/starship.toml"] | str join)
 
+# man 手册高亮
 $env.MANROFFOPT = "-c"
 $env.MANPAGER = "sh -c 'col -bx | bat -l man -p'"
+
+# dwl 目录
 $env.DWL_DIR = "/home/lqs/App/dwl"
+
+# rust 镜像
 $env.RUSTUP_DIST_SERVER = "https://rsproxy.cn"
 $env.RUSTUP_UPDATE_ROOT = "https://rsproxy.cn/rustup"
+
 $env.CARGO_UNSTABLE_SPARSE_REGISTRY = true
+$env.FNM_NODE_DIST_MIRROR = "https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/"
+
 # $env.https_proxy = "http://127.0.0.1:7897"
