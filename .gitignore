@@ -5,3 +5,4 @@ playlists/
 .pid
 .sql
 .git/
+nushell/history.txt
