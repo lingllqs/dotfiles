@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "swaylock",
+    "action" : "hyprlock",
     "text" : "锁屏",
     "keybind" : "l"
 }
@@ -14,7 +14,7 @@
 
 {
     "label" : "suspend",
-    "action" : "swaylock -f && systemctl suspend",
+    "action" : "systemd-run --user hyprlock && systemctl suspend",
     "text" : "挂起",
     "keybind" : "u"
 }

@@ -1,15 +1,14 @@
 * {
     background-image: none;
-    font-size: ${fntSize}px;
+    font-size: ${font_size}px;
 }
-
 
 window {
     background-color: rgba(0,0,0,0.5);
 }
 
 button {
-    color: black;
+    color: #000000;
     background-color: #26233a;
     outline-style: none;
     border: none;
