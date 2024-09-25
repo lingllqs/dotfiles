@@ -1,8 +1,9 @@
 {
     "layer": "top",
     "position": "top",
-    "mod": "dock",
+    "mode": "dock",
     "height": 30,
+    "margin": "5 8 0 8",
     "exclusive": true,
     "passthrough": false,
     "modules-left": [
@@ -25,7 +26,8 @@
         "custom/power",
     ],
     "hyprland/workspaces": {
-        "disable-scroll": false,
+        // "disable-scroll": false,
+        // "persistent-workspaces": {"*": 1},
         "active-only": false,
         "all-outputs": true,
         "on-click": "activate"
@@ -35,12 +37,13 @@
         "separate-outputs": true
     },
     "clock": {
-        //"format": " {:%H:%M 󰃭 %A}",
-        "format": "{:%H:%M %A}",
-        "format-alt": " {:%Y年%m月%d日}",
+        "locale": "zh_CN.UTF-8",
+        "timezones": ["Asia/Shanghai"],
+        "format": "{:%H:%M}",
+        "format-alt": "{:%Y年%m月%d日 %A}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
-            "mode": "year",
+            "mode": "month",
             "mode-mon-col": 3,
             "weeks-pos": "right",
             "on-scroll": 1,
@@ -63,9 +66,9 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "  WiFi  {bandwidthDownBytes}",
+        "format-wifi": "  WiFi  {bandwidthUpBytes}  {bandwidthDownBytes}",
         "format-ethernet": "󰀂 Wired",
-        "tooltip-format": "󱘖 {ipaddr}\n {bandwidthUpBytes}",
+        "tooltip-format": "󱘖 {ipaddr}\n",
         "format-linked": "󱘖 {ifname} (No IP)",
         "format-disconnected": " Disconnected",
         "format-alt": "󰤨 {signalStrength}%",
@@ -159,7 +162,7 @@
 //        "exec": "echo ; echo 应用菜单",
 //    },
     "custom/power": {
-        "format": "{}",
+        "format": " {}",
         "exec": "echo ; echo  logout",
         "on-click": "~/.config/hypr/scripts/logoutlaunch.sh 2",
         "interval": "once", // once every day
