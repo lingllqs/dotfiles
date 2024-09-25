@@ -1,6 +1,6 @@
 /*****----- 配置 -----*****/
 configuration {
-	modi:                       "drun,run,filebrowser,window";
+	modi:                       "";
     show-icons:                 true;
     display-drun:               "APPS";
     display-run:                "RUN";
@@ -27,7 +27,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       875px;
+    width:                       350px;
     height:                      500px;
     x-offset:                    0px;
     y-offset:                    0px;
@@ -42,25 +42,25 @@ window {
 mainbox {
     enabled:                     true;
     spacing:                     0px;
-    background-color:            transparent;
-    background-image:            url("~/Pictures/wallpaper/4.jpg", height);
-    orientation:                 horizontal;
-    children:                    [ "controlbox", "listbox" ];
+    background-color:            #020202;
+   /* background-image:            url("~/Pictures/wallpaper/节日少女.jpg", height);*/
+    orientation:                 vertical;
+    children:                    [ "listbox" ];
 }
 
 controlbox {
     padding:                     20px;
     background-color:            transparent;
     orientation:                 vertical;
-    children:                    [ "inputbar", "dummy", "mode-switcher" ];
+    children:                    [ "inputbar" ];
 }
 
 listbox {
     spacing:                     20px;
     padding:                     20px;
-    background-color:            transparent;
+    background-color:            #101010;
     orientation:                 vertical;
-    children:                    [ "message", "listview" ];
+    children:                    [ "inputbar", "message", "listview" ];
 }
 
 dummy {
@@ -73,8 +73,8 @@ inputbar {
     spacing:                     10px;
     padding:                     15px;
     border-radius:               10px;
-    background-color:            @background-alt;
-    text-color:                  @foreground;
+    background-color:            #202020ee;
+    text-color:                  #afaffa;
     children:                    [ "textbox-prompt-colon", "entry" ];
 }
 textbox-prompt-colon {
@@ -89,7 +89,7 @@ entry {
     background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 "Search";
+    placeholder:                 "查找";
     placeholder-color:           inherit;
 }
 
@@ -125,7 +125,7 @@ listview {
     fixed-height:                true;
     fixed-columns:               true;
     
-    spacing:                     10px;
+    spacing:                     8px;
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      "default";
@@ -154,8 +154,8 @@ element normal.active {
     text-color:                  @foreground;
 }
 element selected.normal {
-    background-color:            @selected;
-    text-color:                  @foreground;
+    background-color:            #8fea9aff;
+    text-color:                  #000000;
 }
 element selected.urgent {
     background-color:            @urgent;
