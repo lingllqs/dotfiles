@@ -5,12 +5,12 @@ return {
         require("Trans").install()
     end,
     keys = {
-        { "mm", mode = { "n", "x" }, "<Cmd>Translate<CR>", desc = " Translate" },
-        { "mk", mode = { "n", "x" }, "<Cmd>TransPlay<CR>", desc = " Auto Play" },
-        { "mi", "<Cmd>TranslateInput<CR>", desc = " Translate From Input" },
+        { "<leader>mm", mode = { "n", "x" }, "<Cmd>Translate<CR>", desc = " Translate" },
+        { "<leader>mk", mode = { "n", "x" }, "<Cmd>TransPlay<CR>", desc = " Auto Play" },
+        { "<leader>mi", "<Cmd>TranslateInput<CR>", desc = " Translate From Input" },
     },
     opts = {
         -- your configuration there
-        theme = "dracula",
+        theme = "tokyonight",
     },
 }

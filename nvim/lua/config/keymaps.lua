@@ -1,21 +1,20 @@
 -- Markdown 对齐
 vim.cmd([[
-    nnoremap m/ :Tab /\/\/<cr>
-    nnoremap m\ :Tab /\<cr>
-    nnoremap m- :Tab /--<cr>
-    nnoremap m* :Tab /\/\*<cr>
-    nnoremap m= :Tab /=<cr>
-    nnoremap m" :Tab /"<cr>
-    nnoremap m: :Tab /:<cr>
-    nnoremap m; :Tab /;<cr>
-    nnoremap m# :Tab /#<cr>
-    nnoremap m\| :Tab /\|<cr>
+    nnoremap <leader>m/ :Tab /\/\/<cr>
+    nnoremap <leader>m\ :Tab /\<cr>
+    nnoremap <leader>m- :Tab /--<cr>
+    nnoremap <leader>m* :Tab /\/\*<cr>
+    nnoremap <leader>m= :Tab /=<cr>
+    nnoremap <leader>m" :Tab /"<cr>
+    nnoremap <leader>m: :Tab /:<cr>
+    nnoremap <leader>m; :Tab /;<cr>
+    nnoremap <leader>m# :Tab /#<cr>
+    nnoremap <leader>m\| :Tab /\|<cr>
 ]])
 
 local map = vim.keymap.set
-map("", "<space>", "<nop>", { noremap = true })
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- vim.g.mapleader = " "
+-- vim.g.maplocalleader = " "
 
 map("i", "<A-u>", "<esc>viwUea", { noremap = true, silent = true }) -- 大写当我们光标所在单词
 map("n", "<bs>", "viwc", { noremap = true, silent = true }) -- 删除光标下单词并进入插入模式
@@ -79,7 +78,7 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- lazy
-map("n", "<leader>lz", "<cmd>Lazy<cr>", { desc = "Lazy" })
+-- map("n", "<leader>lz", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
 -- new file
 map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
@@ -90,7 +89,12 @@ map("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
 map("n", "[q", vim.cmd.cprev, { desc = "Previous quickfix" })
 map("n", "]q", vim.cmd.cnext, { desc = "Next quickfix" })
 
-map( "n", "<leader>ur", "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>", { desc = "Redraw / clear hlsearch / diff update" })
+map(
+  "n",
+  "<leader>ur",
+  "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
+  { desc = "Redraw / clear hlsearch / diff update" }
+)
 
 -- diagnostic
 local diagnostic_goto = function(next, severity)
@@ -107,7 +111,6 @@ map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
 map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
 map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
-
 
 -- quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
@@ -140,20 +143,13 @@ map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
-
-
-
-
-
-
-
 map("n", "0", "<cmd>call v:lua.MagicMove()<cr>", { noremap = true, silent = true })
 -- map("v", "T", ":call v:lua.MagicToggleHump(v:true)<CR>", { noremap = true, silent = true })
 -- map("v", "t", ":call v:lua.MagicToggleHump(v:false)<CR>", { noremap = true, silent = true })
 
 function MagicMove()
   local first = 1
-  local head = #vim.fn.getline(".") - #vim.fn.substitute(vim.fn.getline("."), "^\\s*", "", "G") + 1
+  local head = #vim.fn.getline(".") - #vim.fn.substitute(vim.fn.getline("."), "^\\s*", "", "g") + 1
   local before = vim.fn.col(".")
   vim.fn.execute(before == first and first ~= head and "norm! ^" or "norm! $")
   local after = vim.fn.col(".")

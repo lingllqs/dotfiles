@@ -1,7 +1,4 @@
-## Usage
+# 💤 LazyVim
 
-```
-git clone https://github.com/lingllqs/dotfiles /tmp
-cp -r /tmp/dotfiles/nvim ~/.config
-nvim
-```
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
