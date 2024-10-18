@@ -1,7 +1,19 @@
-## 快捷键
+# 目录结构
 
- | 别名 | 描述                |
- | ---  | ---                 |
- | gls  | 粗略查看 git status |
- | gll  | 详细查看 git status |
- | v    | 打开 nvim           |
+.
+├── cache
+│  └── currentdir.txt               当前目录路径缓存，配合 back_to_last_dir 脚本使用，使用前先清空文件内容
+├── config.nu
+├── env.nu
+└── scripts
+   ├── alias
+   │  └── alias.nu
+   ├── filesystem
+   │  ├── autojump.nu
+   │  └── back_to_last_dir.nu
+   ├── git
+   │  └── git-completion.nu
+   ├── themes
+   │  └── colors.nu
+   └── yazi
+      └── yazi.nu
