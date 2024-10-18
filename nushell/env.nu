@@ -77,19 +77,20 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.local/bin/')
 # $env.EDITOR = nvim
 
 # 目录快捷跳转工具 zoxide 配置
-# zoxide init nushell | str replace --all "-- $rest" "-- ...$rest" | str replace --all "def-env" "def --env" | save -f ~/.zoxide.nu
-zoxide init nushell | save -f ~/.zoxide.nu
+# $env._ZO_ECHO = 1
+zoxide init --hook pwd nushell | save -f ~/.zoxide.nu
 
 # starship 配置
 $env.STARSHIP_SHELL = "nu"
 $env.STARSHIP_CONFIG = ([$env.HOME, "/.config/starship/starship.toml"] | str join)
+#starship init nu | save -f ~/.cache/starship/init.nu
 
 # man 手册高亮
 $env.MANROFFOPT = "-c"
 $env.MANPAGER = "sh -c 'col -bx | bat -l man -p'"
 
 # dwl 目录
-$env.DWL_DIR = "/home/lqs/App/dwl"
+#$env.DWL = [$env.HOME, "/APP/dwl"] | str join
 
 # rust 镜像
 $env.RUSTUP_DIST_SERVER = "https://rsproxy.cn"

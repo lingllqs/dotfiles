@@ -1,9 +1,0 @@
-export alias ll = ls -la
-export alias l = ls -l
-export alias ls = eza
-export alias lt = eza -T
-export alias v = nvim
-export alias vi = vim
-export alias md = mkdir
-export alias cat = bat -p
-export alias la = eza -a

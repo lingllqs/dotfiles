@@ -1,15 +1,6 @@
-source ~/.zoxide.nu
-source ~/.config/nushell/scripts/themes/colors.nu
-source ~/.config/nushell/scripts/alias/alias.nu
-source ~/.config/nushell/scripts/git/git-completion.nu
-source ~/.config/nushell/scripts/filesystem/autojump.nu
-source ~/.config/nushell/scripts/filesystem/back_to_last_dir.nu
-source ~/.config/nushell/scripts/yazi/yazi.nu
-
-
 $env.config = {
     buffer_editor: nvim # 默认文本编辑器
-    menus: [ 
+    menus: [
         {
             name: completion_menu
             only_buffer_difference: false
@@ -22,7 +13,7 @@ $env.config = {
             }
             style: {
                 text: green_italic
-                selected_text: green_reverse
+                selected_text: "#faaaff"
                 description_text: "#ffffaa"
             }
         }
@@ -82,3 +73,12 @@ $env.config = {
         }
     }
 }
+
+source ~/.config/nushell/scripts/themes/colors.nu
+source ~/.config/nushell/scripts/alias/alias.nu
+source ~/.config/nushell/scripts/git/git-completion.nu
+#source ~/.config/nushell/scripts/filesystem/autojump.nu
+source ~/.config/nushell/scripts/filesystem/back_to_last_dir.nu
+source ~/.config/nushell/scripts/yazi/yazi.nu
+#use ~/.cache/starship/init.nu
+source ~/.zoxide.nu
