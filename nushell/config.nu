@@ -33,8 +33,9 @@ $env.config = {
     }
     completions: {
         case_sensitive: false # 补全大小写敏感
-        quick: false          # 只有一项的时候不自动选择
+        quick: true           # 只有一项的时候不自动选择
         algorithm: prefix     # 补全算法
+        partial: false
     }
     cursor_shape: { # 光标形状
         emacs: blink_line
