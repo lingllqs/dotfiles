@@ -7,7 +7,7 @@ ipc_socket = true
 
 [env]
 TERM = "alacritty"
-# LANG = "en_US.UTF-8"
+LANG = "en_US.UTF-8"
 
 [window]
 opacity = 0.8
@@ -22,12 +22,12 @@ history = 10000 # 命令行历史，0 表示不允许滚动，最大值为100000
 multiplier = 3  # 鼠标滚轮每次滚动行数
 
 [font]
-normal = { family = "Hack Nerd Font Mono", style = "Regular" }          # 正常
-bold = { family = "Hack Nerd Font Mono", style = "Bold" }               # 粗体
-italic = { family = "Hack Nerd Font Mono", style = "Italic" }           # 斜体
-bold_italic = { family = "Hack Nerd Font Mono", style = "Bold Italic" } # 粗体加斜体
-size = 14.0                                                        # 字体大小
-offset = { x = 0, y = 0 }                                          # 字符间隔
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }          # 正常
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }               # 粗体
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }           # 斜体
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" } # 粗体加斜体
+size = 16.0                                                             # 字体大小
+offset = { x = 0, y = 0 }                                               # 字符间隔
 builtin_box_drawing = true
 
 [selection]
