@@ -10,22 +10,22 @@
     // "reload_style_on_change": true,
     "modules-left": [
         // "custom/logo",
-        "hyprland/workspaces",
+        "custom/power",
         "hyprland/window"
     ],
     "modules-center": [
-        "clock",
+        "hyprland/workspaces",
         "mpd"
     ],
     "modules-right": [
-        "tray",
         "network",
         "bluetooth",
         "pulseaudio",
         // "pulseaudio/slider",
         "cpu",
         "memory",
-        "custom/power"
+        "tray",
+        "clock"
     ],
     "hyprland/workspaces": {
         // "disable-scroll": false,
@@ -39,11 +39,11 @@
         "separate-outputs": true
     },
     "clock": {
-        // "locale": "zh_CN.UTF-8",
+        "locale": "en_US.UTF-8",
         "timezones": [
             "Asia/Shanghai"
         ],
-        "format": "{:%H:%M %a}",
+        "format": "{:%H:%M}",
         "format-alt": "{:%Y-%m-%d %A}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
@@ -71,7 +71,7 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         // "format-wifi": "  {bandwidthUpBytes}  {bandwidthDownBytes}",
-        "format-wifi": "  {bandwidthDownBytes}\n{bandwidthUpBytes}",
+        "format-wifi": "  {bandwidthDownBytes} {bandwidthUpBytes}",
         "format-ethernet": "󰀂 {bandwidthDownBytes}",
         "tooltip-format": "󱘖 {ipaddr}\n",
         "format-linked": "󱘖 {ifname} (No IP)",
@@ -106,7 +106,7 @@
     },
     "cpu": {
         "interval": 1,
-        "format": " {usage}%",
+        "format": " {usage:2}%",
         "tooltip": true
     },
     "memory": {
