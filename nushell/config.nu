@@ -12,9 +12,9 @@ $env.config = {
                 col_padding: 2
             }
             style: {
-                text: green_italic
-                selected_text: "#faaaff"
-                description_text: "#ffffaa"
+                text: white_italic
+                selected_text: "#0fff0a"
+                description_text: "#e6ff0a"
             }
         }
     ]
@@ -62,8 +62,8 @@ $env.config = {
     ]
     hooks: {
         display_output: "if (term size).columns >= 50 { table -e } else { table }"
-        pre_prompt: {||}
-        pre_execution: {||}
+        pre_prompt: []
+        pre_execution: []
         env_change: {
             PWD: [
                 { 
@@ -81,5 +81,17 @@ source ~/.config/nushell/scripts/git/git-completion.nu
 #source ~/.config/nushell/scripts/filesystem/autojump.nu
 source ~/.config/nushell/scripts/filesystem/back_to_last_dir.nu
 source ~/.config/nushell/scripts/yazi/yazi.nu
+source ~/.config/nushell/scripts/nu_scripts/custom-completions/rg/rg-completions.nu
+source ~/.config/nushell/scripts/nu_scripts/custom-completions/man/man-completions.nu
+source ~/.config/nushell/scripts/nu_scripts/custom-completions/cargo/cargo-completions.nu
+source ~/.config/nushell/scripts/nu_scripts/custom-completions/cargo-make/cargo-make-completions.nu
+source ~/.config/nushell/scripts/nu_scripts/custom-completions/ssh/ssh-completions.nu
+source ~/.config/nushell/scripts/nu_scripts/custom-completions/make/make-completions.nu
+source ~/.config/nushell/scripts/nu_scripts/custom-completions/auto-generate/completions/nvim.nu
+source ~/.config/nushell/scripts/nu_scripts/custom-completions/auto-generate/completions/wget.nu
+source ~/.config/nushell/scripts/nu_scripts/custom-completions/auto-generate/completions/7z.nu
+source ~/.config/nushell/scripts/nu_scripts/custom-completions/auto-generate/completions/ip.nu
+source ~/.config/nushell/scripts/nu_scripts/custom-completions/curl/curl-completions.nu
+source ~/.config/nushell/scripts/nu_scripts/custom-completions/tar/tar-completions.nu
 #use ~/.cache/starship/init.nu
 source ~/.zoxide.nu
