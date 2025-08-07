@@ -77,7 +77,7 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.local/bin/')
 # $env.EDITOR = nvim
 
 # 目录快捷跳转工具 zoxide 配置
-# $env._ZO_ECHO = 1
+$env._ZO_ECHO = 1
 zoxide init --hook pwd nushell | save -f ~/.zoxide.nu
 
 # starship 配置
@@ -99,4 +99,4 @@ $env.RUSTUP_UPDATE_ROOT = "https://rsproxy.cn/rustup"
 $env.CARGO_UNSTABLE_SPARSE_REGISTRY = true
 $env.FNM_NODE_DIST_MIRROR = "https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/"
 
-# $env.https_proxy = "http://127.0.0.1:7897"
+$env.https_proxy = "http://127.0.0.1:7897"

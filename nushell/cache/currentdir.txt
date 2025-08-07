@@ -1,1 +1,1 @@
-/home/lqs/dotfiles
+/home/lqs
