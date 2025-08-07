@@ -1,31 +1,31 @@
 {
     "layer": "top",
-    "position": "top",
+    "position": "bottom",
     "mode": "dock",
     "height": 30,
     "name": "bar",
-    "margin": "5 8 0 8",
+    "margin": "0 8 5 8",
     "exclusive": true,
     "passthrough": false,
     // "reload_style_on_change": true,
-    "modules-left": [
-        // "custom/logo",
-        "custom/power",
-        "hyprland/window"
-    ],
-    "modules-center": [
-        "hyprland/workspaces",
-        "mpd"
-    ],
     "modules-right": [
+        // "custom/logo",
         "network",
-        "bluetooth",
-        "pulseaudio",
-        // "pulseaudio/slider",
+        "tray",
         "cpu",
         "memory",
-        "tray",
+        "pulseaudio",
+        "bluetooth",
+        "custom/power"
+    ],
+    "modules-center": [
+        "mpd",
         "clock"
+    ],
+    "modules-left": [
+        // "pulseaudio/slider",
+        "hyprland/workspaces",
+        "hyprland/window"
     ],
     "hyprland/workspaces": {
         // "disable-scroll": false,
@@ -71,11 +71,11 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         // "format-wifi": "  {bandwidthUpBytes}  {bandwidthDownBytes}",
-        "format-wifi": "  {bandwidthDownBytes} {bandwidthUpBytes}",
+        "format-wifi": "  {bandwidthDownBytes}",
         "format-ethernet": "󰀂 {bandwidthDownBytes}",
         "tooltip-format": "󱘖 {ipaddr}\n",
         "format-linked": "󱘖 {ifname} (No IP)",
-        "format-disconnected": " Disconnected",
+        "format-disconnected": " 无网络",
         "format-alt": "󰤨 {signalStrength}%",
         "interval": 5
     },
