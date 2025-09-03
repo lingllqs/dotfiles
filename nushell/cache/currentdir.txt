@@ -1,1 +1,1 @@
-/home/lqs
+/home/lqs/.config
