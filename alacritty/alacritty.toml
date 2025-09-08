@@ -5,8 +5,8 @@ working_directory = "None"
 live_config_reload = true
 ipc_socket = true
 
-[terminal]
-shell = { program = "/bin/bash", args = ["-l"] }
+# [terminal]
+# shell = { program = "/bin/bash", args = ["-l"] }
 
 [env]
 TERM = "alacritty"
@@ -18,6 +18,7 @@ title = "alacritty"
 padding = { x = 5, y = 5 }
 dynamic_title = true
 class = { instance = "alacritty", general = "alacritty" }
+decorations = "None"
 decorations_theme_variant = "Dark"
 
 [scrolling]
@@ -29,15 +30,15 @@ normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }          # �
 bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }               # 粗体
 italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }           # 斜体
 bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" } # 粗体加斜体
-size = 16.0                                                             # 字体大小
-offset = { x = 0, y = 0 }                                               # 字符间隔
+size = 14.0                                                                 # 字体大小
+offset = { x = 0, y = 0 }                                                   # 字符间隔
 builtin_box_drawing = false
 
 [selection]
 save_to_clipboard = true
 
 [cursor]
-style = { shape = "Block", blinking = "Always" }
+style = { shape = "Beam", blinking = "Always" }
 vi_mode_style = { shape = "Block", blinking = "Always" }
 blink_interval = 750
 blink_timeout = 0
