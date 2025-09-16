@@ -23,7 +23,7 @@ export EDITOR="/usr/bin/nvim"
 
 # firefox pixel-perfect trackpad scrolling
 export MOZ_USE_XINPUT2=1
-export BROWSER="/usr/bin/firefox-nightly"
+# export BROWSER="/usr/bin/firefox-nightly"
 export XDG_DOWNLOAD_DIR="$HOME/Downloads"
 export XDG_DOCUMENTS_DIR="$HOME/Documents"
 export XDG_MUSIC_DIR="$HOME/Music"

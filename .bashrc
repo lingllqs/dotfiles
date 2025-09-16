@@ -4,17 +4,22 @@
 # 判断当前 shell 是否为交互 shell，不是则什么都不做(避免在运行脚本时候的一些不必要的加载)
 [[ $- != *i* ]] && return
 
-# 保存上次退出时的目录
-PROMPT_COMMAND='pwd > ~/.config/bash/last-exit-dir.txt'
 
 # 启动时回到上次的目录
 if [ -f ~/.config/bash/last-exit-dir.txt ]; then
     cd "$(cat ~/.config/bash/last-exit-dir.txt)"
+else
+    mkdir -p "$HOME/.config/bash"
+    touch "$HOME/.config/bash/last-exit-dir"
 fi
+
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+# 保存上次退出时的目录
+PROMPT_COMMAND='pwd > ~/.config/bash/last-exit-dir.txt'
 
 
 
@@ -56,6 +61,7 @@ shopt -s checkwinsize       # check window size after each command
 # starship
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init bash)"
+eval "$(fnm env --use-on-cd --shell bash)"
 
 # zoxide
 eval "$(zoxide init bash)"

@@ -7,10 +7,18 @@ set history-size 100000
 set show-mode-in-prompt on
 set colored-completion-prefix on
 set menu-complete-display-prefix on
+set completion-map-case on
 set colored-stats on
+set page-completions on
+set completion-query-items 100
 set visible-stats on
 set show-all-if-unmodified on
 set echo-control-characters off
+
+# Tab 键循环补全
+"\t": menu-complete
+# Shift+Tab 反向循环
+"\e[Z": menu-complete-backward
 
 # bind only in the vi insertion (Ctrl+p / Ctrl+n)
 $if mode=vi
