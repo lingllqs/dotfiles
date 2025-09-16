@@ -118,7 +118,7 @@ layout {
 }
 
 //spawn-at-startup "waybar"
-spawn-at-startup "clash-verge"
+// spawn-at-startup "clash-verge"
 spawn-at-startup "mako"
 spawn-at-startup "xwayland-satellite"
 // prefer-no-csd
