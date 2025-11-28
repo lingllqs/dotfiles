@@ -78,7 +78,7 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.local/bin/')
 
 # 目录快捷跳转工具 zoxide 配置
 $env._ZO_ECHO = 1
-zoxide init --hook pwd nushell | save -f ~/.zoxide.nu
+zoxide init nushell | save -f ~/.zoxide.nu
 
 # starship 配置
 $env.STARSHIP_SHELL = "nu"

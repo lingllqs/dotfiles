@@ -1,3 +1,10 @@
+source ~/.zoxide.nu
+source ~/.config/nushell/scripts/themes/colors.nu
+source ~/.config/nushell/scripts/alias/alias.nu
+source ~/.config/nushell/scripts/git/git-completion.nu
+source ~/.config/nushell/scripts/filesystem/back_to_last_dir.nu
+source ~/.config/nushell/scripts/yazi/yazi.nu
+
 $env.config = {
     buffer_editor: nvim # 默认文本编辑器
     menus: [
@@ -75,23 +82,16 @@ $env.config = {
     }
 }
 
-source ~/.config/nushell/scripts/themes/colors.nu
-source ~/.config/nushell/scripts/alias/alias.nu
-source ~/.config/nushell/scripts/git/git-completion.nu
-#source ~/.config/nushell/scripts/filesystem/autojump.nu
-source ~/.config/nushell/scripts/filesystem/back_to_last_dir.nu
-source ~/.config/nushell/scripts/yazi/yazi.nu
-source ~/.config/nushell/scripts/nu_scripts/custom-completions/rg/rg-completions.nu
-source ~/.config/nushell/scripts/nu_scripts/custom-completions/man/man-completions.nu
-source ~/.config/nushell/scripts/nu_scripts/custom-completions/cargo/cargo-completions.nu
-source ~/.config/nushell/scripts/nu_scripts/custom-completions/cargo-make/cargo-make-completions.nu
-source ~/.config/nushell/scripts/nu_scripts/custom-completions/ssh/ssh-completions.nu
-source ~/.config/nushell/scripts/nu_scripts/custom-completions/make/make-completions.nu
-source ~/.config/nushell/scripts/nu_scripts/custom-completions/auto-generate/completions/nvim.nu
-source ~/.config/nushell/scripts/nu_scripts/custom-completions/auto-generate/completions/wget.nu
-source ~/.config/nushell/scripts/nu_scripts/custom-completions/auto-generate/completions/7z.nu
-source ~/.config/nushell/scripts/nu_scripts/custom-completions/auto-generate/completions/ip.nu
-source ~/.config/nushell/scripts/nu_scripts/custom-completions/curl/curl-completions.nu
-source ~/.config/nushell/scripts/nu_scripts/custom-completions/tar/tar-completions.nu
+# source ~/.config/nushell/scripts/nu_scripts/custom-completions/rg/rg-completions.nu
+# source ~/.config/nushell/scripts/nu_scripts/custom-completions/man/man-completions.nu
+# source ~/.config/nushell/scripts/nu_scripts/custom-completions/cargo/cargo-completions.nu
+# source ~/.config/nushell/scripts/nu_scripts/custom-completions/cargo-make/cargo-make-completions.nu
+# source ~/.config/nushell/scripts/nu_scripts/custom-completions/ssh/ssh-completions.nu
+# source ~/.config/nushell/scripts/nu_scripts/custom-completions/make/make-completions.nu
+# source ~/.config/nushell/scripts/nu_scripts/custom-completions/auto-generate/completions/nvim.nu
+# source ~/.config/nushell/scripts/nu_scripts/custom-completions/auto-generate/completions/wget.nu
+# source ~/.config/nushell/scripts/nu_scripts/custom-completions/auto-generate/completions/7z.nu
+# source ~/.config/nushell/scripts/nu_scripts/custom-completions/auto-generate/completions/ip.nu
+# source ~/.config/nushell/scripts/nu_scripts/custom-completions/curl/curl-completions.nu
+# source ~/.config/nushell/scripts/nu_scripts/custom-completions/tar/tar-completions.nu
 #use ~/.cache/starship/init.nu
-source ~/.zoxide.nu

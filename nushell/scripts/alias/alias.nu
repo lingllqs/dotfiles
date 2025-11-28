@@ -5,8 +5,9 @@ export alias la = exa -a
 export alias lt = exa -T
 export alias v = nvim
 export alias vi = vim
-export alias md = mkdir
+# export alias md = mkdir
 export alias cat = bat -p
+# export alias date = date now
 
 
 # export alias gll = git --no-pager log --pretty=tformat:'%C(red)%h%Creset %C(yellow)%s%Creset' --graph -n 10

@@ -1,1 +1,1 @@
-/home/lqs/.config
+/home/jqms/dotfiles
