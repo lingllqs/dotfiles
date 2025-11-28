@@ -1,10 +1,10 @@
 {
     "layer": "top",
-    "position": "bottom",
+    "position": "top",
     "mode": "dock",
-    "height": 30,
+    "height": 20,
     "name": "bar",
-    "margin": "0 8 5 8",
+    "margin": "5 8 0 8",
     "exclusive": true,
     "passthrough": false,
     // "reload_style_on_change": true,
@@ -23,10 +23,46 @@
         "clock"
     ],
     "modules-left": [
+		"ext/workspaces",
+		"dwl/window"
+        // "niri/workspaces",
+        // "niri/window"
         // "pulseaudio/slider",
-        "hyprland/workspaces",
-        "hyprland/window"
+        // "hyprland/workspaces",
+        // "hyprland/window"
     ],
+	"dwl/tags": {
+		"num-tags":9,
+	},
+	"dwl/window": {
+		"format": "[{layout}]{title}"
+	},
+	"ext/workspaces": {
+		"format": "{icon}",
+		"ignore-hidden": true,
+		"on-click": "activate",
+		"on-click-right": "deactivate",
+		"sort-by-id": true,
+	},
+    "niri/workspaces": {
+        "format": "{index}",
+        "format-icons": {
+        // Named workspaces
+        // (you need to configure them in niri)
+        // "code": "",
+        // "browser": "",
+        // "chat": "<b></b>",
+
+        // Icons by state
+        // "active": "",
+        // "default": ""
+        }
+    },
+    "niri/window": {
+        "format": "{title}",
+        "separate-outputs": true
+    },
+
     "hyprland/workspaces": {
         // "disable-scroll": false,
         // "persistent-workspaces": {"*": 1},
@@ -116,10 +152,10 @@
         "max-length": 100
     },
     "bluetooth": {
-        //"format": "{status}",
+        // "format": "{status}",
         "format": "",
         "format-disabled": "", // an empty format will hide the module
-        //"on-click": "blueman-manager",
+        "on-click": "blueman-manager",
         "format-connected": " {num_connections}",
         "tooltip-format": " {device_alias}",
         "tooltip-format-connected": "{device_enumerate}",
@@ -127,7 +163,7 @@
     },
     "pulseaudio": {
         "format": "{icon} {volume}",
-        "format-muted": "婢",
+        "format-muted": "󰝟",
         "on-click": "pavucontrol -t 3",
         "on-click-middle": "~/scripts/volumecontrol.sh -o m",
         "on-scroll-up": "~/scripts/volumecontrol.sh -o i",

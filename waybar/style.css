@@ -36,6 +36,8 @@ tooltip {
 #workspaces button {
     box-shadow: none;
 	text-shadow: none;
+    padding-left: 10px;
+    padding-right: 10px;
     background: #222436;
     border-radius: 5px;
     margin: 4px 3px 4px 3px; /*上右下左*/
@@ -162,7 +164,7 @@ tooltip {
     background: #dce2f1;
     color: #622792;
     border-radius: 5px;
-    padding: 0px 8px 0px 10px;
+    padding: 0px 4px 0px 10px;
     margin: 4px 8px 4px 5px;
 }
  #custom-logo { 
