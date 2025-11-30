@@ -5,4 +5,4 @@ rofi \
 	-drun-match-fields all \
 	-no-drun-show-actions \
 	-terminal alacritty \
-	-theme $HOME/.config/rofi/config/launcher_1.rasi
+	-theme $HOME/scripts/rofi/launcher_1.rasi
