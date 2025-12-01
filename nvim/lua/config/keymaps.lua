@@ -17,3 +17,15 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+
+vim.keymap.set("n", "0", ":call v:lua.MagicMove()<CR>", { noremap = true, silent = true })
+function MagicMove()
+	local first = 1
+	local head = #vim.fn.getline(".") - #vim.fn.substitute(vim.fn.getline("."), "^\\s*", "", "G") + 1
+	local before = vim.fn.col(".")
+	vim.fn.execute(before == first and first ~= head and "norm! ^" or "norm! $")
+	local after = vim.fn.col(".")
+	if before == after then
+		vim.fn.execute("norm! 0")
+	end
+end

@@ -4,53 +4,54 @@ return { -- Autocompletion
 	version = "1.*",
 	dependencies = {
 		-- Snippet Engine
-		{
-			"L3MON4D3/LuaSnip",
-			version = "2.*",
-			build = (function()
-				-- Build Step is needed for regex support in snippets.
-				-- This step is not supported in many windows environments.
-				-- Remove the below condition to re-enable on windows.
-				if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
-					return
-				end
-				return "make install_jsregexp"
-			end)(),
-			dependencies = {
-				{
-					"rafamadriz/friendly-snippets",
-					config = function()
-						require("luasnip.loaders.from_vscode").lazy_load()
-					end,
-				},
-			},
-			opts = {},
-		},
+		"rafamadriz/friendly-snippets",
 		"folke/lazydev.nvim",
 	},
 	opts = {
 		keymap = {
-			preset = "enter",
+			preset = "enter", -- enter 键确认选择
 		},
 
 		appearance = {
-			-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-			-- Adjusts spacing to ensure icons are aligned
+			-- mono 对应 Nerd Font Mono, normal 对应 Nerd Font, 为了使 icons 对齐
 			nerd_font_variant = "mono",
 		},
 
 		completion = {
+			menu = {
+				enabled = true,
+				draw = {
+					padding = 1,
+				},
+				border = "rounded",
+				scrollbar = false,
+			},
 			documentation = { auto_show = false, auto_show_delay_ms = 500 },
+			ghost_text = {
+				enabled = false,
+			},
 		},
 
 		sources = {
 			default = { "buffer", "lsp", "path", "snippets", "lazydev" },
 			providers = {
 				lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
+				snippets = {
+					friendly_snippets = true, -- 默认启用extended_filetypes = {
+					markdown = { "jekyll" },
+					sh = { "shelldoc" },
+					php = { "phpdoc" },
+					cpp = { "unreal" },
+				},
 			},
 		},
 
-		snippets = { preset = "luasnip" },
+		snippets = {
+			preset = "default",
+			opts = {
+				search_paths = { vim.fn.stdpath("config") .. "/snippets" },
+			},
+		},
 
 		-- See :h blink-cmp-config-fuzzy for more information
 		fuzzy = { implementation = "prefer_rust_with_warning" },

@@ -1,0 +1,5 @@
+return {
+	"lingllqs/smart-zero.nvim",
+	lazy = true,
+	coifig = function() end,
+}

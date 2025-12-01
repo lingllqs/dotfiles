@@ -22,17 +22,18 @@ return { -- Autoformat
 			if disable_filetypes[vim.bo[bufnr].filetype] then
 				return nil
 			else
-				return {
-					timeout_ms = 500,
-					lsp_format = "fallback",
-				}
+				return nil
+				-- return {
+				-- 	timeout_ms = 500,
+				-- 	lsp_format = "fallback",
+				-- }
 			end
 		end,
 		formatters_by_ft = {
-			lua = { "stylua" },
-			python = { "isort", "black", stop_after_first = true },
-			javascript = { "prettierd", "prettier", stop_after_first = true },
-			sh = { "shfmt" },
+			-- lua = { "stylua" },
+			-- python = { "isort", "black", stop_after_first = true },
+			-- javascript = { "prettierd", "prettier", stop_after_first = true },
+			-- sh = { "shfmt" },
 		},
 	},
 }
