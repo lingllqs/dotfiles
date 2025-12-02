@@ -14,7 +14,7 @@
 
 {
     "label" : "suspend",
-    "action" : "systemd-run --user hyprlock && systemctl suspend",
+    "action" : "systemctl suspend",
     "text" : "挂起",
     "keybind" : "u"
 }
