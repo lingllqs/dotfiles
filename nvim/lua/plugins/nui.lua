@@ -1,4 +1,4 @@
 return {
 	"MunifTanjim/nui.nvim",
-	enabled = false,
+	enabled = true,
 }

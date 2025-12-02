@@ -11,8 +11,8 @@ vim.schedule(function()
 end)
 
 vim.o.breakindent = true -- 行内容过长换行时保持同样的缩进
-vim.o.tabstop = 8        -- Tab 空格数
-vim.o.shiftwidth = 8     -- 缩进空格数
+vim.o.tabstop = 4        -- Tab 空格数
+vim.o.shiftwidth = 4     -- 缩进空格数
 vim.o.undofile = true    -- 保存撤销历史
 vim.o.swapfile = false   -- 不使用交换文件，大型项目建议开启
 vim.o.ignorecase = true  -- 查找时忽略大小写

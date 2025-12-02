@@ -36,21 +36,14 @@ return { -- Autocompletion
 			default = { "buffer", "lsp", "path", "snippets", "lazydev" },
 			providers = {
 				lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
-				snippets = {
-					friendly_snippets = true, -- 默认启用extended_filetypes = {
-					markdown = { "jekyll" },
-					sh = { "shelldoc" },
-					php = { "phpdoc" },
-					cpp = { "unreal" },
-				},
 			},
 		},
 
 		snippets = {
 			preset = "default",
-			opts = {
-				search_paths = { vim.fn.stdpath("config") .. "/snippets" },
-			},
+			-- opts = {
+			-- 	search_path = { vim.fn.stdpath("config") .. "/snippets" },
+			-- },
 		},
 
 		-- See :h blink-cmp-config-fuzzy for more information

@@ -1,5 +1,6 @@
 return {
 	"uga-rosa/ccc.nvim",
+	lazy = false,
 	config = function()
 		local ccc = require("ccc")
 		ccc.setup({
