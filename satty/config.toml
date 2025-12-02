@@ -1,4 +1,65 @@
 [general]
-copy-command = "wl-copy"
-actions-on-right-click = ["save-to-clipboard"]
-focus-toggles-toolbars = true
+output-filename = "~/Pictures/screenshots/%Y-%m-%d_%H:%M:%S.png" # 图片保存位置
+
+fullscreen = true          # 启动 satty 为全屏模式
+early-exit = true          # 复制或保存后直接退出
+corner-roundness = 12      # 边框圆角
+initial-tool = "brush"     # 启动时默认选择工具[可选项: pointer,crop,line,arrow,rectangle,text,marker,blur,brush]
+copy-command = "wl-copy"   # 复制使用的命令
+annotation-size-factor = 2 # Increase or decrease the size of the annotations
+
+save-after-copy = false                        # 复制图片后保存与否
+default-hide-toolbars = false                  # 默认隐藏工具栏与否
+focus-toggles-toolbars = true                  # 窗口聚焦时显示工具栏，否则不显示
+default-fill-shapes = false                    # Fill shapes by default (since 0.20.0)
+primary-highlighter = "block"                  # [block|freehand] 按住ctrl键切换
+disable-notifications = false                  # 通知信息
+actions-on-right-click = ["save-to-clipboard"] # 鼠标右键功能[save-to-clipboard|save-to-file|exit]
+actions-on-enter = ["save-to-clipboard"]       # 回车键功能[save-to-clipboard|save-to-file|exit]
+actions-on-escape = ["exit"]                   # Esc键功能[save-to-clipboard|save-to-file|exit]
+no-window-decoration = true                    # 窗口风格，最终取决于窗口管理器
+brush-smooth-history-size = 10                 # [0|5|10]
+pan-step-size = 50.0                           # 使用方向键平移步长
+zoom-factor = 1.1                              # 图片缩放因子
+
+# 快捷键
+[keybinds]
+pointer = "p"
+crop = "c"      # 裁剪
+brush = "b"     # 画刷
+line = "i"      # 直线
+arrow = "z"     # 箭头
+rectangle = "r" # 矩形
+ellipse = "e"   # 椭圆
+text = "t"      # 文本
+marker = "m"    # 标记
+blur = "u"      # 模糊(打码)
+highlight = "g" # 高亮
+
+# 字体
+[font]
+family = "JetBrains Nerd Font Mono"
+style = "Regular"
+
+# 自定义调色板
+[color-palette]
+# These will be shown in the toolbar for quick selection
+palette = [
+    "#00ffff",
+    "#a52a2a",
+    "#dc143c",
+    "#ff1493",
+    "#ffd700",
+    "#008000",
+]
+
+# These will be available in the color picker as presets
+# Leave empty to use GTK's default
+custom = [
+    "#00ffff",
+    "#a52a2a",
+    "#dc143c",
+    "#ff1493",
+    "#ffd700",
+    "#008000",
+]
