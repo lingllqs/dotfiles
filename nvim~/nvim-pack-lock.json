@@ -8,9 +8,21 @@
       "rev": "1eebd637c55d09d979f1e76a6745c855b0666d76",
       "src": "https://github.com/lingllqs/lastplace.nvim"
     },
+    "mason-lspconfig.nvim": {
+      "rev": "4cfe411526a7a99c18281135e8b4765ae6330d15",
+      "src": "https://github.com/mason-org/mason-lspconfig.nvim"
+    },
+    "mason.nvim": {
+      "rev": "57e5a8addb8c71fb063ee4acda466c7cf6ad2800",
+      "src": "https://github.com/mason-org/mason.nvim"
+    },
     "nvim": {
       "rev": "ce8d176faa4643e026e597ae3c31db59b63cef09",
       "src": "https://github.com/catppuccin/nvim"
+    },
+    "nvim-lspconfig": {
+      "rev": "ac04ec3c2af08e9821b4eb64ede86072b9b213bf",
+      "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "snacks.nvim": {
       "rev": "fe7cfe9800a182274d0f868a74b7263b8c0c020b",
