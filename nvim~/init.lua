@@ -7,3 +7,6 @@ require("plugins.snacks")
 require("plugins.auto-pairs")
 
 require("plugins.lsp")
+require("plugins.Trans")
+require("plugins.blink")
+require("plugins.telescope")
