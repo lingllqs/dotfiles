@@ -1,6 +1,5 @@
-return {
-	'lingllqs/lastplace.nvim',
-	config = function ()
-		require('lastplace').setup()
-	end
-}
+vim.pack.add({
+	{ src = "https://github.com/lingllqs/lastplace.nvim" },
+})
+
+require("lastplace").setup()
