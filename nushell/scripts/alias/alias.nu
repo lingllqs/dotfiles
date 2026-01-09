@@ -1,8 +1,8 @@
-# export alias l = exa -lhg
-# export alias ll = exa -lhga
-# export alias ls = exa
-# export alias la = exa -a
-# export alias lt = exa -T
+export alias l = exa -lhg
+export alias ll = exa -lhga
+export alias ls = exa
+export alias la = exa -a
+export alias lt = exa -tree
 export alias v = nvim
 export alias vi = vim
 # export alias md = mkdir
