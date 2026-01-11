@@ -4,6 +4,7 @@ vim.pack.add({
 
 require("snacks").setup({
 	explorer = { enabled = true },
+	bigfile = { enabled = true },
 })
 
 vim.keymap.set("n", "<leader>e", function() Snacks.picker.explorer() end, { desc = "File Explorer" })
@@ -16,8 +17,6 @@ vim.keymap.set("n", "<leader>fD", function() Snacks.picker.diagnostics_buffer() 
 vim.keymap.set("n", "<leader>fk", function() Snacks.picker.keymaps() end, { desc = "Keymaps" })
 vim.keymap.set("n", "<leader>fm", function() Snacks.picker.marks() end, { desc = "Marks" })
 vim.keymap.set("n", "<leader>fM", function() Snacks.picker.man() end, { desc = "Man Pages" })
-
-vim.keymap.set("n", "<leader>bd", function() Snacks.picker.bufdelete() end, { desc = "Delete Buffer" })
 
 vim.keymap.set( "n", "gd", function() Snacks.picker.lsp_definitions() end,{ desc = "Goto Definition" })
 vim.keymap.set( "n", "gD", function() Snacks.picker.lsp_declarations() end,{ desc = "Goto Declaration" })
