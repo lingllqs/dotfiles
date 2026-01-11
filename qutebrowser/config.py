@@ -1,3 +1,7 @@
+import catppuccin
+
+catppuccin.setup(c, 'mocha', True)
+
 config.load_autoconfig(False)
 config.bind('L', 'forward', mode = 'normal')
 config.bind('H', 'back', mode = 'normal')
