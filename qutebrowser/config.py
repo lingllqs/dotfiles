@@ -1,7 +1,7 @@
 config.load_autoconfig(False)
 
 c.auto_save.session = True
-c.content.autoplay = False
+c.content.autoplay = True
 c.content.blocking.enabled = True
 c.content.blocking.method = 'both'
 c.content.blocking.adblock.lists = [
@@ -17,12 +17,13 @@ c.downloads.location.directory = '~/Downloads/qb_downloads'
 c.hints.border = '1px solid #181825'
 c.hints.chars = 'asdfghjkl'
 c.statusbar.show = 'always'
-c.tabs.last_close = 'startpage'
-c.tabs.position = 'left'
-c.tabs.width = '10%'
-c.url.default_page = 'file:///dev/null'
+c.url.default_page = 'https://www.yandex.com'
 c.url.start_pages = ['https://www.google.com']
 c.zoom.default = 100
+
+c.tabs.last_close = 'startpage'
+# c.tabs.position = 'left'
+# c.tabs.width = '10%'
 
 config.set('content.cookies.accept', 'all', 'chrome-devtools://*')
 config.set('content.cookies.accept', 'all', 'devtools://*')
