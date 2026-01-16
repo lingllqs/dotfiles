@@ -1,11 +1,12 @@
 vim.pack.add({
-	{ src = "https://github.com/lingllqs/Trans.nvim" },
-	{ src = "https://github.com/kkharji/sqlite.lua" },
+    { src = "https://github.com/lingllqs/Trans.nvim" },
+    { src = "https://github.com/kkharji/sqlite.lua" }, -- dependencies
 })
 
 require("Trans").setup({
-	require("Trans").install()
+    require("Trans").install(),
 })
-vim.keymap.set( "n", "<leader>mm",  "<Cmd>Translate<CR>", {desc = "󰊿 Translate" })
-vim.keymap.set( "n", "<leader>mk",  "<Cmd>TransPlay<CR>", {desc = " Auto Play" })
-vim.keymap.set( "n", "<leader>mi", "<Cmd>TranslateInput<CR>", {desc = "󰊿 Translate From Input"} )
+
+vim.keymap.set("n", "<leader>mm", "<Cmd>Translate<CR>", { desc = "󰊿 Translate" })
+vim.keymap.set("n", "<leader>mk", "<Cmd>TransPlay<CR>", { desc = " Auto Play" })
+vim.keymap.set("n", "<leader>mi", "<Cmd>TranslateInput<CR>", { desc = "󰊿 Translate From Input" })
