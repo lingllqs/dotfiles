@@ -3,6 +3,7 @@ vim.g.maplocalleader = " "
 
 vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set({"n", "v"}, ";", ":")
+vim.keymap.set("i", "<M-u>", "<ESC>viwUa")
 
 vim.keymap.set("n", "<leader>rs", "<CMD>restart<CR>", { desc = "Restart Nvim" })
 

@@ -6,6 +6,6 @@ vim.pack.add({
 
 -- require("tokyonight").setup()
 require("kongburusi").setup()
--- require("gruber-darker").setup()
+require("gruber-darker").setup()
 
-vim.cmd.colorscheme("kongburusi")
+vim.cmd.colorscheme("gruber-darker")

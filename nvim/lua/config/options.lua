@@ -19,6 +19,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = true
 vim.opt.smartindent = true
+vim.opt.cindent = true
 vim.opt.termguicolors = true
 vim.opt.autoindent = true
 vim.opt.signcolumn = "yes"
