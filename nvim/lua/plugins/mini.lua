@@ -7,3 +7,8 @@ vim.pack.add({
 
 require("mini.pairs").setup()
 require("mini.statusline").setup()
+-- require("mini.pick").setup()
+-- require("mini.files").setup()
+-- require("mini.icons").setup()
+--
+-- vim.keymap.set("n", "<leader>e", "<CMD>lua MiniFiles.open()<CR>", { desc = "打开目录树" })

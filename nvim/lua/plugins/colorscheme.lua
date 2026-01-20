@@ -4,8 +4,8 @@ vim.pack.add({
 	{ src = "https://github.com/lingllqs/kongburusi.nvim"},
 })
 
--- require("tokyonight").setup()
+require("tokyonight").setup()
 require("kongburusi").setup()
-require("gruber-darker").setup()
+-- require("gruber-darker").setup()
 
-vim.cmd.colorscheme("gruber-darker")
+vim.cmd.colorscheme("tokyonight-moon")
