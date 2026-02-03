@@ -1,6 +1,6 @@
 vim.pack.add({
     { src = "https://github.com/archie-judd/blink-cmp-words" },
-    { src = "https://github.com/saghen/blink.cmp", version = vim.version.range('1.*') },
+    { src = "https://github.com/saghen/blink.cmp", version = "v1.8.0" },
     { src = "https://github.com/rafamadriz/friendly-snippets" },
 })
 
@@ -37,7 +37,7 @@ vim.api.nvim_create_autocmd({ "InsertEnter", "CmdlineEnter" }, {
             keymap = {
                 ["<C-u>"] = { "scroll_documentation_up", "fallback" },
                 ["<C-d>"] = { "scroll_documentation_down", "fallback" },
-                preset = "enter",
+                preset = "default",
             },
             signature = {
                 enabled = true,

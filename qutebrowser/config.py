@@ -19,7 +19,7 @@ c.hints.chars = 'asdfghjkl'
 c.statusbar.show = 'always'
 c.url.default_page = 'https://www.yandex.com'
 c.url.start_pages = ['https://www.google.com']
-c.zoom.default = 100
+c.zoom.default = 90
 
 c.tabs.last_close = 'startpage'
 # c.tabs.position = 'left'
@@ -41,10 +41,10 @@ config.set('content.local_content_can_access_file_urls', False, 'file:///home/jq
 
 
 c.fonts.default_family = 'JetBrainsMono Nerd Font'
-c.fonts.default_size = '14pt'
-c.fonts.web.size.default = 14
-c.fonts.web.size.default_fixed = 14
-c.fonts.web.size.minimum = 14
+c.fonts.default_size = '12pt'
+c.fonts.web.size.default = 16
+c.fonts.web.size.default_fixed = 16
+c.fonts.web.size.minimum = 16
 
 config.unbind('<Ctrl+v>')
 config.unbind('M')

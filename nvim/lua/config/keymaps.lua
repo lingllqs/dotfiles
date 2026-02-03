@@ -2,12 +2,13 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.keymap.set("i", "jk", "<Esc>")
-vim.keymap.set({"n", "v"}, ";", ":")
-vim.keymap.set("i", "<M-u>", "<ESC>viwUa")
+vim.keymap.set({ "n", "v" }, ";", ":")
+vim.keymap.set("i", "<M-u>", "<ESC>viwUea")
 
 vim.keymap.set("n", "<leader>rs", "<CMD>restart<CR>", { desc = "Restart Nvim" })
 
--- vim.keymap.set("n", "<leader>ts", "<CMD>set spell!<CR>")
+vim.keymap.set("n", "<leader>ts", "<CMD>set spell!<CR>")
+vim.keymap.set("n", "<leader>tw", "<CMD>set wrap!<CR>")
 
 vim.keymap.set("n", "<ESC>", "<CMD>nohlsearch<CR>")
 
@@ -31,3 +32,15 @@ vim.keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", 
 vim.keymap.set({ "n", "x" }, "Down", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 vim.keymap.set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 vim.keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Up", expr = true, silent = true })
+
+vim.keymap.set("n", "0", ":call v:lua.MagicMove()<CR>", { noremap = true, silent = true })
+function MagicMove()
+	local first = 1
+	local head = #vim.fn.getline(".") - #vim.fn.substitute(vim.fn.getline("."), "^\\s*", "", "G") + 1
+	local before = vim.fn.col(".")
+	vim.fn.execute(before == first and first ~= head and "norm! ^" or "norm! $")
+	local after = vim.fn.col(".")
+	if before == after then
+		vim.fn.execute("norm! 0")
+	end
+end

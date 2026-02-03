@@ -4,7 +4,7 @@ vim.opt.number = true
 vim.opt.relativenumber = false
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.opt.expandtab = false
 vim.opt.softtabstop = 0
 vim.opt.swapfile = false
 vim.opt.undofile = true
@@ -13,7 +13,6 @@ vim.opt.cursorline = true
 vim.opt.confirm = true
 vim.opt.wrap = false
 vim.opt.wildmenu = true
-vim.opt.completeopt:append({"menuone,noselect,popup" })
 vim.cmd([[set completeopt+=menuone,noselect,popup]])
 vim.opt.scrolloff = 10
 -- vim.o.winborder='+,-,+,|,+,-,+,|'
@@ -28,8 +27,8 @@ vim.opt.signcolumn = "yes"
 vim.opt.incsearch = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.list = true -- 显示 <Tab> 和 <EOL>
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+-- vim.opt.list = true -- 显示 <Tab> 和 <EOL>
+-- vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.inccommand = "split"
 vim.opt.clipboard = "unnamedplus"
 -- vim.opt.colorcolumn = "100"
