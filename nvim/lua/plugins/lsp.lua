@@ -7,42 +7,6 @@ require("mason").setup()
 
 vim.diagnostic.config({ virtual_text = true })
 
-vim.lsp.config('rust_analyzer', {
-	settings = {
-		['rust-analyzer'] = {
-			diagnostics = {
-				enable = true,
-			}
-		}
-	}
-})
-
-vim.lsp.config("clangd", {
-	cmd = {
-		"clangd",
-		"--clang-tidy=true",
-	},
-	filetypes = { "c", "cpp", "objc", "objcpp" },
-	root_markers = {
-		".clang-format",
-		".clangd",
-		".clang-tidy",
-		"compile_commands.json",
-		"compile_flags.txt",
-		"configure.ac", -- AutoTools
-		".git",
-	},
-	capabilities = {
-		textDocument = {
-			completion = {
-				editsNearCursor = true,
-			},
-		},
-		offsetEncoding = { 'utf-8', 'utf-16' },
-	},
-})
-
-
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "go to definition" })
 vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "go to declaration" })
 vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "go to implementation" })
