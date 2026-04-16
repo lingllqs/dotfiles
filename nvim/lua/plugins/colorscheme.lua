@@ -8,4 +8,4 @@ require("tokyonight").setup()
 require("kongburusi").setup()
 require("gruber-darker").setup()
 
-vim.cmd.colorscheme("tokyonight-moon")
+vim.cmd.colorscheme("gruber-darker")

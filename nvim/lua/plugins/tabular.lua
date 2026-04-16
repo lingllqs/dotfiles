@@ -17,6 +17,7 @@ vim.keymap.set("n", "<leader>mM", "<CMD>Mtm<CR>", {desc = "Toggle Form Format"})
 vim.cmd([[
 nnoremap <silent> <leader>m\| :Tabularize /\|<cr>
 nnoremap <silent> <leader>m" :Tabularize /"<cr>
+nnoremap <silent> <leader>m; :Tabularize /;<cr>
 nnoremap <silent> <leader>m' :Tabularize /'<cr>
 nnoremap <silent> <leader>m# :Tabularize /#<cr>
 nnoremap <silent> <leader>m= :Tabularize /=<cr>

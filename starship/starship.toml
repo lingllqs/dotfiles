@@ -9,7 +9,6 @@ $directory\
 $git_branch\
 $git_state\
 $git_status\
-$python\
 $character"""
 
 [username]
