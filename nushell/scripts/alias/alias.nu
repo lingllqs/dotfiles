@@ -28,11 +28,3 @@ def search [keyword: string] {
 	let url = $"https://www.google.com/search?q=($keyword | url encode)"
 	firefox --new-tab $url
 }
-
-def lg [path?: string = "."] {
-	ls $path | grid -c
-}
-
-def l [path?: string = "."] {
-	ls -l $path | select type mode size user group modified name
-}
