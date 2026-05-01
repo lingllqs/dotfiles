@@ -1,0 +1,59 @@
+[general]
+import = ["~/.config/alacritty/themes/theme.toml"]
+
+working_directory = "None"
+live_config_reload = true
+ipc_socket = true
+
+# [terminal]
+# shell = { program = "/bin/bash", args = ["-l"] }
+
+[env]
+TERM = "alacritty"
+LANG = "en_US.UTF-8"
+
+[window]
+opacity = 0.8
+title = "alacritty"
+padding = { x = 5, y = 5 }
+dynamic_title = true
+class = { instance = "alacritty", general = "alacritty" }
+decorations = "None"
+decorations_theme_variant = "Dark"
+
+[scrolling]
+history = 10000 # 命令行历史，0 表示不允许滚动，最大值为100000
+multiplier = 3  # 鼠标滚轮每次滚动行数 
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }          # 正常
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }               # 粗体
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }           # 斜体
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" } # 粗体加斜体
+size = 14.0                                                                 # 字体大小
+offset = { x = 0, y = 0 }                                                   # 字符间隔
+builtin_box_drawing = false
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+style = { shape = "Beam", blinking = "Always" }
+vi_mode_style = { shape = "Block", blinking = "Always" }
+blink_interval = 750
+blink_timeout = 0
+unfocused_hollow = true
+thickness = 0.15
+
+[mouse]
+hide_when_typing = true
+bindings = [{ mouse = "Right", mods = "Control", action = "Paste" }]
+
+[keyboard]
+bindings = [
+  { key = "Insert", mods = "Control", action = "Copy" },
+  { key = "Insert", mods = "Shift", action = "Paste" },
+  { key = "Home", mods = "Control", action = "IncreaseFontSize" },
+  { key = "End", mods = "Control", action = "DecreaseFontSize" },
+  { key = "Backspace", mods = "Control", action = "ResetFontSize" },
+]

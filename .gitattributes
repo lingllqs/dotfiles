@@ -1,0 +1,2 @@
+pictures/ filter=lfs diff=lfs merge=lfs -text
+rime/ filter=lfs diff=lfs merge=lfs -text

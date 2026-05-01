@@ -1,0 +1,10 @@
+Error: "Socket file '\"/run/user/1000/wayland-1-swww-daemon..sock\"' not found. Make sure swww-daemon is running, and that the --namespace argument matches for the client and the daemon"
+       258ms [INFO]  BumpPool with: 1 buffers. Size: 4098Kb
+      4478ms [INFO]  Removed socket at "/run/user/1000/wayland-1-swww-daemon..sock"
+      4478ms [INFO]  Goodbye!
+Error: "Socket file '\"/run/user/1000/wayland-1-swww-daemon..sock\"' not found. Make sure swww-daemon is running, and that the --namespace argument matches for the client and the daemon"
+Error: "Socket file '\"/run/user/1000/wayland-1-swww-daemon..sock\"' not found. Make sure swww-daemon is running, and that the --namespace argument matches for the client and the daemon"
+       295ms [INFO]  BumpPool with: 1 buffers. Size: 4098Kb
+      3971ms [INFO]  Removed socket at "/run/user/1000/wayland-1-swww-daemon..sock"
+      3971ms [INFO]  Goodbye!
+Error: "Socket file '\"/run/user/1000/wayland-1-swww-daemon..sock\"' not found. Make sure swww-daemon is running, and that the --namespace argument matches for the client and the daemon"

@@ -1,0 +1,237 @@
+# ncmpcpp 目录
+ncmpcpp_directory = ~/.config/ncmpcpp
+# 歌词目录
+lyrics_directory = ~/.config/ncmpcpp/lyrics
+# mpd 主机
+mpd_host = localhost
+# mpd 连接端口
+mpd_port = 6600
+# mpd 连接超时(秒)
+mpd_connection_timeout = 5
+# mpd 音乐目录
+mpd_music_dir = ~/Music
+# mpd 淡入淡出时间(秒)
+mpd_crossfade_time = 5
+#random_exclude_pattern = "^(temp|midi_songs).*"
+
+# 可视数据源
+visualizer_data_source = /tmp/mpd.fifo
+visualizer_output_name = "my_fifo"
+visualizer_in_stereo = yes
+#visualizer_sync_interval = 0
+
+#Available values: spectrum, wave, wave_filled, ellipse.
+visualizer_type = spectrum
+visualizer_fps = 60
+visualizer_autoscale = yes
+visualizer_look = "▋▋"
+#visualizer_color = blue, cyan, green, yellow, magenta, red
+visualizer_color = 47, 83, 119, 155, 191, 227, 221, 215, 209, 203, 197, 161
+visualizer_spectrum_smooth_look = yes
+visualizer_spectrum_dft_size = 2
+visualizer_spectrum_gain = 10
+visualizer_spectrum_hz_min = 20
+visualizer_spectrum_hz_max = 20000
+system_encoding = "utf-8"
+# 播放列表当前选项取消高亮时间，0 表示总是高亮
+playlist_disable_highlight_delay = 0
+# 提示信息显示时间(秒)
+message_delay_time = 2
+
+## %l - length 
+## %f - filename
+## %D - directory
+## %a - artist
+## %A - album artist
+## %t - title
+## %b - album
+## %y - date
+## %n - track number (01/12 -> 01)
+## %N - full track info (01/12 -> 01/12)
+## %g - genre
+## %c - composer
+## %p - performer
+## %d - disc
+## %C - comment
+## %P - priority
+## $R - begin right alignment
+
+## - 0 - default window color (discards all other colors)
+## - 1 - black
+## - 2 - red
+## - 3 - green
+## - 4 - yellow
+## - 5 - blue
+## - 6 - magenta
+## - 7 - cyan
+## - 8 - white
+## - 9 - end of current color
+## - b - bold text
+## - u - underline text
+## - r - reverse colors
+## - a - use alternative character set
+
+# 歌曲列表格式
+song_list_format = "{$3%n │ $9}{$7%a - $9}{$5%t$9}|{$8%f$9}$R{$6 │ %b$9}{$3 │ %l$9}"
+# 歌曲状态格式
+song_status_format = " $2%a $4⟫$3⟫ $8%t $4⟫$3⟫ $5%b "
+song_library_format = {%n - }{%t}|{%f}
+alternative_header_first_line_format = "$0$aqqu$/a {$7%a - $9}{$5%t$9}|{$8%f$9} $0$atqq$/a$9"
+alternative_header_second_line_format = "{{$6%b$9}{ [$6%y$9]}}|{%D}"
+current_item_prefix = $(cyan)$r
+current_item_suffix = $/r$(end)
+current_item_inactive_column_prefix = $(cyan)$r
+current_item_inactive_column_suffix = $/r$(end)
+# 正在播放项前缀
+now_playing_prefix = "$b$3󰝚 "
+# 正在播放项后缀
+now_playing_suffix = $/b
+browser_playlist_prefix = "$2playlist$9 "
+# 选中项前缀
+selected_item_prefix = " "
+# 选中项后缀
+selected_item_suffix = $9
+# 修改项前缀
+modified_item_prefix = $3> $9
+
+song_window_title_format = {%a - }{%t}|{%f}
+# "type", "name", "mtime", "format" and "none".
+browser_sort_mode = type
+browser_sort_format = {%a - }{%t}|{%f} {%l}
+
+# (width of the column)[color of the column]{displayed tag} (10f)[white]{a} or (10)[white]{a}
+# - r - column will be right aligned {lr:custom_name}
+# - E - if tag is empty, empty tag marker won't be displayed
+
+# 歌曲播放列表排列格式
+song_columns_list_format = "(10f)[155]{l:时长} (50)[160]{t|f:歌曲} (20)[226]{a:歌手} (20)[184]{br:专辑}"
+
+# 歌曲切换时执行命令
+execute_on_song_change = ""
+
+# MPD_PLAYER_STATE unknown/play/pause/stop
+execute_on_player_state_change = ""
+
+playlist_show_mpd_host = no
+playlist_show_remaining_time = no
+playlist_shorten_total_times = yes
+playlist_separate_albums = no
+
+# classic/columns
+playlist_display_mode = columns
+browser_display_mode = classic
+search_engine_display_mode = classic
+playlist_editor_display_mode = columns
+discard_colors_if_item_is_selected = yes
+show_duplicate_tags = yes
+incremental_seeking = yes
+seek_time = 1
+
+# 音量调节步长
+volume_change_step = 2
+
+autocenter_mode = yes
+centered_cursor = yes
+
+# 进度条样式       ─
+progressbar_look = "─ "
+progressbar_color = cyan:b
+progressbar_elapsed_color = blue:b
+
+# database/playlist
+default_place_to_search_in = database
+
+# classic/alternative
+user_interface = alternative
+data_fetching_delay = yes
+
+#  artist, album_artist, date, genre, composer, performer.
+media_library_primary_tag = artist
+media_library_albums_split_by_date = yes
+media_library_hide_album_dates = no
+
+# wrapped/normal
+default_find_mode = wrapped
+default_tag_editor_pattern = %n - %t
+header_visibility = yes
+statusbar_visibility = yes
+
+# 启动时连接状态信息 
+connected_message_on_startup = yes
+
+# 
+titles_visibility = yes
+header_text_scrolling = yes
+cyclic_scrolling = yes
+lyrics_fetchers = azlyrics, genius, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet
+follow_now_playing_lyrics = yes
+fetch_lyrics_for_current_song_in_background = no
+store_lyrics_in_song_dir = no
+generate_win32_compatible_filenames = yes
+allow_for_physical_item_deletion = yes
+lastfm_preferred_language = en
+space_add_mode = add_remove
+show_hidden_files_in_local_browser = no
+
+## - "previous" - switch between the current and previous screen.
+## - "screen1,...,screenN" - switch between given sequence of screens.
+
+## Screens available for use: help, playlist, browser, search_engine,
+## media_library, playlist_editor, tag_editor, outputs, visualizer, clock,
+## lyrics, last_fm.
+screen_switcher_mode = playlist, browser
+
+# 启动时显示的界面
+startup_screen = playlist
+startup_slave_screen = ""
+startup_slave_screen_focus = no
+
+# 20~80
+locked_screen_width_part = 50
+ask_for_locked_screen_width_part = yes
+jump_to_now_playing_song_at_start = yes
+ask_before_clearing_playlists = yes
+clock_display_seconds = no
+display_volume_level = yes
+display_bitrate = yes
+display_remaining_time = yes
+# none, basic, extended, perl.
+regular_expressions = extended
+
+ignore_leading_the = yes
+ignore_diacritics = yes
+block_search_constraints_change_if_items_found = yes
+mouse_support = yes
+mouse_list_scroll_whole_page = no
+lines_scrolled = 1
+empty_tag_marker = <empty>
+tags_separator = " | "
+tag_editor_extended_numeration = no
+media_library_sort_by_mtime = no
+enable_window_title = yes
+
+# 1/2/3
+search_engine_default_search_mode = 1
+external_editor = nvim
+use_console_editor = yes
+
+## visualizer_color, color1, color2, empty_tag_color, volume_color,
+## state_line_color, state_flags_color, progressbar_color,
+## progressbar_elapsed_color, player_state_color, statusbar_time_color,
+## alternative_ui_separator_color.
+
+colors_enabled = yes
+empty_tag_color = cyan
+header_window_color = 250
+volume_color = yellow
+state_line_color = default
+state_flags_color = default:b
+main_window_color = white
+color1 = white
+color2 = green
+statusbar_color = red
+statusbar_time_color = default:b
+player_state_color = default:b
+alternative_ui_separator_color = black:b
+window_border_color = green
+active_window_border = blue

@@ -1,0 +1,7 @@
+
+export _wifi='^swifi^^c#eeeeee^^b#2222220x88^ 褐 ^c#eeeeee^^b#2222220x99^ WiFi '
+export _cpu='^scpu^^c#eeeeee^^b#2222220x88^ 閭 ^c#eeeeee^^b#2222220x99^ 100%  '
+export _mem='^smem^^c#eeeeee^^b#2222220x88^  ^c#eeeeee^^b#2222220x99^ 04% '
+export _vol='^svol^^c#eeeeee^^b#2222220x88^ 🔉 ^c#eeeeee^^b#2222220x99^ 30% '
+export _icons='^sicons^^c#2D1B46^^b#2222220x66^ 🤪 '
+export _date='^sdate^^c#eeeeee^^b#2222220x88^  ^c#eeeeee^^b#2222220x99^ 2023-09-14 16:39 星期四 '

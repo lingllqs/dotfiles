@@ -1,0 +1,17 @@
+require("config.options")
+require("config.keymaps")
+require("config.autocmds")
+
+require("plugins.colorscheme")
+require("plugins.lastplace")
+require("plugins.mini")
+require("plugins.snacks")
+
+require("plugins.completion")
+require("plugins.Trans")
+require("plugins.bufferline")
+require("plugins.noice")
+require("plugins.lsp")
+require("plugins.tabular")
+require("plugins.ccc")
+-- require("plugins.telescope")

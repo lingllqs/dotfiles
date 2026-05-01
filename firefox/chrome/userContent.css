@@ -1,0 +1,8 @@
+@-moz-document url("about:newtab"), url("about:home") {
+    .outer-wrapper.ds-outer-wrapper-breakpoint-override.visible-logo {
+        background-image: url("./水下女孩.jpg"), url("./水下女孩.jpg");
+        background-position: 0px 0px !important;
+        background-size: cover;
+    }
+}
+

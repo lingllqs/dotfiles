@@ -1,0 +1,134 @@
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 16px;
+    min-height: 10px;
+}
+
+@import "themes/theme.conf";
+
+#window {
+    color: #40ff80;
+    margin-left: 8px;
+}
+
+/* 主窗口：模拟玻璃面板（无模糊，仅靠半透+阴影） */
+window#waybar {
+    background: rgba(25, 30, 40, 0.65);   /* 半透深色基底 */
+    border: 1px solid rgba(170, 255, 254, 0.3);
+    border-radius: 16px;
+    margin: 8px 12px 8px 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: all 0.2s ease;
+}
+
+/* 工具提示同样半透，无模糊 */
+tooltip {
+    background: rgba(17, 17, 27, 0.9);
+    color: #cdd6f4;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* 工作区整体 */
+#workspaces {
+    margin-left: 8px;
+}
+
+/* 工作区按钮：半透明背景，圆润，悬浮感 */
+#workspaces button {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0 12px;
+    background: rgba(34, 36, 54, 0.6);
+    border-radius: 12px;
+    margin: 4px 4px;
+    color: #e0e0ff;
+    transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    border: 1px solid transparent;
+}
+
+/* 当前激活的工作区：更亮，带光晕效果（用阴影模拟） */
+#workspaces button.active {
+    background: rgba(230, 255, 255, 0.25);
+    color: #ffffff;
+    padding: 0 18px;
+    margin: 4px 4px;
+    border: 1px solid rgba(170, 255, 254, 0.6);
+    box-shadow: 0 0 8px rgba(170, 255, 254, 0.4);
+}
+
+/* 鼠标悬停 */
+#workspaces button:hover {
+    background: rgba(245, 194, 231, 0.35);
+    color: #ffffff;
+    border: 1px solid #f5c2e7;
+}
+
+/* ----- 右侧所有模块的统一样式（不依赖背景模糊）----- */
+#clock,
+#network,
+#bluetooth,
+#pulseaudio,
+#cpu,
+#memory,
+#tray,
+#custom-power,
+#custom-logo {
+    background: rgba(20, 22, 30, 0.65);    /* 统一半透玻璃质感基底 */
+    border-radius: 12px;
+    margin: 4px 5px;
+    padding: 0 12px;
+    color: #f0f0f0;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* CPU 和内存连体，去除中间缝隙 */
+#cpu {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 0;
+    padding-right: 8px;
+}
+
+#memory {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: 0;
+    padding-left: 8px;
+}
+
+/* 时钟模块略微保留原色调，但仍旧半透明 */
+#clock {
+    background: rgba(246, 234, 149, 0.25);
+    color: #f6ea95;
+    border: 1px solid rgba(246, 234, 149, 0.5);
+}
+
+/* 托盘菜单保持半透明（菜单弹出框） */
+#tray menu {
+    background: rgba(33, 33, 47, 0.95);
+    color: #cdd6f4;
+    border-radius: 12px;
+    padding: 5px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* 电源按钮点缀 */
+#custom-power {
+    background: rgba(220, 226, 241, 0.2);
+    color: #dce2f1;
+    border: 1px solid rgba(220, 226, 241, 0.5);
+}
+
+/* 自定义logo保持完全透明（如果有需要） */
+#custom-logo {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}

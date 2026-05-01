@@ -1,0 +1,46 @@
+# Colors (custom)
+[colors]
+
+# Default colors
+[colors.primary]
+background = '#000000'
+foreground = '#f8f8f2'
+bright_foreground = '#ffffff'
+
+# Normal colors
+[colors.normal]
+black = '#21222c'
+red = '#ff5555'
+green = '#30ff20'
+yellow = '#f1fa0c'
+blue = '#22a2ff'
+magenta = '#ff79c6'
+cyan = '#8be9fd'
+white = '#f8f8f2'
+
+# Bright colors
+[colors.bright]
+black = '#d0d0f0'
+red = '#ff6e6e'
+green = '#30ff30'
+yellow = '#ffffa5'
+blue = '#d6acff'
+magenta = '#ff92df'
+cyan = '#a4ffff'
+white = '#ffffff'
+
+# [colors.cursor]
+# text = '#d1fa8c'
+# cursor = '#f29d94'
+#
+# [colors.vi_mode_cursor]
+# text = '#d1fa8c'
+# cursor = '#f29d94'
+#
+# [colors.search]
+# matches = { foreground = "#181818", background = "#f4d455" }
+# focused_match = { foreground = "#5ddbfa", background = "#50fb8a" }
+#
+# [colors.selection]
+# text = "#181818"
+# background = "#f2f32a"
