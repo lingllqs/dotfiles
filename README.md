@@ -11,6 +11,7 @@
 | 软件名                      | 作用            |
 |-----------------------------|-----------------|
 | ttf-jetbrains-mono-nerd     | 字体            |
+| nerd-fonts-sf-mono          | 字体            |
 | fd                          | 文件查找        |
 | fzf                         | 模糊搜索        |
 | ripgrep                     | grep替代        |
