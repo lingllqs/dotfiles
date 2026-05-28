@@ -1,8 +1,16 @@
 @-moz-document url("about:newtab"), url("about:home") {
-    .outer-wrapper.ds-outer-wrapper-breakpoint-override.visible-logo {
-        background-image: url("./水下女孩.jpg"), url("./水下女孩.jpg");
-        background-position: 0px 0px !important;
-        background-size: cover;
+    html, body {
+        background: url("./watergirl.jpg") center/cover no-repeat fixed !important;
     }
+    /* 可选：隐藏原有可能会遮挡背景的白色块 */
+    .activity-stream,
+    .outer-wrapper {
+        background: transparent !important;
+    }
+}
+
+a:link {
+	text-decoration: underline !important;
+	color: #0066cc !important;
 }
 

@@ -2,3 +2,5 @@ user_pref("layout.css.devPixelsPerPx", "1.0");
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("browser.tabs.closeWindowWithLastTab", false); // last tab
 user_pref("browser.search.region", "US"); //region
+user_pref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false);
+user_pref("browser.newtabpage.activity-stream.nova.enabled", false);
